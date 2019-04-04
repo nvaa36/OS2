@@ -11,4 +11,4 @@ qemu-system-x86_64 -s -drive format=raw,file=foo.img -serial stdio #stdio helful
 ## No symbols, so just random crap
 # symbol-file os2/kernel.bin
 ## need to load user-space programs separately and tell gdb where the program is loaded
-# add-symbol-file <user-space-program> 0x8000000000
+# add-symbol-file <user-space-program> <start-address>
