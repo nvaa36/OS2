@@ -1,35 +1,39 @@
 kernel := build/kernel.bin
-iso := build/os.iso
+img := build/foo.img
 
 linker_script := src/linker.ld
 grub_cfg := src/grub.cfg
 assembly_source_files := $(wildcard src/*.asm)
 assembly_object_files := $(patsubst src/%.asm, \
-	obj/%.o, $(assembly_source_files))
+	build/%.o, $(assembly_source_files))
 
-.PHONY: all clean run
+.PHONY: all clean run img
 
 all: $(kernel)
 
 clean:
+	@umount /mnt/fatgrub
+	@losetup -d /dev/loop17
+	@losetup -d /dev/loop24
 	@rm -r build
+	@rm -r .img
 
-run: $(iso)
-	@qemu-system-x86_64 -cdrom $(iso)
+run: $(img)
+	@qemu-system-x86_64 -s -m 512 -drive format=raw,file=$(img) -serial stdio
 
-iso: $(iso)
+img:
+	@setup_scripts/setup.sh $(img)
 
-$(iso): $(kernel) $(grub_cfg)
-	@mkdir -p build/isofiles/boot/grub
-	@cp $(kernel) build/isofiles/boot/kernel.bin
-	@cp $(grub_cfg) build/isofiles/boot/grub
-	@grub-mkrescue -o $(iso) build/isofiles 2> /dev/null
-	@rm -r build/isofiles
+$(img): $(kernel) $(grub_cfg)
+	@mkdir build
+	@mkdir -p .img/boot/grub
+	@cp $(kernel) .img/boot/kernel.bin
+	@cp $(grub_cfg) .img/boot/grub
+	@setup_scripts/setup.sh $(img)
 
 $(kernel): $(assembly_object_files) $(linker_script)
 	@ld -n -T $(linker_script) -o $(kernel) $(assembly_object_files)
 
 # compile assembly files
-build/arch/$(arch)/%.o: src/arch/$(arch)/%.asm
-	@mkdir -p $(shell dirname $@)
+build/%.o: src/%.asm
 	@nasm -felf64 $< -o $@
