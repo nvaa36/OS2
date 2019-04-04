@@ -11,7 +11,7 @@ sudo parted foo.img mkpart primary fat32 2048s 30720s
 # set the partition as bootable, flag for partition 1 
 sudo parted foo.img set 1 boot on
 
-sudo ./Cleanup.sh 
+sudo ./cleanup.sh 
 
 #partitioned, but no grub or any of our files 
 
