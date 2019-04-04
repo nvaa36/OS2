@@ -12,11 +12,11 @@ assembly_object_files := $(patsubst src/%.asm, \
 all: $(kernel)
 
 clean:
-	@umount /mnt/fatgrub
-	@losetup -d /dev/loop17
-	@losetup -d /dev/loop24
-	@rm -r build
-	@rm -r .img
+	@-sudo umount /mnt/fatgrub
+	@-sudo losetup -d /dev/loop17
+	@-sudo losetup -d /dev/loop24
+	@-rm -r build
+	@-rm -r .img
 
 run: $(img)
 	@qemu-system-x86_64 -s -m 512 -drive format=raw,file=$(img) -serial stdio
