@@ -31,7 +31,7 @@ sudo mount /dev/loop17 /mnt/fatgrub # make sure that the /mnt/fatgrub exists
 
 # install grub 
 
-sudo grub -install --root-directory=/mnt/fatgrub --no-floppy --modules="normal part_msdos ext2 multiboot" /dev/loop17 # need to have the path to the filesystem so grub can install files there
+sudo grub-install --root-directory=/mnt/fatgrub --no-floppy --modules="normal part_msdos ext2 multiboot" /dev/loop17 # need to have the path to the filesystem so grub can install files there
 
 # put the rest of the data into the partition
 
