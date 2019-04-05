@@ -15,17 +15,13 @@ clean:
 	@-sudo umount /mnt/fatgrub
 	@-sudo losetup -d /dev/loop17
 	@-sudo losetup -d /dev/loop24
-	@-rm -r build
-	@-rm -r .img
+	@-rm -r build/*
+	@-rm -r .img/*
 
 run: $(img)
-	@qemu-system-x86_64 -s -m 512 -drive format=raw,file=$(img) -serial stdio
+	@qemu-system-x86_64 -s -m 1024 -drive format=raw,file=$(img) -serial stdio
 
-img:
-	@setup_scripts/setup.sh $(img)
-
-$(img): $(kernel) $(grub_cfg)
-	@mkdir build
+img: $(kernel) $(grub_cfg)
 	@mkdir -p .img/boot/grub
 	@cp $(kernel) .img/boot/kernel.bin
 	@cp $(grub_cfg) .img/boot/grub
