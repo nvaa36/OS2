@@ -7,7 +7,7 @@ assembly_source_files := $(wildcard src/*.asm)
 assembly_object_files := $(patsubst src/%.asm, \
 	build/%.o, $(assembly_source_files))
 
-.PHONY: all clean run img
+.PHONY: all clean run img debug
 
 all: $(kernel)
 
@@ -20,6 +20,9 @@ clean:
 
 run: $(img)
 	qemu-system-x86_64 -s -drive format=raw,file=$(img)
+
+debug: $(img)
+	qemu-system-x86_64 -s -S -drive format=raw,file=$(img)
 
 img: $(kernel) $(grub_cfg)
 	mkdir -p .img/boot/grub
