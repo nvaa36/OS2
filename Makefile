@@ -19,7 +19,7 @@ clean:
 	-rm -r .img/*
 
 run: $(img)
-	qemu-system-x86_64 -drive format=raw,file=$(img)
+	qemu-system-x86_64 -s -drive format=raw,file=$(img)
 
 img: $(kernel) $(grub_cfg)
 	mkdir -p .img/boot/grub
@@ -32,4 +32,4 @@ $(kernel): $(assembly_object_files) $(linker_script)
 
 # compile assembly files
 build/%.o: src/%.asm
-	nasm -felf64 $< -o $@
+	nasm -g -felf64 $< -o $@

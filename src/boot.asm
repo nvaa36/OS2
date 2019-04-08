@@ -15,8 +15,8 @@ start:
    call check_cpuid
    call check_long_mode
 
-   call set_up_page_tables
-   call enable_paging
+   ;call set_up_page_tables
+   ;call enable_paging
    hlt
 
 set_up_page_tables:
