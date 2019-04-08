@@ -43,6 +43,6 @@ build/asm/%.o: src/asm/%.asm
 	nasm -g -felf64 $< -o $@
 
 # compile c files
-build/c/%.o: src/c/%.c
+build/c/%.o: src/c/%.c src/c/%.h
 	mkdir -p build/c
 	x86_64-elf-gcc -c -g $< -o $@
