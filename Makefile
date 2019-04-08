@@ -1,11 +1,14 @@
 kernel := build/kernel.bin
 img := build/foo.img
 
-linker_script := src/linker.ld
-grub_cfg := src/grub.cfg
-assembly_source_files := $(wildcard src/*.asm)
-assembly_object_files := $(patsubst src/%.asm, \
-	build/%.o, $(assembly_source_files))
+linker_script := src/setup/linker.ld
+grub_cfg := src/setup/grub.cfg
+assembly_source_files := $(wildcard src/asm/*.asm)
+assembly_object_files := $(patsubst src/asm/%.asm, \
+	build/asm/%.o, $(assembly_source_files))
+c_source_files := $(wildcard src/c/*.c)
+c_object_files := $(patsubst src/c/%.c, \
+	build/c/%.o, $(c_source_files))
 
 .PHONY: all clean run img debug
 
@@ -30,9 +33,16 @@ img: $(kernel) $(grub_cfg)
 	cp $(grub_cfg) .img/boot/grub
 	setup_scripts/setup.sh $(img)
 
-$(kernel): $(assembly_object_files) $(linker_script)
-	ld -n -T $(linker_script) -o $(kernel) $(assembly_object_files)
+$(kernel): $(assembly_object_files) $(c_object_files) $(linker_script)
+	ld -n -T $(linker_script) -o $(kernel) $(assembly_object_files) \
+      $(c_object_files)
 
 # compile assembly files
-build/%.o: src/%.asm
+build/asm/%.o: src/asm/%.asm
+	mkdir -p build/asm
 	nasm -g -felf64 $< -o $@
+
+# compile c files
+build/c/%.o: src/c/%.c
+	mkdir -p build/c
+	x86_64-elf-gcc -c -g $< -o $@

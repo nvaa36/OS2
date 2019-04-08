@@ -43,4 +43,8 @@ sudo grub-install --root-directory=/mnt/fatgrub --no-floppy --modules="normal pa
 
 sudo cp -r .img/* /mnt/fatgrub
 
-sudo chmod 777 $1
+sudo chown cpe454 build/foo.img
+
+sudo umount /mnt/fatgrub
+sudo losetup -d /dev/loop17
+sudo losetup -d /dev/loop24
