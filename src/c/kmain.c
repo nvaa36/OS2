@@ -1,8 +1,9 @@
 #include "kmain.h"
 
 int kmain(int argc, char **argv) {
-   const char *str = "Hello World.";
-   printk("%s\n", str);
+   int i = 332;
+   printk("\n");
+   printk("%% %d %%\n", i);
    while (1) {
       asm("hlt");
    }
