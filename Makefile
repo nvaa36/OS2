@@ -45,4 +45,4 @@ build/asm/%.o: src/asm/%.asm
 # compile c files
 build/c/%.o: src/c/%.c src/c/%.h
 	mkdir -p build/c
-	x86_64-elf-gcc -Wall -Werror -c -g $< -o $@
+	x86_64-elf-gcc -Wall -ffreestanding -nostdlib -lgcc -mno-red-zone -Werror -c -g $< -o $@
