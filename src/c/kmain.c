@@ -1,8 +1,8 @@
 #include "kmain.h"
 
 int kmain(int argc, char **argv) {
-   VGA_clear();
-   VGA_display_str("OKAY!!!!!");
+   const char *str = "Hello World.";
+   printk("%s\n", str);
    while (1) {
       asm("hlt");
    }
