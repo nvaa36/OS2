@@ -1,0 +1,5 @@
+char status = inb(PS2_STATUS); /* Get the status of the kb */
+while (!(status & PS2_STATUS_OUTPUT)) {
+	status = inb(PS2_STATUS);
+}
+return inb(PS2_DATA); /* Get the actual data out */
