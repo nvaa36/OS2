@@ -14,7 +14,7 @@ void *memcpy(void *dest, const void *src, size_t n) {
    }
    return dest;
 }
-size_t strlen(const char *s) {
+/*size_t strlen(const char *s) {
    size_t size = 0;
    return size;
 }
@@ -25,6 +25,6 @@ int strncmp(const char *s1, const char *s2, size_t n) {
    int val = 0;
    return val;
 }
-/*const char *strchr(const char *s, int c) {
+const char *strchr(const char *s, int c) {
 }
 char *strdup(const char *s);*/
