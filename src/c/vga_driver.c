@@ -9,12 +9,13 @@ static unsigned char color = 0x2f;
 void VGA_display_char(char c) {
    if (c == '\n') {
       cursor = (cursor / width + 1) * width;
-      if (cursor >= width*height)
+      if (cursor >= width*height) {
          scroll();
+      }
    }
-   else if (c == '\r')
+   else if (c == '\r') {
       cursor = cursor / width * width;
-      else {
+      } else {
          vgaBuff[cursor] = (color << 8) | c;
          if ( (cursor % width) < (width - 1))
             cursor++;
@@ -30,6 +31,12 @@ void VGA_display_str(const char *str) {
    }
 }
 
-void VGA_clear(){}
+void VGA_clear(){
+   memset(vgaBuff, 0, width * height * sizeof(unsigned short));
+}
 
-void scroll() {}
+void scroll() {
+   memcpy(vgaBuff, vgaBuff + width, width * (height - 1)
+          * sizeof(unsigned short));
+   memset(vgaBuff + width * (height - 1), 0, width);
+}

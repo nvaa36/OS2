@@ -1,6 +1,8 @@
 #ifndef VGA_DRIVER_H
 #define VGA_DRIVER_H
 
+#include "string.h"
+
 #define VGA_BASE 0xb8000
 
 void VGA_clear(void);
