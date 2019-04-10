@@ -34,7 +34,16 @@ void handle_flag(char c, va_list va, int *num_chars) {
          return;
       case 'd':
          i = va_arg(va, int);
-         print_int(i, num_chars);
+         print_neg((long)i);
+         print_long_long((long)i, num_chars);
+         return;
+      case 'u':
+         i = va_arg(va, int);
+         print_long_long((long)i, num_chars);
+         return;
+      case 'x':
+         i = va_arg(va, int);
+         print_long_hex((long)i, num_chars);
          return;
    }
 }
@@ -47,23 +56,53 @@ void print_num_char(char c) {
    VGA_display_char(c + DEC_ZERO);
 }
 
-void print_int(int i, int *num_chars) {
+void print_neg(long i, int *num_chars) {
+   if (i < 0) {
+      print_char('-');
+      (*num_chars)++;
+   }
+}
+
+void print_long_long(long i, int *num_chars) {
    int digit;
 
-   while (i) {
-      digit = i % DECIMAL;
-      print_num_char(digit);
-      (*num_chars)++;
-      i = i / DECIMAL;
+   if (!i) {
+      return;
    }
+
+   digit = (int)(i % DECIMAL);
+   (*num_chars)++;
+   print_long_long(i / DECIMAL, num_chars);
+   print_num_char(digit);
+}
+
+void print_ulong_long(unsigned long i, int *num_chars) {
+   int digit;
+
+   if (!i) {
+      return;
+   }
+
+   digit = (int)(i % DECIMAL);
+   (*num_chars)++;
+   print_long_long(i / DECIMAL, num_chars);
+   print_num_char(digit);
 }
 
 void print_str(const char *str, int *num_chars) {
    VGA_display_str(str);
 }
-void print_uchar(unsigned char uc, int *num_chars) {
-}
-void print_short(short sh, int *num_chars) {
-}
 void print_long_hex(long lo, int *num_chars) {
+   char [] characters = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b',
+                         'c', 'd', 'e', 'f']
+   int digit;
+
+   if (!i) {
+      return;
+   }
+
+   digit = (int)(i % HEX);
+   (*num_chars)++;
+   print_long_hex(i / HEX, num_chars);
+   print_num_char(digit);
 }
