@@ -50,10 +50,11 @@ void print_num_char(char c) {
 void print_int(int i, int *num_chars) {
    int digit;
 
-   while (i / DECIMAL) {
+   while (i) {
       digit = i % DECIMAL;
       print_num_char(digit);
       (*num_chars)++;
+      i = i / DECIMAL;
    }
 }
 
