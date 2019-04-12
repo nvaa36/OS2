@@ -8,29 +8,69 @@ static char keycode_translation [] = {'\t', '`', '_', '_', '_', '_', '_', '_',
    '_', '\'', '_', '[', '=', '_', '_', '_', '_', '\n', ']', '_', '\\', '_',
    '_', '_', '_', '_', '_', '_', '_', '\b'};
 
+static char shift_translation [] = {'_', '_', '_', '_', '_', '_', '_', '_',
+   '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_',
+   '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_',
+   '_', '"', '_', '_', '_', '_', '<', '_', '>', '?', ')', '!', '@', '#', '$',
+   '%', '^', '&', '*', '(', '_', ':', '_', '+', '_', '_', '_', '_', '_', '_',
+   '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_',
+   '_', '_', '_', '_', '_', '_', '_', '_', '{', '|', '}'}
+
 static kb_state state = {0, 0};
 
 char get_kb_c() {
-   unsigned char c = BKSP_PRESS + 1;
+   unsigned char c;
+   char translated_key = 0;
 
-   unsigned char status = inb(KBSR);
-   while (!is_key_press(c)) {
-      while (!(status & KBDR_READY))
-         status = inb(KBSR);
-      c = inb(KBDR);
-      handle_key(c);
+   while (!translated_key) {
+      c = poll_kb();
+      translated_key = handle_key(c);
    }
-   return keycode_translation[c - OFFSET];
+   return translated key;
 }
 
-char is_key_press(unsigned char c) {
-   if (c < BKSP_PRESS && c != LSHIFT && c != RSHIFT && c != CAPS &&
-       c != BKSP) {
-      return 1;
-   }
+char poll_kb() {
+   char c;
+   unsigned char status = inb(KBSR);
 
-   return 0;
+   while (!(status & KBDR_READY))
+      status = inb(KBSR);
+   return inb(KBDR);
 }
 
 void handle_key(unsigned char c) {
+   if (c == LSHIFT || c == RSHIFT) {
+      state.shift = 1;
+      return 0;
+   }
+   if (c == CAPS) {
+      state.caps = 1;
+      return 0;
+   }
+   /* TODO: handle backspace better? Somewhere else? */
+   if (c < BKSP_PRESS) {
+      c = keycode_translation[c - OFFSET];
+      if (c == '\n' || c == '\t' || c == '\b') {
+         return c;
+      }
+      /* capitalize if caps lock and a letter */
+      if (state.caps && c >= LOW_A && c <= LOW_Z) {
+         return c - LOW_A + UPPER_A;
+      }
+      if (state.shift) {
+         if (c >= LOW_A && c <= LOW_Z) {
+            return c - LOW_A + UPPER_A;
+         }
+         if (c >= EXCL && c <= TILD) {
+            return shift_translation[c];
+         }
+      }
+      return c;
+   }
+   
+}
+
+unsigned char shift_symbol(unsigned char c) {
+   switch (c) {
+   }
 }
