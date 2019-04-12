@@ -11,6 +11,7 @@ void VGA_display_char(char c) {
       cursor = (cursor / width + 1) * width;
       if (cursor >= width*height) {
          scroll();
+         cursor -= width;
       }
    }
    else if (c == '\r') {

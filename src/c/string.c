@@ -14,17 +14,40 @@ void *memcpy(void *dest, const void *src, size_t n) {
    }
    return dest;
 }
-/*size_t strlen(const char *s) {
+size_t strlen(const char *s) {
    size_t size = 0;
+   char c;
+   while ((c = s[size])) {
+      size++;
+   }
    return size;
 }
 char *strncpy(char *dest, const char *src, size_t n) {
+   memcpy(dest, src, n);
    return dest;
 }
 int strncmp(const char *s1, const char *s2, size_t n) {
+   int i;
    int val = 0;
+   for (i = 0; i < n; i++) {
+      if ((val = s1[i] - s2[i])) {
+         return val;
+      }
+   }
    return val;
 }
 const char *strchr(const char *s, int c) {
+   const char *character = s;
+   int i = 0;
+   size_t len = strlen(s);
+   while (i < len) {
+      if (*character == c) {
+         return character;
+      }
+      character++;
+      i++;
+   }
+   return NULL;
 }
-char *strdup(const char *s);*/
+/*char *strdup(const char *s) {
+}*/
