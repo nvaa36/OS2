@@ -19,25 +19,29 @@ sudo parted $1 set 1 boot on
 
 #some device names/numbers might be off 
 
-sudo losetup /dev/loop17 $1 # loop17 – loopback device might be different on system 
+LOOP1="$(sudo losetup -f)"
+
+sudo losetup $LOOP1 $1 # loop17 – loopback device might be different on system 
 
 #allows grub to install 
 
 #need another loopback device for the actual partition 
 
-sudo losetup /dev/loop24 $1 -o 1048576 # set the other loopback device to point to the kernel partition (2048*512) 
+LOOP2="$(sudo losetup -f)"
+
+sudo losetup $LOOP2 $1 -o 1048576 # set the other loopback device to point to the kernel partition (2048*512) 
 
 #loop17 = grub, loop24 = kernel partition 
 
 #actually put the fat32 fileystem on it 
 
-sudo mkdosfs -F32 -f 2 /dev/loop24 # format disk image based on existing fat32 implementation 
+sudo mkdosfs -F32 -f 2 $LOOP2 # format disk image based on existing fat32 implementation 
 
-sudo mount /dev/loop24 /mnt/fatgrub # make sure that the /mnt/fatgrub exists 
+sudo mount $LOOP2 /mnt/fatgrub # make sure that the /mnt/fatgrub exists 
 
 # install grub
 
-sudo grub-install --root-directory=/mnt/fatgrub --no-floppy --modules="normal part_msdos ext2 multiboot" /dev/loop17 # need to have the path to the filesystem so grub can install files there
+sudo grub-install --root-directory=/mnt/fatgrub --no-floppy --modules="normal part_msdos ext2 multiboot" $LOOP1 # need to have the path to the filesystem so grub can install files there
 
 # put the rest of the data into the partition
 
@@ -46,5 +50,5 @@ sudo cp -r .img/* /mnt/fatgrub
 sudo chown cpe454 build/foo.img
 
 sudo umount /mnt/fatgrub
-sudo losetup -d /dev/loop17
-sudo losetup -d /dev/loop24
+sudo losetup -d $LOOP1
+sudo losetup -d $LOOP2
