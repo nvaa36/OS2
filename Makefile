@@ -23,6 +23,7 @@ clean:
 	-sudo losetup -d /dev/loop24
 	-rm -r build/*
 	-rm -r .img/*
+	-rm build/foo.img
 
 run: $(img)
 	qemu-system-x86_64 -s -drive format=raw,file=$(img)
