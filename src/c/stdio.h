@@ -31,6 +31,6 @@ typedef struct {
 
 char get_kb_c();
 char poll_kb();
-void handle_key(unsigned char c);
+unsigned char handle_key(unsigned char c);
 
 #endif

@@ -14,7 +14,7 @@ static char shift_translation [] = {'_', '_', '_', '_', '_', '_', '_', '_',
    '_', '"', '_', '_', '_', '_', '<', '_', '>', '?', ')', '!', '@', '#', '$',
    '%', '^', '&', '*', '(', '_', ':', '_', '+', '_', '_', '_', '_', '_', '_',
    '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_',
-   '_', '_', '_', '_', '_', '_', '_', '_', '{', '|', '}'}
+   '_', '_', '_', '_', '_', '_', '_', '_', '{', '|', '}'};
 
 static kb_state state = {0, 0};
 
@@ -26,11 +26,10 @@ char get_kb_c() {
       c = poll_kb();
       translated_key = handle_key(c);
    }
-   return translated key;
+   return translated_key;
 }
 
 char poll_kb() {
-   char c;
    unsigned char status = inb(KBSR);
 
    while (!(status & KBDR_READY))
@@ -38,7 +37,7 @@ char poll_kb() {
    return inb(KBDR);
 }
 
-void handle_key(unsigned char c) {
+unsigned char handle_key(unsigned char c) {
    if (c == LSHIFT || c == RSHIFT) {
       state.shift = 1;
       return 0;
@@ -48,7 +47,7 @@ void handle_key(unsigned char c) {
       return 0;
    }
    /* TODO: handle backspace better? Somewhere else? */
-   if (c < BKSP_PRESS) {
+   if (c < BKSP) {
       c = keycode_translation[c - OFFSET];
       if (c == '\n' || c == '\t' || c == '\b') {
          return c;
@@ -67,10 +66,8 @@ void handle_key(unsigned char c) {
       }
       return c;
    }
-   
-}
 
-unsigned char shift_symbol(unsigned char c) {
-   switch (c) {
-   }
+   /* TODO: Handle other cases. */
+   return 0;
+   
 }
