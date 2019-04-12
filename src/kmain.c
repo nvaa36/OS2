@@ -15,6 +15,9 @@ int kmain(int argc, char **argv) {
    /*for (i = 0; i < 10; i++)
       printk("kjsdlkfjslkdf\n");*/
    setup_keyboard_polling();
+   while(1) {
+      printk("%c", get_kb_c());
+   }
    while (1) {
       asm("hlt");
    }

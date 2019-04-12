@@ -10,7 +10,6 @@
 #define PS2_STATUS_OUTPUT 1
 #define PS2_STATUS_INPUT (1 << 1)
 
-#define KBDR PS2_DATA
 #define GETSET_SCANSET 0xF0
 
 /* Commands */
