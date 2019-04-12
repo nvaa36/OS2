@@ -18,5 +18,11 @@ for line in file:
 		continue
 
 print(codes)
-for key, value in sorted(codes.items(), key=lambda item: item[1]):
-    print("\'%s\'" % (key), end=', ')
+final_codes = []
+for i in range(240):
+	final_codes.append('_')
+for key, value in codes.items():
+    final_codes[value] = key
+
+for code in final_codes:
+	print("'%s'" % str(code).lower(), end=', ')
