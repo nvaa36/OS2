@@ -46,8 +46,7 @@ unsigned char handle_key(unsigned char c) {
       state.caps = !state.caps;
       return 0;
    }
-   /* TODO: handle backspace better? Somewhere else? */
-   if (c < BKSP) {
+   if (c <= BKSP) {
       c = keycode_translation[c - OFFSET];
       if (c != '_') {
          if (c == '\n' || c == '\t' || c == '\b') {
@@ -69,7 +68,6 @@ unsigned char handle_key(unsigned char c) {
       }
    }
 
-   /* TODO: Handle other cases. */
    if (c == RELEASED) {
       c = poll_kb();
       if (c == LSHIFT || c == RSHIFT) {
