@@ -43,31 +43,39 @@ unsigned char handle_key(unsigned char c) {
       return 0;
    }
    if (c == CAPS) {
-      state.caps = 1;
+      state.caps = !state.caps;
       return 0;
    }
    /* TODO: handle backspace better? Somewhere else? */
    if (c < BKSP) {
       c = keycode_translation[c - OFFSET];
-      if (c == '\n' || c == '\t' || c == '\b') {
-         return c;
-      }
-      /* capitalize if caps lock and a letter */
-      if (state.caps && c >= LOW_A && c <= LOW_Z) {
-         return c - LOW_A + UPPER_A;
-      }
-      if (state.shift) {
-         if (c >= LOW_A && c <= LOW_Z) {
+      if (c != '_') {
+         if (c == '\n' || c == '\t' || c == '\b') {
+            return c;
+         }
+         /* capitalize if caps lock and a letter */
+         if (state.caps && c >= LOW_A && c <= LOW_Z) {
             return c - LOW_A + UPPER_A;
          }
-         if (c >= EXCL && c <= TILD) {
-            return shift_translation[c];
+         if (state.shift) {
+            if (c >= LOW_A && c <= LOW_Z) {
+               return c - LOW_A + UPPER_A;
+            }
+            if (c >= EXCL && c <= TILD) {
+               return shift_translation[c];
+            }
          }
+         return c;
       }
-      return c;
    }
 
    /* TODO: Handle other cases. */
+   if (c == RELEASED) {
+      c = poll_kb();
+      if (c == LSHIFT || c == RSHIFT) {
+         state.shift = 0;
+      }
+   }
    return 0;
    
 }

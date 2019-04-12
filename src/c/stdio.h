@@ -11,6 +11,8 @@
 
 #define OFFSET 0x0D
 
+#define RELEASED 0xF0
+
 #define LSHIFT 0x12
 #define CAPS 0x58
 #define RSHIFT 0x59
