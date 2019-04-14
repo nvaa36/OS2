@@ -1,8 +1,5 @@
 #include "gdt.h"
 
-gdt_entry gdt[NUM_GDT_ENTRIES];
-table_desc table_descriptor;
-
 void setup_gdt() {
    /* Zero first entry. */
    memset(gdt, 0, sizeof(gdt_entry));

@@ -41,6 +41,9 @@ struct tabledesc {
 
 typedef struct tabledesc table_desc;
 
+gdt_entry gdt[NUM_GDT_ENTRIES];
+table_desc table_descriptor;
+
 void setup_gdt();
 void setup_kernel_segment();
 void lgdt(void* base, uint16_t size);
