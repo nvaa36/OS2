@@ -6,6 +6,10 @@
 
 #define NUM_IDT_ENTRIES 256
 
+/* Labels for the 0th and 1st isrs */
+extern void isr_0(void);
+extern void isr_1(void);
+
 struct idte{
    uint16_t offset1;
    uint16_t selector;
