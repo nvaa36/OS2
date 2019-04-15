@@ -82,7 +82,12 @@ void print_dux(const char *fmt, int *i, long long num, int *num_chars) {
 }
 
 void print_char(char c) {
-   VGA_display_char(c);
+   if (c == '\b') {
+      backspace();
+   }
+   else {
+      VGA_display_char(c);
+   }
 }
 
 void print_num_char(char c) {

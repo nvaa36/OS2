@@ -41,3 +41,10 @@ void scroll() {
           * sizeof(unsigned short));
    memset(vgaBuff + width * (height - 1), 0, width);
 }
+
+void backspace() {
+   if (cursor > 0) {
+      cursor--;
+   }
+   vgaBuff[cursor] = (color << 8) | 0;
+}
