@@ -4,4 +4,4 @@ isr_%d:
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f%d4f%d
    mov dword [0xb8008], 0x4f%d4f20
-   hlt
+   iret

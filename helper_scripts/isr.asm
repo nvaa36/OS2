@@ -9,1782 +9,1782 @@ isr_0:
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_1:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_2:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_3:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_4:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_5:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_6:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_7:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_8:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_9:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f30
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_10:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_11:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_12:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_13:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_14:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_15:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_16:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_17:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_18:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_19:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f31
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_20:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_21:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_22:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_23:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_24:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_25:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_26:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_27:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_28:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_29:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f32
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_30:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_31:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_32:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_33:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_34:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_35:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_36:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_37:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_38:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_39:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f33
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_40:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_41:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_42:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_43:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_44:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_45:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_46:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_47:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_48:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_49:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f34
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_50:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_51:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_52:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_53:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_54:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_55:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_56:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_57:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_58:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_59:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f35
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_60:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_61:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_62:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_63:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_64:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_65:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_66:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_67:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_68:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_69:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f36
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_70:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_71:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_72:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_73:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_74:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_75:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_76:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_77:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_78:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_79:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f37
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_80:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_81:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_82:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_83:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_84:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_85:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_86:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_87:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_88:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_89:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f38
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_90:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_91:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_92:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_93:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_94:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_95:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_96:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_97:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_98:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_99:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f304f39
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_100:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_101:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_102:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_103:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_104:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_105:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_106:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_107:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_108:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_109:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f30
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_110:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_111:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_112:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_113:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_114:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_115:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_116:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_117:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_118:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_119:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f31
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_120:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_121:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_122:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_123:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_124:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_125:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_126:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_127:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_128:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_129:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f32
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_130:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_131:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_132:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_133:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_134:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_135:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_136:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_137:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_138:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_139:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f33
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_140:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_141:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_142:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_143:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_144:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_145:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_146:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_147:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_148:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_149:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f34
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_150:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_151:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_152:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_153:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_154:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_155:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_156:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_157:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_158:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_159:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f35
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_160:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_161:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_162:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_163:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_164:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_165:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_166:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_167:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_168:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_169:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f36
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_170:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_171:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_172:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_173:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_174:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_175:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_176:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_177:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_178:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_179:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f37
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_180:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_181:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_182:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_183:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_184:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_185:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_186:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_187:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_188:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_189:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f38
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_190:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_191:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_192:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_193:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_194:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_195:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_196:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_197:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_198:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_199:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f314f39
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_200:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_201:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_202:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_203:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_204:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_205:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_206:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_207:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_208:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_209:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f30
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_210:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_211:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_212:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_213:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_214:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_215:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_216:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_217:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_218:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_219:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f31
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_220:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_221:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_222:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_223:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_224:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_225:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_226:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_227:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_228:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_229:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f32
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_230:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_231:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_232:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_233:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_234:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_235:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_236:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_237:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_238:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_239:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f33
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_240:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_241:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_242:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_243:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_244:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
 isr_245:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f354f20
-   hlt
+   iret
 isr_246:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f364f20
-   hlt
+   iret
 isr_247:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f374f20
-   hlt
+   iret
 isr_248:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f384f20
-   hlt
+   iret
 isr_249:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f34
    mov dword [0xb8008], 0x4f394f20
-   hlt
+   iret
 isr_250:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f35
    mov dword [0xb8008], 0x4f304f20
-   hlt
+   iret
 isr_251:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f35
    mov dword [0xb8008], 0x4f314f20
-   hlt
+   iret
 isr_252:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f35
    mov dword [0xb8008], 0x4f324f20
-   hlt
+   iret
 isr_253:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f35
    mov dword [0xb8008], 0x4f334f20
-   hlt
+   iret
 isr_254:
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
    mov dword [0xb8008], 0x4f324f35
    mov dword [0xb8008], 0x4f344f20
-   hlt
+   iret
