@@ -27,5 +27,5 @@ int kmain(int argc, char **argv) {
 void setup_kernel() {
    setup_keyboard_polling();
    setup_gdt();
-   /*setup_interrupts();*/
+   setup_interrupts();
 }

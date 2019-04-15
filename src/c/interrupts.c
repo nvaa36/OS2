@@ -8,10 +8,12 @@ void setup_interrupts() {
 
 void setup_idt() {
    int i;
+   uint64_t offset;
 
    for (i = 0; i < NUM_IDT_ENTRIES; i++) {
-      /* TODO: make the offset correct */
-      idt[i].offset1 = 0;
+      /* Offset calculated from asm labels for the 1st and second isrs */
+      offset = (uint64_t)(&isr_0 + i * (isr_1-isr_0));
+      idt[i].offset1 = (uint16_t)offset;
       /* TODO: Is this segment selector right? */
       /* Want index 1 in the GDT */
       idt[i].selector = 0 | (1 << 3);
@@ -21,12 +23,12 @@ void setup_idt() {
       idt[i].type = 0xE;
       idt[i].zero = 0;
       /* TODO: Don't know what to set this to */
-      idt[i].zero = 0;
+      idt[i].dpl = 0;
       /* Set all of them to present, print an error message if unimplemented */
       idt[i].p = 0;
 
-      idt[i].offset2 = 0;
-      idt[i].offset3 = 0;
+      idt[i].offset2 = (uint16_t)(offset >> 16);
+      idt[i].offset3 = (uint32_t)(offset >> 32);
 
       idt[i].ign2 = 0;
    }
@@ -39,5 +41,5 @@ void lidt(void* base, uint16_t size) {
    } __attribute__((packed)) IDTR;
    IDTR.length = size;
    IDTR.base = base;
-   asm ( "lidt %0" : : "m"(GDTR) );
+   asm ( "lidt %0" : : "m"(IDTR) );
 }
