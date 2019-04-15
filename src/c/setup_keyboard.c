@@ -12,9 +12,8 @@ void setup_keyboard_polling() {
    ps2_poll_cmd_write(READ_CONF);
    data = ps2_poll_read();
 
-   /* clear bits 0, 1, and 6 */
-   /* TODO: enable interrupts (bit 0) later */
-   mask = ~(mask | PS2_INT1_BIT | PS2_INT2_BIT | PS2_CLCK2_BIT | PS2_PT_BIT);
+   /* clear bits 1 and 6 */
+   mask = ~(mask | PS2_INT2_BIT | PS2_CLCK2_BIT | PS2_PT_BIT);
    data &= mask;
 
    /* enable clock on channel 1 */

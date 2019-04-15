@@ -18,6 +18,7 @@
 #define DISABLE_P2 0xA7
 #define DISABLE_P1 0xAD
 #define ENABLE_P1 0xAE
+#define ENABLE_I_P1 0xAE
 
 #define RESET 0xFF
 #define ENABLE 0xF4
