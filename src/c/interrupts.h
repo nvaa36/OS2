@@ -30,6 +30,9 @@
 #define PIC_EOI      0x20     /* End-of-interrupt command code */
 /* End OSDevWiki code */
 
+#define OFFSET1 0x20
+#define OFFSET2 0x70
+
 #define KB_IRQ 1
 
 /* Labels for the 0th and 1st isrs */
@@ -55,9 +58,16 @@ struct idte{
 
 typedef struct idte idt_entry;
 
+struct {
+   uint16_t length;
+   void* base;
+} __attribute__((packed)) IDTR;
+
 void setup_interrupts();
 void setup_idt();
 void lidt(void* base, uint16_t size);
+
+void PIC_remap(int offset1, int offset2);
 
 /* interface for setting/clearing irqs */
 /* TODO: implement this function. */

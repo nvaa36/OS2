@@ -26,7 +26,10 @@ clean:
 	-rm build/foo.img
 
 run: $(img)
-	qemu-system-x86_64 -s -drive format=raw,file=$(img)
+	qemu-system-x86_64 -s -d int -drive format=raw,file=$(img)
+
+debug: $(img)
+	qemu-system-x86_64 -s -d int -drive format=raw,file=$(img) 1> output.txt 2> outerr.txt
 
 img: $(kernel) $(grub_cfg)
 	mkdir -p .img/boot/grub
