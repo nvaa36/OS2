@@ -9,6 +9,9 @@ bits 64
 isr_0:
    push rdi
    mov rdi, 0
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -20,6 +23,9 @@ isr_0:
 isr_1:
    push rdi
    mov rdi, 1
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -31,6 +37,9 @@ isr_1:
 isr_2:
    push rdi
    mov rdi, 2
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -42,6 +51,9 @@ isr_2:
 isr_3:
    push rdi
    mov rdi, 3
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -53,6 +65,9 @@ isr_3:
 isr_4:
    push rdi
    mov rdi, 4
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -64,6 +79,9 @@ isr_4:
 isr_5:
    push rdi
    mov rdi, 5
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -75,6 +93,9 @@ isr_5:
 isr_6:
    push rdi
    mov rdi, 6
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -86,6 +107,9 @@ isr_6:
 isr_7:
    push rdi
    mov rdi, 7
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -111,6 +135,9 @@ isr_8:
 isr_9:
    push rdi
    mov rdi, 9
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -192,6 +219,9 @@ isr_14:
 isr_15:
    push rdi
    mov rdi, 15
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -203,6 +233,9 @@ isr_15:
 isr_16:
    push rdi
    mov rdi, 16
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -228,6 +261,9 @@ isr_17:
 isr_18:
    push rdi
    mov rdi, 18
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -239,6 +275,9 @@ isr_18:
 isr_19:
    push rdi
    mov rdi, 19
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -250,6 +289,9 @@ isr_19:
 isr_20:
    push rdi
    mov rdi, 20
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -261,6 +303,9 @@ isr_20:
 isr_21:
    push rdi
    mov rdi, 21
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -272,6 +317,9 @@ isr_21:
 isr_22:
    push rdi
    mov rdi, 22
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -283,6 +331,9 @@ isr_22:
 isr_23:
    push rdi
    mov rdi, 23
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -294,6 +345,9 @@ isr_23:
 isr_24:
    push rdi
    mov rdi, 24
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -305,6 +359,9 @@ isr_24:
 isr_25:
    push rdi
    mov rdi, 25
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -316,6 +373,9 @@ isr_25:
 isr_26:
    push rdi
    mov rdi, 26
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -327,6 +387,9 @@ isr_26:
 isr_27:
    push rdi
    mov rdi, 27
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -338,6 +401,9 @@ isr_27:
 isr_28:
    push rdi
    mov rdi, 28
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -349,6 +415,9 @@ isr_28:
 isr_29:
    push rdi
    mov rdi, 29
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -360,6 +429,9 @@ isr_29:
 isr_30:
    push rdi
    mov rdi, 30
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -371,6 +443,9 @@ isr_30:
 isr_31:
    push rdi
    mov rdi, 31
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -382,6 +457,9 @@ isr_31:
 isr_32:
    push rdi
    mov rdi, 32
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -393,6 +471,9 @@ isr_32:
 isr_33:
    push rdi
    mov rdi, 33
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -404,6 +485,9 @@ isr_33:
 isr_34:
    push rdi
    mov rdi, 34
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -415,6 +499,9 @@ isr_34:
 isr_35:
    push rdi
    mov rdi, 35
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -426,6 +513,9 @@ isr_35:
 isr_36:
    push rdi
    mov rdi, 36
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -437,6 +527,9 @@ isr_36:
 isr_37:
    push rdi
    mov rdi, 37
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -448,6 +541,9 @@ isr_37:
 isr_38:
    push rdi
    mov rdi, 38
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -459,6 +555,9 @@ isr_38:
 isr_39:
    push rdi
    mov rdi, 39
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -470,6 +569,9 @@ isr_39:
 isr_40:
    push rdi
    mov rdi, 40
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -481,6 +583,9 @@ isr_40:
 isr_41:
    push rdi
    mov rdi, 41
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -492,6 +597,9 @@ isr_41:
 isr_42:
    push rdi
    mov rdi, 42
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -503,6 +611,9 @@ isr_42:
 isr_43:
    push rdi
    mov rdi, 43
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -514,6 +625,9 @@ isr_43:
 isr_44:
    push rdi
    mov rdi, 44
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -525,6 +639,9 @@ isr_44:
 isr_45:
    push rdi
    mov rdi, 45
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -536,6 +653,9 @@ isr_45:
 isr_46:
    push rdi
    mov rdi, 46
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -547,6 +667,9 @@ isr_46:
 isr_47:
    push rdi
    mov rdi, 47
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -558,6 +681,9 @@ isr_47:
 isr_48:
    push rdi
    mov rdi, 48
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -569,6 +695,9 @@ isr_48:
 isr_49:
    push rdi
    mov rdi, 49
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -580,6 +709,9 @@ isr_49:
 isr_50:
    push rdi
    mov rdi, 50
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -591,6 +723,9 @@ isr_50:
 isr_51:
    push rdi
    mov rdi, 51
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -602,6 +737,9 @@ isr_51:
 isr_52:
    push rdi
    mov rdi, 52
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -613,6 +751,9 @@ isr_52:
 isr_53:
    push rdi
    mov rdi, 53
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -624,6 +765,9 @@ isr_53:
 isr_54:
    push rdi
    mov rdi, 54
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -635,6 +779,9 @@ isr_54:
 isr_55:
    push rdi
    mov rdi, 55
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -646,6 +793,9 @@ isr_55:
 isr_56:
    push rdi
    mov rdi, 56
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -657,6 +807,9 @@ isr_56:
 isr_57:
    push rdi
    mov rdi, 57
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -668,6 +821,9 @@ isr_57:
 isr_58:
    push rdi
    mov rdi, 58
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -679,6 +835,9 @@ isr_58:
 isr_59:
    push rdi
    mov rdi, 59
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -690,6 +849,9 @@ isr_59:
 isr_60:
    push rdi
    mov rdi, 60
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -701,6 +863,9 @@ isr_60:
 isr_61:
    push rdi
    mov rdi, 61
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -712,6 +877,9 @@ isr_61:
 isr_62:
    push rdi
    mov rdi, 62
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -723,6 +891,9 @@ isr_62:
 isr_63:
    push rdi
    mov rdi, 63
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -734,6 +905,9 @@ isr_63:
 isr_64:
    push rdi
    mov rdi, 64
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -745,6 +919,9 @@ isr_64:
 isr_65:
    push rdi
    mov rdi, 65
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -756,6 +933,9 @@ isr_65:
 isr_66:
    push rdi
    mov rdi, 66
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -767,6 +947,9 @@ isr_66:
 isr_67:
    push rdi
    mov rdi, 67
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -778,6 +961,9 @@ isr_67:
 isr_68:
    push rdi
    mov rdi, 68
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -789,6 +975,9 @@ isr_68:
 isr_69:
    push rdi
    mov rdi, 69
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -800,6 +989,9 @@ isr_69:
 isr_70:
    push rdi
    mov rdi, 70
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -811,6 +1003,9 @@ isr_70:
 isr_71:
    push rdi
    mov rdi, 71
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -822,6 +1017,9 @@ isr_71:
 isr_72:
    push rdi
    mov rdi, 72
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -833,6 +1031,9 @@ isr_72:
 isr_73:
    push rdi
    mov rdi, 73
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -844,6 +1045,9 @@ isr_73:
 isr_74:
    push rdi
    mov rdi, 74
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -855,6 +1059,9 @@ isr_74:
 isr_75:
    push rdi
    mov rdi, 75
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -866,6 +1073,9 @@ isr_75:
 isr_76:
    push rdi
    mov rdi, 76
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -877,6 +1087,9 @@ isr_76:
 isr_77:
    push rdi
    mov rdi, 77
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -888,6 +1101,9 @@ isr_77:
 isr_78:
    push rdi
    mov rdi, 78
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -899,6 +1115,9 @@ isr_78:
 isr_79:
    push rdi
    mov rdi, 79
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -910,6 +1129,9 @@ isr_79:
 isr_80:
    push rdi
    mov rdi, 80
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -921,6 +1143,9 @@ isr_80:
 isr_81:
    push rdi
    mov rdi, 81
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -932,6 +1157,9 @@ isr_81:
 isr_82:
    push rdi
    mov rdi, 82
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -943,6 +1171,9 @@ isr_82:
 isr_83:
    push rdi
    mov rdi, 83
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -954,6 +1185,9 @@ isr_83:
 isr_84:
    push rdi
    mov rdi, 84
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -965,6 +1199,9 @@ isr_84:
 isr_85:
    push rdi
    mov rdi, 85
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -976,6 +1213,9 @@ isr_85:
 isr_86:
    push rdi
    mov rdi, 86
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -987,6 +1227,9 @@ isr_86:
 isr_87:
    push rdi
    mov rdi, 87
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -998,6 +1241,9 @@ isr_87:
 isr_88:
    push rdi
    mov rdi, 88
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1009,6 +1255,9 @@ isr_88:
 isr_89:
    push rdi
    mov rdi, 89
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1020,6 +1269,9 @@ isr_89:
 isr_90:
    push rdi
    mov rdi, 90
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1031,6 +1283,9 @@ isr_90:
 isr_91:
    push rdi
    mov rdi, 91
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1042,6 +1297,9 @@ isr_91:
 isr_92:
    push rdi
    mov rdi, 92
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1053,6 +1311,9 @@ isr_92:
 isr_93:
    push rdi
    mov rdi, 93
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1064,6 +1325,9 @@ isr_93:
 isr_94:
    push rdi
    mov rdi, 94
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1075,6 +1339,9 @@ isr_94:
 isr_95:
    push rdi
    mov rdi, 95
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1086,6 +1353,9 @@ isr_95:
 isr_96:
    push rdi
    mov rdi, 96
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1097,6 +1367,9 @@ isr_96:
 isr_97:
    push rdi
    mov rdi, 97
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1108,6 +1381,9 @@ isr_97:
 isr_98:
    push rdi
    mov rdi, 98
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1119,6 +1395,9 @@ isr_98:
 isr_99:
    push rdi
    mov rdi, 99
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1130,6 +1409,9 @@ isr_99:
 isr_100:
    push rdi
    mov rdi, 100
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1141,6 +1423,9 @@ isr_100:
 isr_101:
    push rdi
    mov rdi, 101
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1152,6 +1437,9 @@ isr_101:
 isr_102:
    push rdi
    mov rdi, 102
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1163,6 +1451,9 @@ isr_102:
 isr_103:
    push rdi
    mov rdi, 103
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1174,6 +1465,9 @@ isr_103:
 isr_104:
    push rdi
    mov rdi, 104
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1185,6 +1479,9 @@ isr_104:
 isr_105:
    push rdi
    mov rdi, 105
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1196,6 +1493,9 @@ isr_105:
 isr_106:
    push rdi
    mov rdi, 106
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1207,6 +1507,9 @@ isr_106:
 isr_107:
    push rdi
    mov rdi, 107
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1218,6 +1521,9 @@ isr_107:
 isr_108:
    push rdi
    mov rdi, 108
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1229,6 +1535,9 @@ isr_108:
 isr_109:
    push rdi
    mov rdi, 109
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1240,6 +1549,9 @@ isr_109:
 isr_110:
    push rdi
    mov rdi, 110
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1251,6 +1563,9 @@ isr_110:
 isr_111:
    push rdi
    mov rdi, 111
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1262,6 +1577,9 @@ isr_111:
 isr_112:
    push rdi
    mov rdi, 112
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1273,6 +1591,9 @@ isr_112:
 isr_113:
    push rdi
    mov rdi, 113
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1284,6 +1605,9 @@ isr_113:
 isr_114:
    push rdi
    mov rdi, 114
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1295,6 +1619,9 @@ isr_114:
 isr_115:
    push rdi
    mov rdi, 115
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1306,6 +1633,9 @@ isr_115:
 isr_116:
    push rdi
    mov rdi, 116
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1317,6 +1647,9 @@ isr_116:
 isr_117:
    push rdi
    mov rdi, 117
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1328,6 +1661,9 @@ isr_117:
 isr_118:
    push rdi
    mov rdi, 118
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1339,6 +1675,9 @@ isr_118:
 isr_119:
    push rdi
    mov rdi, 119
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1350,6 +1689,9 @@ isr_119:
 isr_120:
    push rdi
    mov rdi, 120
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1361,6 +1703,9 @@ isr_120:
 isr_121:
    push rdi
    mov rdi, 121
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1372,6 +1717,9 @@ isr_121:
 isr_122:
    push rdi
    mov rdi, 122
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1383,6 +1731,9 @@ isr_122:
 isr_123:
    push rdi
    mov rdi, 123
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1394,6 +1745,9 @@ isr_123:
 isr_124:
    push rdi
    mov rdi, 124
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1405,6 +1759,9 @@ isr_124:
 isr_125:
    push rdi
    mov rdi, 125
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1416,6 +1773,9 @@ isr_125:
 isr_126:
    push rdi
    mov rdi, 126
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1427,6 +1787,9 @@ isr_126:
 isr_127:
    push rdi
    mov rdi, 127
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1438,6 +1801,9 @@ isr_127:
 isr_128:
    push rdi
    mov rdi, 128
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1449,6 +1815,9 @@ isr_128:
 isr_129:
    push rdi
    mov rdi, 129
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1460,6 +1829,9 @@ isr_129:
 isr_130:
    push rdi
    mov rdi, 130
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1471,6 +1843,9 @@ isr_130:
 isr_131:
    push rdi
    mov rdi, 131
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1482,6 +1857,9 @@ isr_131:
 isr_132:
    push rdi
    mov rdi, 132
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1493,6 +1871,9 @@ isr_132:
 isr_133:
    push rdi
    mov rdi, 133
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1504,6 +1885,9 @@ isr_133:
 isr_134:
    push rdi
    mov rdi, 134
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1515,6 +1899,9 @@ isr_134:
 isr_135:
    push rdi
    mov rdi, 135
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1526,6 +1913,9 @@ isr_135:
 isr_136:
    push rdi
    mov rdi, 136
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1537,6 +1927,9 @@ isr_136:
 isr_137:
    push rdi
    mov rdi, 137
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1548,6 +1941,9 @@ isr_137:
 isr_138:
    push rdi
    mov rdi, 138
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1559,6 +1955,9 @@ isr_138:
 isr_139:
    push rdi
    mov rdi, 139
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1570,6 +1969,9 @@ isr_139:
 isr_140:
    push rdi
    mov rdi, 140
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1581,6 +1983,9 @@ isr_140:
 isr_141:
    push rdi
    mov rdi, 141
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1592,6 +1997,9 @@ isr_141:
 isr_142:
    push rdi
    mov rdi, 142
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1603,6 +2011,9 @@ isr_142:
 isr_143:
    push rdi
    mov rdi, 143
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1614,6 +2025,9 @@ isr_143:
 isr_144:
    push rdi
    mov rdi, 144
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1625,6 +2039,9 @@ isr_144:
 isr_145:
    push rdi
    mov rdi, 145
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1636,6 +2053,9 @@ isr_145:
 isr_146:
    push rdi
    mov rdi, 146
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1647,6 +2067,9 @@ isr_146:
 isr_147:
    push rdi
    mov rdi, 147
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1658,6 +2081,9 @@ isr_147:
 isr_148:
    push rdi
    mov rdi, 148
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1669,6 +2095,9 @@ isr_148:
 isr_149:
    push rdi
    mov rdi, 149
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1680,6 +2109,9 @@ isr_149:
 isr_150:
    push rdi
    mov rdi, 150
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1691,6 +2123,9 @@ isr_150:
 isr_151:
    push rdi
    mov rdi, 151
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1702,6 +2137,9 @@ isr_151:
 isr_152:
    push rdi
    mov rdi, 152
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1713,6 +2151,9 @@ isr_152:
 isr_153:
    push rdi
    mov rdi, 153
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1724,6 +2165,9 @@ isr_153:
 isr_154:
    push rdi
    mov rdi, 154
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1735,6 +2179,9 @@ isr_154:
 isr_155:
    push rdi
    mov rdi, 155
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1746,6 +2193,9 @@ isr_155:
 isr_156:
    push rdi
    mov rdi, 156
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1757,6 +2207,9 @@ isr_156:
 isr_157:
    push rdi
    mov rdi, 157
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1768,6 +2221,9 @@ isr_157:
 isr_158:
    push rdi
    mov rdi, 158
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1779,6 +2235,9 @@ isr_158:
 isr_159:
    push rdi
    mov rdi, 159
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1790,6 +2249,9 @@ isr_159:
 isr_160:
    push rdi
    mov rdi, 160
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1801,6 +2263,9 @@ isr_160:
 isr_161:
    push rdi
    mov rdi, 161
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1812,6 +2277,9 @@ isr_161:
 isr_162:
    push rdi
    mov rdi, 162
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1823,6 +2291,9 @@ isr_162:
 isr_163:
    push rdi
    mov rdi, 163
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1834,6 +2305,9 @@ isr_163:
 isr_164:
    push rdi
    mov rdi, 164
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1845,6 +2319,9 @@ isr_164:
 isr_165:
    push rdi
    mov rdi, 165
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1856,6 +2333,9 @@ isr_165:
 isr_166:
    push rdi
    mov rdi, 166
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1867,6 +2347,9 @@ isr_166:
 isr_167:
    push rdi
    mov rdi, 167
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1878,6 +2361,9 @@ isr_167:
 isr_168:
    push rdi
    mov rdi, 168
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1889,6 +2375,9 @@ isr_168:
 isr_169:
    push rdi
    mov rdi, 169
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1900,6 +2389,9 @@ isr_169:
 isr_170:
    push rdi
    mov rdi, 170
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1911,6 +2403,9 @@ isr_170:
 isr_171:
    push rdi
    mov rdi, 171
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1922,6 +2417,9 @@ isr_171:
 isr_172:
    push rdi
    mov rdi, 172
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1933,6 +2431,9 @@ isr_172:
 isr_173:
    push rdi
    mov rdi, 173
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1944,6 +2445,9 @@ isr_173:
 isr_174:
    push rdi
    mov rdi, 174
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1955,6 +2459,9 @@ isr_174:
 isr_175:
    push rdi
    mov rdi, 175
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1966,6 +2473,9 @@ isr_175:
 isr_176:
    push rdi
    mov rdi, 176
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1977,6 +2487,9 @@ isr_176:
 isr_177:
    push rdi
    mov rdi, 177
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1988,6 +2501,9 @@ isr_177:
 isr_178:
    push rdi
    mov rdi, 178
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1999,6 +2515,9 @@ isr_178:
 isr_179:
    push rdi
    mov rdi, 179
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2010,6 +2529,9 @@ isr_179:
 isr_180:
    push rdi
    mov rdi, 180
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2021,6 +2543,9 @@ isr_180:
 isr_181:
    push rdi
    mov rdi, 181
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2032,6 +2557,9 @@ isr_181:
 isr_182:
    push rdi
    mov rdi, 182
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2043,6 +2571,9 @@ isr_182:
 isr_183:
    push rdi
    mov rdi, 183
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2054,6 +2585,9 @@ isr_183:
 isr_184:
    push rdi
    mov rdi, 184
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2065,6 +2599,9 @@ isr_184:
 isr_185:
    push rdi
    mov rdi, 185
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2076,6 +2613,9 @@ isr_185:
 isr_186:
    push rdi
    mov rdi, 186
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2087,6 +2627,9 @@ isr_186:
 isr_187:
    push rdi
    mov rdi, 187
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2098,6 +2641,9 @@ isr_187:
 isr_188:
    push rdi
    mov rdi, 188
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2109,6 +2655,9 @@ isr_188:
 isr_189:
    push rdi
    mov rdi, 189
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2120,6 +2669,9 @@ isr_189:
 isr_190:
    push rdi
    mov rdi, 190
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2131,6 +2683,9 @@ isr_190:
 isr_191:
    push rdi
    mov rdi, 191
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2142,6 +2697,9 @@ isr_191:
 isr_192:
    push rdi
    mov rdi, 192
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2153,6 +2711,9 @@ isr_192:
 isr_193:
    push rdi
    mov rdi, 193
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2164,6 +2725,9 @@ isr_193:
 isr_194:
    push rdi
    mov rdi, 194
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2175,6 +2739,9 @@ isr_194:
 isr_195:
    push rdi
    mov rdi, 195
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2186,6 +2753,9 @@ isr_195:
 isr_196:
    push rdi
    mov rdi, 196
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2197,6 +2767,9 @@ isr_196:
 isr_197:
    push rdi
    mov rdi, 197
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2208,6 +2781,9 @@ isr_197:
 isr_198:
    push rdi
    mov rdi, 198
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2219,6 +2795,9 @@ isr_198:
 isr_199:
    push rdi
    mov rdi, 199
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2230,6 +2809,9 @@ isr_199:
 isr_200:
    push rdi
    mov rdi, 200
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2241,6 +2823,9 @@ isr_200:
 isr_201:
    push rdi
    mov rdi, 201
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2252,6 +2837,9 @@ isr_201:
 isr_202:
    push rdi
    mov rdi, 202
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2263,6 +2851,9 @@ isr_202:
 isr_203:
    push rdi
    mov rdi, 203
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2274,6 +2865,9 @@ isr_203:
 isr_204:
    push rdi
    mov rdi, 204
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2285,6 +2879,9 @@ isr_204:
 isr_205:
    push rdi
    mov rdi, 205
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2296,6 +2893,9 @@ isr_205:
 isr_206:
    push rdi
    mov rdi, 206
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2307,6 +2907,9 @@ isr_206:
 isr_207:
    push rdi
    mov rdi, 207
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2318,6 +2921,9 @@ isr_207:
 isr_208:
    push rdi
    mov rdi, 208
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2329,6 +2935,9 @@ isr_208:
 isr_209:
    push rdi
    mov rdi, 209
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2340,6 +2949,9 @@ isr_209:
 isr_210:
    push rdi
    mov rdi, 210
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2351,6 +2963,9 @@ isr_210:
 isr_211:
    push rdi
    mov rdi, 211
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2362,6 +2977,9 @@ isr_211:
 isr_212:
    push rdi
    mov rdi, 212
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2373,6 +2991,9 @@ isr_212:
 isr_213:
    push rdi
    mov rdi, 213
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2384,6 +3005,9 @@ isr_213:
 isr_214:
    push rdi
    mov rdi, 214
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2395,6 +3019,9 @@ isr_214:
 isr_215:
    push rdi
    mov rdi, 215
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2406,6 +3033,9 @@ isr_215:
 isr_216:
    push rdi
    mov rdi, 216
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2417,6 +3047,9 @@ isr_216:
 isr_217:
    push rdi
    mov rdi, 217
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2428,6 +3061,9 @@ isr_217:
 isr_218:
    push rdi
    mov rdi, 218
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2439,6 +3075,9 @@ isr_218:
 isr_219:
    push rdi
    mov rdi, 219
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2450,6 +3089,9 @@ isr_219:
 isr_220:
    push rdi
    mov rdi, 220
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2461,6 +3103,9 @@ isr_220:
 isr_221:
    push rdi
    mov rdi, 221
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2472,6 +3117,9 @@ isr_221:
 isr_222:
    push rdi
    mov rdi, 222
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2483,6 +3131,9 @@ isr_222:
 isr_223:
    push rdi
    mov rdi, 223
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2494,6 +3145,9 @@ isr_223:
 isr_224:
    push rdi
    mov rdi, 224
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2505,6 +3159,9 @@ isr_224:
 isr_225:
    push rdi
    mov rdi, 225
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2516,6 +3173,9 @@ isr_225:
 isr_226:
    push rdi
    mov rdi, 226
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2527,6 +3187,9 @@ isr_226:
 isr_227:
    push rdi
    mov rdi, 227
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2538,6 +3201,9 @@ isr_227:
 isr_228:
    push rdi
    mov rdi, 228
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2549,6 +3215,9 @@ isr_228:
 isr_229:
    push rdi
    mov rdi, 229
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2560,6 +3229,9 @@ isr_229:
 isr_230:
    push rdi
    mov rdi, 230
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2571,6 +3243,9 @@ isr_230:
 isr_231:
    push rdi
    mov rdi, 231
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2582,6 +3257,9 @@ isr_231:
 isr_232:
    push rdi
    mov rdi, 232
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2593,6 +3271,9 @@ isr_232:
 isr_233:
    push rdi
    mov rdi, 233
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2604,6 +3285,9 @@ isr_233:
 isr_234:
    push rdi
    mov rdi, 234
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2615,6 +3299,9 @@ isr_234:
 isr_235:
    push rdi
    mov rdi, 235
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2626,6 +3313,9 @@ isr_235:
 isr_236:
    push rdi
    mov rdi, 236
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2637,6 +3327,9 @@ isr_236:
 isr_237:
    push rdi
    mov rdi, 237
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2648,6 +3341,9 @@ isr_237:
 isr_238:
    push rdi
    mov rdi, 238
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2659,6 +3355,9 @@ isr_238:
 isr_239:
    push rdi
    mov rdi, 239
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2670,6 +3369,9 @@ isr_239:
 isr_240:
    push rdi
    mov rdi, 240
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2681,6 +3383,9 @@ isr_240:
 isr_241:
    push rdi
    mov rdi, 241
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2692,6 +3397,9 @@ isr_241:
 isr_242:
    push rdi
    mov rdi, 242
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2703,6 +3411,9 @@ isr_242:
 isr_243:
    push rdi
    mov rdi, 243
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2714,6 +3425,9 @@ isr_243:
 isr_244:
    push rdi
    mov rdi, 244
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2725,6 +3439,9 @@ isr_244:
 isr_245:
    push rdi
    mov rdi, 245
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2736,6 +3453,9 @@ isr_245:
 isr_246:
    push rdi
    mov rdi, 246
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2747,6 +3467,9 @@ isr_246:
 isr_247:
    push rdi
    mov rdi, 247
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2758,6 +3481,9 @@ isr_247:
 isr_248:
    push rdi
    mov rdi, 248
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2769,6 +3495,9 @@ isr_248:
 isr_249:
    push rdi
    mov rdi, 249
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2780,6 +3509,9 @@ isr_249:
 isr_250:
    push rdi
    mov rdi, 250
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2791,6 +3523,9 @@ isr_250:
 isr_251:
    push rdi
    mov rdi, 251
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2802,6 +3537,9 @@ isr_251:
 isr_252:
    push rdi
    mov rdi, 252
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2813,6 +3551,9 @@ isr_252:
 isr_253:
    push rdi
    mov rdi, 253
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2824,6 +3565,9 @@ isr_253:
 isr_254:
    push rdi
    mov rdi, 254
+   nop
+   nop
+   nop
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
