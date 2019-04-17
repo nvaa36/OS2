@@ -3,9 +3,12 @@
 idt_entry idt[NUM_IDT_ENTRIES];
 
 void setup_interrupts() {
+   disable_interrupts();
    setup_idt();
+   PIC_remap(OFFSET1, OFFSET2);
    /* Enable keyboard interrupt */
-   IRQ_clear_mask(KB_IRQ);
+   /*IRQ_clear_mask(KB_IRQ);*/
+   enable_interrupts();
 }
 
 void setup_idt() {
@@ -16,7 +19,6 @@ void setup_idt() {
       /* Offset calculated from asm labels for the 1st and second isrs */
       offset = (uint64_t)(&isr_0 + i * (isr_1-isr_0));
       idt[i].offset1 = (uint16_t)offset;
-      /* TODO: Is this segment selector right? */
       /* Want index 1 in the GDT */
       idt[i].selector = 0 | (1 << 3);
       idt[i].ist = 0;
@@ -27,7 +29,7 @@ void setup_idt() {
       /* TODO: Don't know what to set this to */
       idt[i].dpl = 0;
       /* Set all of them to present, print an error message if unimplemented */
-      idt[i].p = 0;
+      idt[i].p = 1;
 
       idt[i].offset2 = (uint16_t)(offset >> 16);
       idt[i].offset3 = (uint32_t)(offset >> 32);
@@ -125,10 +127,6 @@ int IRQ_get_mask(int IRQline) {
 }
 
 void lidt(void* base, uint16_t size) {
-   struct {
-      uint16_t length;
-      void* base;
-   } __attribute__((packed)) IDTR;
    IDTR.length = size;
    IDTR.base = base;
    asm ( "lidt %0" : : "m"(IDTR) );

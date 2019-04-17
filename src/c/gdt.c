@@ -1,6 +1,7 @@
 #include "gdt.h"
 
 void setup_gdt() {
+   /* TODO: Determine if this works. */
    /* Zero first entry. */
    memset(gdt, 0, sizeof(gdt_entry));
    setup_kernel_segment();
@@ -31,10 +32,6 @@ void setup_kernel_segment() {
 }
 
 void lgdt(void* base, uint16_t size) {
-   struct {
-      uint16_t length;
-      void* base;
-   } __attribute__((packed)) GDTR;
    GDTR.length = size;
    GDTR.base = base;
    asm ( "lgdt %0" : : "m"(GDTR) );

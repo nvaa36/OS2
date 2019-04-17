@@ -34,15 +34,12 @@ typedef struct csdesc cs_desc;
 /* TODO: Change when multiple types of descriptors. */
 typedef struct csdesc gdt_entry;
 
-struct tabledesc {
-   uint16_t limit;
-   uint64_t base_addr;
-} __attribute__ ((packed));
-
-typedef struct tabledesc table_desc;
+struct {
+   uint16_t length;
+   void* base;
+} __attribute__((packed)) GDTR;
 
 gdt_entry gdt[NUM_GDT_ENTRIES];
-table_desc table_descriptor;
 
 void setup_gdt();
 void setup_kernel_segment();

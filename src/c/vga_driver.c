@@ -39,7 +39,7 @@ void VGA_clear(){
 void scroll() {
    memcpy(vgaBuff, vgaBuff + width, width * (height - 1)
           * sizeof(unsigned short));
-   memset(vgaBuff + width * (height - 1), 0, width);
+   memset(vgaBuff + width * (height - 1), 0, width * sizeof(unsigned short));
 }
 
 void backspace() {
