@@ -1,5 +1,8 @@
 global isr_0
 global isr_1
 
+extern isr_normal
+extern isr_errcode
+
 section .text
 bits 64
