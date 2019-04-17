@@ -7,4 +7,4 @@ output_file.write("\n")
 base = open("isr_base.txt", "r").read()
 
 for i in range(255):
-	output_file.write(base % (i, i // 100 + 30, (i // 10) % 10 + 30, i % 10 + 30) + "\n")
+	output_file.write(base % (i, i, i // 100 + 30, (i // 10) % 10 + 30, i % 10 + 30) + "\n")
