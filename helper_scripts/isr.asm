@@ -8,10 +8,9 @@ section .text
 bits 64
 isr_0:
    push rdi
+   push rsi
    mov rdi, 0
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -19,13 +18,13 @@ isr_0:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_1:
    push rdi
+   push rsi
    mov rdi, 1
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -33,13 +32,13 @@ isr_1:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_2:
    push rdi
+   push rsi
    mov rdi, 2
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -47,13 +46,13 @@ isr_2:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_3:
    push rdi
+   push rsi
    mov rdi, 3
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -61,13 +60,13 @@ isr_3:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_4:
    push rdi
+   push rsi
    mov rdi, 4
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -75,13 +74,13 @@ isr_4:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_5:
    push rdi
+   push rsi
    mov rdi, 5
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -89,13 +88,13 @@ isr_5:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_6:
    push rdi
+   push rsi
    mov rdi, 6
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -103,13 +102,13 @@ isr_6:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_7:
    push rdi
+   push rsi
    mov rdi, 7
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -117,6 +116,7 @@ isr_7:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_8:
    push rdi
@@ -134,10 +134,9 @@ isr_8:
    iret
 isr_9:
    push rdi
+   push rsi
    mov rdi, 9
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -145,6 +144,7 @@ isr_9:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_10:
    push rdi
@@ -218,10 +218,9 @@ isr_14:
    iret
 isr_15:
    push rdi
+   push rsi
    mov rdi, 15
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -229,13 +228,13 @@ isr_15:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_16:
    push rdi
+   push rsi
    mov rdi, 16
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -243,6 +242,7 @@ isr_16:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_17:
    push rdi
@@ -260,10 +260,9 @@ isr_17:
    iret
 isr_18:
    push rdi
+   push rsi
    mov rdi, 18
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -271,13 +270,13 @@ isr_18:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_19:
    push rdi
+   push rsi
    mov rdi, 19
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -285,13 +284,13 @@ isr_19:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_20:
    push rdi
+   push rsi
    mov rdi, 20
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -299,13 +298,13 @@ isr_20:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_21:
    push rdi
+   push rsi
    mov rdi, 21
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -313,13 +312,13 @@ isr_21:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_22:
    push rdi
+   push rsi
    mov rdi, 22
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -327,13 +326,13 @@ isr_22:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_23:
    push rdi
+   push rsi
    mov rdi, 23
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -341,13 +340,13 @@ isr_23:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_24:
    push rdi
+   push rsi
    mov rdi, 24
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -355,13 +354,13 @@ isr_24:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_25:
    push rdi
+   push rsi
    mov rdi, 25
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -369,13 +368,13 @@ isr_25:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_26:
    push rdi
+   push rsi
    mov rdi, 26
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -383,13 +382,13 @@ isr_26:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_27:
    push rdi
+   push rsi
    mov rdi, 27
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -397,13 +396,13 @@ isr_27:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_28:
    push rdi
+   push rsi
    mov rdi, 28
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -411,13 +410,13 @@ isr_28:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_29:
    push rdi
+   push rsi
    mov rdi, 29
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -425,13 +424,13 @@ isr_29:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_30:
    push rdi
+   push rsi
    mov rdi, 30
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -439,13 +438,13 @@ isr_30:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_31:
    push rdi
+   push rsi
    mov rdi, 31
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -453,13 +452,13 @@ isr_31:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_32:
    push rdi
+   push rsi
    mov rdi, 32
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -467,13 +466,13 @@ isr_32:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_33:
    push rdi
+   push rsi
    mov rdi, 33
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -481,13 +480,13 @@ isr_33:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_34:
    push rdi
+   push rsi
    mov rdi, 34
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -495,13 +494,13 @@ isr_34:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_35:
    push rdi
+   push rsi
    mov rdi, 35
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -509,13 +508,13 @@ isr_35:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_36:
    push rdi
+   push rsi
    mov rdi, 36
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -523,13 +522,13 @@ isr_36:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_37:
    push rdi
+   push rsi
    mov rdi, 37
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -537,13 +536,13 @@ isr_37:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_38:
    push rdi
+   push rsi
    mov rdi, 38
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -551,13 +550,13 @@ isr_38:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_39:
    push rdi
+   push rsi
    mov rdi, 39
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -565,13 +564,13 @@ isr_39:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_40:
    push rdi
+   push rsi
    mov rdi, 40
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -579,13 +578,13 @@ isr_40:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_41:
    push rdi
+   push rsi
    mov rdi, 41
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -593,13 +592,13 @@ isr_41:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_42:
    push rdi
+   push rsi
    mov rdi, 42
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -607,13 +606,13 @@ isr_42:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_43:
    push rdi
+   push rsi
    mov rdi, 43
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -621,13 +620,13 @@ isr_43:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_44:
    push rdi
+   push rsi
    mov rdi, 44
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -635,13 +634,13 @@ isr_44:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_45:
    push rdi
+   push rsi
    mov rdi, 45
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -649,13 +648,13 @@ isr_45:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_46:
    push rdi
+   push rsi
    mov rdi, 46
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -663,13 +662,13 @@ isr_46:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_47:
    push rdi
+   push rsi
    mov rdi, 47
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -677,13 +676,13 @@ isr_47:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_48:
    push rdi
+   push rsi
    mov rdi, 48
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -691,13 +690,13 @@ isr_48:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_49:
    push rdi
+   push rsi
    mov rdi, 49
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -705,13 +704,13 @@ isr_49:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_50:
    push rdi
+   push rsi
    mov rdi, 50
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -719,13 +718,13 @@ isr_50:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_51:
    push rdi
+   push rsi
    mov rdi, 51
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -733,13 +732,13 @@ isr_51:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_52:
    push rdi
+   push rsi
    mov rdi, 52
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -747,13 +746,13 @@ isr_52:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_53:
    push rdi
+   push rsi
    mov rdi, 53
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -761,13 +760,13 @@ isr_53:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_54:
    push rdi
+   push rsi
    mov rdi, 54
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -775,13 +774,13 @@ isr_54:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_55:
    push rdi
+   push rsi
    mov rdi, 55
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -789,13 +788,13 @@ isr_55:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_56:
    push rdi
+   push rsi
    mov rdi, 56
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -803,13 +802,13 @@ isr_56:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_57:
    push rdi
+   push rsi
    mov rdi, 57
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -817,13 +816,13 @@ isr_57:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_58:
    push rdi
+   push rsi
    mov rdi, 58
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -831,13 +830,13 @@ isr_58:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_59:
    push rdi
+   push rsi
    mov rdi, 59
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -845,13 +844,13 @@ isr_59:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_60:
    push rdi
+   push rsi
    mov rdi, 60
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -859,13 +858,13 @@ isr_60:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_61:
    push rdi
+   push rsi
    mov rdi, 61
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -873,13 +872,13 @@ isr_61:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_62:
    push rdi
+   push rsi
    mov rdi, 62
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -887,13 +886,13 @@ isr_62:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_63:
    push rdi
+   push rsi
    mov rdi, 63
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -901,13 +900,13 @@ isr_63:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_64:
    push rdi
+   push rsi
    mov rdi, 64
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -915,13 +914,13 @@ isr_64:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_65:
    push rdi
+   push rsi
    mov rdi, 65
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -929,13 +928,13 @@ isr_65:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_66:
    push rdi
+   push rsi
    mov rdi, 66
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -943,13 +942,13 @@ isr_66:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_67:
    push rdi
+   push rsi
    mov rdi, 67
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -957,13 +956,13 @@ isr_67:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_68:
    push rdi
+   push rsi
    mov rdi, 68
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -971,13 +970,13 @@ isr_68:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_69:
    push rdi
+   push rsi
    mov rdi, 69
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -985,13 +984,13 @@ isr_69:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_70:
    push rdi
+   push rsi
    mov rdi, 70
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -999,13 +998,13 @@ isr_70:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_71:
    push rdi
+   push rsi
    mov rdi, 71
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1013,13 +1012,13 @@ isr_71:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_72:
    push rdi
+   push rsi
    mov rdi, 72
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1027,13 +1026,13 @@ isr_72:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_73:
    push rdi
+   push rsi
    mov rdi, 73
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1041,13 +1040,13 @@ isr_73:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_74:
    push rdi
+   push rsi
    mov rdi, 74
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1055,13 +1054,13 @@ isr_74:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_75:
    push rdi
+   push rsi
    mov rdi, 75
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1069,13 +1068,13 @@ isr_75:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_76:
    push rdi
+   push rsi
    mov rdi, 76
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1083,13 +1082,13 @@ isr_76:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_77:
    push rdi
+   push rsi
    mov rdi, 77
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1097,13 +1096,13 @@ isr_77:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_78:
    push rdi
+   push rsi
    mov rdi, 78
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1111,13 +1110,13 @@ isr_78:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_79:
    push rdi
+   push rsi
    mov rdi, 79
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1125,13 +1124,13 @@ isr_79:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_80:
    push rdi
+   push rsi
    mov rdi, 80
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1139,13 +1138,13 @@ isr_80:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_81:
    push rdi
+   push rsi
    mov rdi, 81
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1153,13 +1152,13 @@ isr_81:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_82:
    push rdi
+   push rsi
    mov rdi, 82
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1167,13 +1166,13 @@ isr_82:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_83:
    push rdi
+   push rsi
    mov rdi, 83
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1181,13 +1180,13 @@ isr_83:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_84:
    push rdi
+   push rsi
    mov rdi, 84
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1195,13 +1194,13 @@ isr_84:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_85:
    push rdi
+   push rsi
    mov rdi, 85
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1209,13 +1208,13 @@ isr_85:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_86:
    push rdi
+   push rsi
    mov rdi, 86
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1223,13 +1222,13 @@ isr_86:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_87:
    push rdi
+   push rsi
    mov rdi, 87
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1237,13 +1236,13 @@ isr_87:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_88:
    push rdi
+   push rsi
    mov rdi, 88
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1251,13 +1250,13 @@ isr_88:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_89:
    push rdi
+   push rsi
    mov rdi, 89
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1265,13 +1264,13 @@ isr_89:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_90:
    push rdi
+   push rsi
    mov rdi, 90
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1279,13 +1278,13 @@ isr_90:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_91:
    push rdi
+   push rsi
    mov rdi, 91
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1293,13 +1292,13 @@ isr_91:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_92:
    push rdi
+   push rsi
    mov rdi, 92
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1307,13 +1306,13 @@ isr_92:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_93:
    push rdi
+   push rsi
    mov rdi, 93
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1321,13 +1320,13 @@ isr_93:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_94:
    push rdi
+   push rsi
    mov rdi, 94
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1335,13 +1334,13 @@ isr_94:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_95:
    push rdi
+   push rsi
    mov rdi, 95
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1349,13 +1348,13 @@ isr_95:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_96:
    push rdi
+   push rsi
    mov rdi, 96
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1363,13 +1362,13 @@ isr_96:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_97:
    push rdi
+   push rsi
    mov rdi, 97
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1377,13 +1376,13 @@ isr_97:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_98:
    push rdi
+   push rsi
    mov rdi, 98
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1391,13 +1390,13 @@ isr_98:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_99:
    push rdi
+   push rsi
    mov rdi, 99
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1405,13 +1404,13 @@ isr_99:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_100:
    push rdi
+   push rsi
    mov rdi, 100
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1419,13 +1418,13 @@ isr_100:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_101:
    push rdi
+   push rsi
    mov rdi, 101
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1433,13 +1432,13 @@ isr_101:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_102:
    push rdi
+   push rsi
    mov rdi, 102
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1447,13 +1446,13 @@ isr_102:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_103:
    push rdi
+   push rsi
    mov rdi, 103
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1461,13 +1460,13 @@ isr_103:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_104:
    push rdi
+   push rsi
    mov rdi, 104
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1475,13 +1474,13 @@ isr_104:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_105:
    push rdi
+   push rsi
    mov rdi, 105
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1489,13 +1488,13 @@ isr_105:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_106:
    push rdi
+   push rsi
    mov rdi, 106
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1503,13 +1502,13 @@ isr_106:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_107:
    push rdi
+   push rsi
    mov rdi, 107
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1517,13 +1516,13 @@ isr_107:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_108:
    push rdi
+   push rsi
    mov rdi, 108
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1531,13 +1530,13 @@ isr_108:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_109:
    push rdi
+   push rsi
    mov rdi, 109
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1545,13 +1544,13 @@ isr_109:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_110:
    push rdi
+   push rsi
    mov rdi, 110
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1559,13 +1558,13 @@ isr_110:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_111:
    push rdi
+   push rsi
    mov rdi, 111
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1573,13 +1572,13 @@ isr_111:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_112:
    push rdi
+   push rsi
    mov rdi, 112
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1587,13 +1586,13 @@ isr_112:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_113:
    push rdi
+   push rsi
    mov rdi, 113
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1601,13 +1600,13 @@ isr_113:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_114:
    push rdi
+   push rsi
    mov rdi, 114
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1615,13 +1614,13 @@ isr_114:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_115:
    push rdi
+   push rsi
    mov rdi, 115
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1629,13 +1628,13 @@ isr_115:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_116:
    push rdi
+   push rsi
    mov rdi, 116
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1643,13 +1642,13 @@ isr_116:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_117:
    push rdi
+   push rsi
    mov rdi, 117
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1657,13 +1656,13 @@ isr_117:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_118:
    push rdi
+   push rsi
    mov rdi, 118
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1671,13 +1670,13 @@ isr_118:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_119:
    push rdi
+   push rsi
    mov rdi, 119
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1685,13 +1684,13 @@ isr_119:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_120:
    push rdi
+   push rsi
    mov rdi, 120
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1699,13 +1698,13 @@ isr_120:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_121:
    push rdi
+   push rsi
    mov rdi, 121
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1713,13 +1712,13 @@ isr_121:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_122:
    push rdi
+   push rsi
    mov rdi, 122
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1727,13 +1726,13 @@ isr_122:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_123:
    push rdi
+   push rsi
    mov rdi, 123
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1741,13 +1740,13 @@ isr_123:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_124:
    push rdi
+   push rsi
    mov rdi, 124
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1755,13 +1754,13 @@ isr_124:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_125:
    push rdi
+   push rsi
    mov rdi, 125
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1769,13 +1768,13 @@ isr_125:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_126:
    push rdi
+   push rsi
    mov rdi, 126
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1783,13 +1782,13 @@ isr_126:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_127:
    push rdi
+   push rsi
    mov rdi, 127
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1797,13 +1796,13 @@ isr_127:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_128:
    push rdi
+   push rsi
    mov rdi, 128
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1811,13 +1810,13 @@ isr_128:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_129:
    push rdi
+   push rsi
    mov rdi, 129
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1825,13 +1824,13 @@ isr_129:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_130:
    push rdi
+   push rsi
    mov rdi, 130
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1839,13 +1838,13 @@ isr_130:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_131:
    push rdi
+   push rsi
    mov rdi, 131
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1853,13 +1852,13 @@ isr_131:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_132:
    push rdi
+   push rsi
    mov rdi, 132
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1867,13 +1866,13 @@ isr_132:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_133:
    push rdi
+   push rsi
    mov rdi, 133
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1881,13 +1880,13 @@ isr_133:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_134:
    push rdi
+   push rsi
    mov rdi, 134
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1895,13 +1894,13 @@ isr_134:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_135:
    push rdi
+   push rsi
    mov rdi, 135
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1909,13 +1908,13 @@ isr_135:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_136:
    push rdi
+   push rsi
    mov rdi, 136
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1923,13 +1922,13 @@ isr_136:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_137:
    push rdi
+   push rsi
    mov rdi, 137
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1937,13 +1936,13 @@ isr_137:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_138:
    push rdi
+   push rsi
    mov rdi, 138
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1951,13 +1950,13 @@ isr_138:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_139:
    push rdi
+   push rsi
    mov rdi, 139
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1965,13 +1964,13 @@ isr_139:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_140:
    push rdi
+   push rsi
    mov rdi, 140
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1979,13 +1978,13 @@ isr_140:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_141:
    push rdi
+   push rsi
    mov rdi, 141
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -1993,13 +1992,13 @@ isr_141:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_142:
    push rdi
+   push rsi
    mov rdi, 142
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2007,13 +2006,13 @@ isr_142:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_143:
    push rdi
+   push rsi
    mov rdi, 143
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2021,13 +2020,13 @@ isr_143:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_144:
    push rdi
+   push rsi
    mov rdi, 144
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2035,13 +2034,13 @@ isr_144:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_145:
    push rdi
+   push rsi
    mov rdi, 145
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2049,13 +2048,13 @@ isr_145:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_146:
    push rdi
+   push rsi
    mov rdi, 146
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2063,13 +2062,13 @@ isr_146:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_147:
    push rdi
+   push rsi
    mov rdi, 147
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2077,13 +2076,13 @@ isr_147:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_148:
    push rdi
+   push rsi
    mov rdi, 148
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2091,13 +2090,13 @@ isr_148:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_149:
    push rdi
+   push rsi
    mov rdi, 149
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2105,13 +2104,13 @@ isr_149:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_150:
    push rdi
+   push rsi
    mov rdi, 150
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2119,13 +2118,13 @@ isr_150:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_151:
    push rdi
+   push rsi
    mov rdi, 151
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2133,13 +2132,13 @@ isr_151:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_152:
    push rdi
+   push rsi
    mov rdi, 152
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2147,13 +2146,13 @@ isr_152:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_153:
    push rdi
+   push rsi
    mov rdi, 153
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2161,13 +2160,13 @@ isr_153:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_154:
    push rdi
+   push rsi
    mov rdi, 154
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2175,13 +2174,13 @@ isr_154:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_155:
    push rdi
+   push rsi
    mov rdi, 155
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2189,13 +2188,13 @@ isr_155:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_156:
    push rdi
+   push rsi
    mov rdi, 156
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2203,13 +2202,13 @@ isr_156:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_157:
    push rdi
+   push rsi
    mov rdi, 157
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2217,13 +2216,13 @@ isr_157:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_158:
    push rdi
+   push rsi
    mov rdi, 158
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2231,13 +2230,13 @@ isr_158:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_159:
    push rdi
+   push rsi
    mov rdi, 159
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2245,13 +2244,13 @@ isr_159:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_160:
    push rdi
+   push rsi
    mov rdi, 160
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2259,13 +2258,13 @@ isr_160:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_161:
    push rdi
+   push rsi
    mov rdi, 161
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2273,13 +2272,13 @@ isr_161:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_162:
    push rdi
+   push rsi
    mov rdi, 162
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2287,13 +2286,13 @@ isr_162:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_163:
    push rdi
+   push rsi
    mov rdi, 163
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2301,13 +2300,13 @@ isr_163:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_164:
    push rdi
+   push rsi
    mov rdi, 164
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2315,13 +2314,13 @@ isr_164:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_165:
    push rdi
+   push rsi
    mov rdi, 165
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2329,13 +2328,13 @@ isr_165:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_166:
    push rdi
+   push rsi
    mov rdi, 166
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2343,13 +2342,13 @@ isr_166:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_167:
    push rdi
+   push rsi
    mov rdi, 167
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2357,13 +2356,13 @@ isr_167:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_168:
    push rdi
+   push rsi
    mov rdi, 168
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2371,13 +2370,13 @@ isr_168:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_169:
    push rdi
+   push rsi
    mov rdi, 169
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2385,13 +2384,13 @@ isr_169:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_170:
    push rdi
+   push rsi
    mov rdi, 170
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2399,13 +2398,13 @@ isr_170:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_171:
    push rdi
+   push rsi
    mov rdi, 171
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2413,13 +2412,13 @@ isr_171:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_172:
    push rdi
+   push rsi
    mov rdi, 172
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2427,13 +2426,13 @@ isr_172:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_173:
    push rdi
+   push rsi
    mov rdi, 173
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2441,13 +2440,13 @@ isr_173:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_174:
    push rdi
+   push rsi
    mov rdi, 174
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2455,13 +2454,13 @@ isr_174:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_175:
    push rdi
+   push rsi
    mov rdi, 175
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2469,13 +2468,13 @@ isr_175:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_176:
    push rdi
+   push rsi
    mov rdi, 176
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2483,13 +2482,13 @@ isr_176:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_177:
    push rdi
+   push rsi
    mov rdi, 177
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2497,13 +2496,13 @@ isr_177:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_178:
    push rdi
+   push rsi
    mov rdi, 178
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2511,13 +2510,13 @@ isr_178:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_179:
    push rdi
+   push rsi
    mov rdi, 179
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2525,13 +2524,13 @@ isr_179:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_180:
    push rdi
+   push rsi
    mov rdi, 180
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2539,13 +2538,13 @@ isr_180:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_181:
    push rdi
+   push rsi
    mov rdi, 181
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2553,13 +2552,13 @@ isr_181:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_182:
    push rdi
+   push rsi
    mov rdi, 182
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2567,13 +2566,13 @@ isr_182:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_183:
    push rdi
+   push rsi
    mov rdi, 183
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2581,13 +2580,13 @@ isr_183:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_184:
    push rdi
+   push rsi
    mov rdi, 184
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2595,13 +2594,13 @@ isr_184:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_185:
    push rdi
+   push rsi
    mov rdi, 185
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2609,13 +2608,13 @@ isr_185:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_186:
    push rdi
+   push rsi
    mov rdi, 186
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2623,13 +2622,13 @@ isr_186:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_187:
    push rdi
+   push rsi
    mov rdi, 187
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2637,13 +2636,13 @@ isr_187:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_188:
    push rdi
+   push rsi
    mov rdi, 188
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2651,13 +2650,13 @@ isr_188:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_189:
    push rdi
+   push rsi
    mov rdi, 189
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2665,13 +2664,13 @@ isr_189:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_190:
    push rdi
+   push rsi
    mov rdi, 190
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2679,13 +2678,13 @@ isr_190:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_191:
    push rdi
+   push rsi
    mov rdi, 191
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2693,13 +2692,13 @@ isr_191:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_192:
    push rdi
+   push rsi
    mov rdi, 192
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2707,13 +2706,13 @@ isr_192:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_193:
    push rdi
+   push rsi
    mov rdi, 193
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2721,13 +2720,13 @@ isr_193:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_194:
    push rdi
+   push rsi
    mov rdi, 194
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2735,13 +2734,13 @@ isr_194:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_195:
    push rdi
+   push rsi
    mov rdi, 195
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2749,13 +2748,13 @@ isr_195:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_196:
    push rdi
+   push rsi
    mov rdi, 196
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2763,13 +2762,13 @@ isr_196:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_197:
    push rdi
+   push rsi
    mov rdi, 197
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2777,13 +2776,13 @@ isr_197:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_198:
    push rdi
+   push rsi
    mov rdi, 198
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2791,13 +2790,13 @@ isr_198:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_199:
    push rdi
+   push rsi
    mov rdi, 199
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2805,13 +2804,13 @@ isr_199:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_200:
    push rdi
+   push rsi
    mov rdi, 200
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2819,13 +2818,13 @@ isr_200:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_201:
    push rdi
+   push rsi
    mov rdi, 201
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2833,13 +2832,13 @@ isr_201:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_202:
    push rdi
+   push rsi
    mov rdi, 202
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2847,13 +2846,13 @@ isr_202:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_203:
    push rdi
+   push rsi
    mov rdi, 203
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2861,13 +2860,13 @@ isr_203:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_204:
    push rdi
+   push rsi
    mov rdi, 204
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2875,13 +2874,13 @@ isr_204:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_205:
    push rdi
+   push rsi
    mov rdi, 205
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2889,13 +2888,13 @@ isr_205:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_206:
    push rdi
+   push rsi
    mov rdi, 206
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2903,13 +2902,13 @@ isr_206:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_207:
    push rdi
+   push rsi
    mov rdi, 207
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2917,13 +2916,13 @@ isr_207:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_208:
    push rdi
+   push rsi
    mov rdi, 208
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2931,13 +2930,13 @@ isr_208:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_209:
    push rdi
+   push rsi
    mov rdi, 209
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2945,13 +2944,13 @@ isr_209:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_210:
    push rdi
+   push rsi
    mov rdi, 210
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2959,13 +2958,13 @@ isr_210:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_211:
    push rdi
+   push rsi
    mov rdi, 211
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2973,13 +2972,13 @@ isr_211:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_212:
    push rdi
+   push rsi
    mov rdi, 212
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -2987,13 +2986,13 @@ isr_212:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_213:
    push rdi
+   push rsi
    mov rdi, 213
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3001,13 +3000,13 @@ isr_213:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_214:
    push rdi
+   push rsi
    mov rdi, 214
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3015,13 +3014,13 @@ isr_214:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_215:
    push rdi
+   push rsi
    mov rdi, 215
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3029,13 +3028,13 @@ isr_215:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_216:
    push rdi
+   push rsi
    mov rdi, 216
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3043,13 +3042,13 @@ isr_216:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_217:
    push rdi
+   push rsi
    mov rdi, 217
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3057,13 +3056,13 @@ isr_217:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_218:
    push rdi
+   push rsi
    mov rdi, 218
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3071,13 +3070,13 @@ isr_218:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_219:
    push rdi
+   push rsi
    mov rdi, 219
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3085,13 +3084,13 @@ isr_219:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_220:
    push rdi
+   push rsi
    mov rdi, 220
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3099,13 +3098,13 @@ isr_220:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_221:
    push rdi
+   push rsi
    mov rdi, 221
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3113,13 +3112,13 @@ isr_221:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_222:
    push rdi
+   push rsi
    mov rdi, 222
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3127,13 +3126,13 @@ isr_222:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_223:
    push rdi
+   push rsi
    mov rdi, 223
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3141,13 +3140,13 @@ isr_223:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_224:
    push rdi
+   push rsi
    mov rdi, 224
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3155,13 +3154,13 @@ isr_224:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_225:
    push rdi
+   push rsi
    mov rdi, 225
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3169,13 +3168,13 @@ isr_225:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_226:
    push rdi
+   push rsi
    mov rdi, 226
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3183,13 +3182,13 @@ isr_226:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_227:
    push rdi
+   push rsi
    mov rdi, 227
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3197,13 +3196,13 @@ isr_227:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_228:
    push rdi
+   push rsi
    mov rdi, 228
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3211,13 +3210,13 @@ isr_228:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_229:
    push rdi
+   push rsi
    mov rdi, 229
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3225,13 +3224,13 @@ isr_229:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_230:
    push rdi
+   push rsi
    mov rdi, 230
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3239,13 +3238,13 @@ isr_230:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_231:
    push rdi
+   push rsi
    mov rdi, 231
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3253,13 +3252,13 @@ isr_231:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_232:
    push rdi
+   push rsi
    mov rdi, 232
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3267,13 +3266,13 @@ isr_232:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_233:
    push rdi
+   push rsi
    mov rdi, 233
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3281,13 +3280,13 @@ isr_233:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_234:
    push rdi
+   push rsi
    mov rdi, 234
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3295,13 +3294,13 @@ isr_234:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_235:
    push rdi
+   push rsi
    mov rdi, 235
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3309,13 +3308,13 @@ isr_235:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_236:
    push rdi
+   push rsi
    mov rdi, 236
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3323,13 +3322,13 @@ isr_236:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_237:
    push rdi
+   push rsi
    mov rdi, 237
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3337,13 +3336,13 @@ isr_237:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_238:
    push rdi
+   push rsi
    mov rdi, 238
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3351,13 +3350,13 @@ isr_238:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_239:
    push rdi
+   push rsi
    mov rdi, 239
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3365,13 +3364,13 @@ isr_239:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_240:
    push rdi
+   push rsi
    mov rdi, 240
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3379,13 +3378,13 @@ isr_240:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_241:
    push rdi
+   push rsi
    mov rdi, 241
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3393,13 +3392,13 @@ isr_241:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_242:
    push rdi
+   push rsi
    mov rdi, 242
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3407,13 +3406,13 @@ isr_242:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_243:
    push rdi
+   push rsi
    mov rdi, 243
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3421,13 +3420,13 @@ isr_243:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_244:
    push rdi
+   push rsi
    mov rdi, 244
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3435,13 +3434,13 @@ isr_244:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_245:
    push rdi
+   push rsi
    mov rdi, 245
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3449,13 +3448,13 @@ isr_245:
    mov dword [0xb8008], 0x4f354f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_246:
    push rdi
+   push rsi
    mov rdi, 246
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3463,13 +3462,13 @@ isr_246:
    mov dword [0xb8008], 0x4f364f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_247:
    push rdi
+   push rsi
    mov rdi, 247
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3477,13 +3476,13 @@ isr_247:
    mov dword [0xb8008], 0x4f374f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_248:
    push rdi
+   push rsi
    mov rdi, 248
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3491,13 +3490,13 @@ isr_248:
    mov dword [0xb8008], 0x4f384f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_249:
    push rdi
+   push rsi
    mov rdi, 249
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3505,13 +3504,13 @@ isr_249:
    mov dword [0xb8008], 0x4f394f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_250:
    push rdi
+   push rsi
    mov rdi, 250
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3519,13 +3518,13 @@ isr_250:
    mov dword [0xb8008], 0x4f304f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_251:
    push rdi
+   push rsi
    mov rdi, 251
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3533,13 +3532,13 @@ isr_251:
    mov dword [0xb8008], 0x4f314f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_252:
    push rdi
+   push rsi
    mov rdi, 252
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3547,13 +3546,13 @@ isr_252:
    mov dword [0xb8008], 0x4f324f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_253:
    push rdi
+   push rsi
    mov rdi, 253
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3561,13 +3560,13 @@ isr_253:
    mov dword [0xb8008], 0x4f334f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
 isr_254:
    push rdi
+   push rsi
    mov rdi, 254
-   nop
-   nop
-   nop
+   mov rsi, [rsp]
    mov dword [0xb8000], 0x4f524f45
    mov dword [0xb8004], 0x4f3a4f52
    mov dword [0xb8008], 0x4f204f20
@@ -3575,4 +3574,5 @@ isr_254:
    mov dword [0xb8008], 0x4f344f20
    call isr_normal
    pop rdi
+   pop rsi
    iret
