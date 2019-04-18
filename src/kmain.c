@@ -29,5 +29,5 @@ void setup_kernel() {
    setup_keyboard_polling();
    /*setup_gdt();*/
    setup_interrupts();
-   asm("int $0x30");
+   asm("int $0x50");
 }

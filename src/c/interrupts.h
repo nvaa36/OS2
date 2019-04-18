@@ -31,7 +31,7 @@
 /* End OSDevWiki code */
 
 #define OFFSET1 0x20
-#define OFFSET2 0x70
+#define OFFSET2 0x50
 
 #define KB_IRQ 1
 

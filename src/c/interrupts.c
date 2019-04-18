@@ -7,7 +7,7 @@ void setup_interrupts() {
    setup_idt();
    PIC_remap(OFFSET1, OFFSET2);
    /* Enable keyboard interrupt */
-   /*IRQ_clear_mask(KB_IRQ);*/
+   IRQ_clear_mask(KB_IRQ);
    enable_interrupts();
 }
 

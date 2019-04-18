@@ -1,1790 +1,2303 @@
 global isr_0
 global isr_1
 
+extern isr_normal
+extern isr_errcode
+
 section .text
 bits 64
 isr_0:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 0
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_1:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 1
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_2:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 2
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_3:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 3
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_4:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 4
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_5:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 5
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_6:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 6
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_7:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 7
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_8:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 8
+   mov rsi, [rsp]
+   call isr_errcode
+   pop rdi
+   pop rsi
+   iretq
 isr_9:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f30
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 9
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_10:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 10
+   mov rsi, [rsp]
+   call isr_errcode
+   pop rdi
+   pop rsi
+   iretq
 isr_11:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 11
+   mov rsi, [rsp]
+   call isr_errcode
+   pop rdi
+   pop rsi
+   iretq
 isr_12:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 12
+   mov rsi, [rsp]
+   call isr_errcode
+   pop rdi
+   pop rsi
+   iretq
 isr_13:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 13
+   mov rsi, [rsp]
+   call isr_errcode
+   pop rdi
+   pop rsi
+   iretq
 isr_14:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 14
+   mov rsi, [rsp]
+   call isr_errcode
+   pop rdi
+   pop rsi
+   iretq
 isr_15:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 15
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_16:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 16
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_17:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 17
+   mov rsi, [rsp]
+   call isr_errcode
+   pop rdi
+   pop rsi
+   iretq
 isr_18:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 18
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_19:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f31
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 19
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_20:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 20
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_21:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 21
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_22:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 22
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_23:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 23
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_24:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 24
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_25:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 25
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_26:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 26
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_27:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 27
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_28:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 28
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_29:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f32
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 29
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_30:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 30
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_31:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 31
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_32:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 32
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_33:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 33
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_34:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 34
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_35:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 35
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_36:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 36
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_37:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 37
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_38:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 38
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_39:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f33
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 39
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_40:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 40
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_41:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 41
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_42:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 42
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_43:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 43
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_44:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 44
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_45:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 45
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_46:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 46
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_47:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 47
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_48:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 48
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_49:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f34
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 49
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_50:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 50
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_51:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 51
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_52:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 52
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_53:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 53
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_54:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 54
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_55:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 55
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_56:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 56
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_57:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 57
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_58:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 58
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_59:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f35
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 59
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_60:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 60
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_61:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 61
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_62:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 62
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_63:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 63
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_64:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 64
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_65:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 65
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_66:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 66
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_67:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 67
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_68:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 68
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_69:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f36
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 69
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_70:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 70
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_71:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 71
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_72:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 72
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_73:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 73
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_74:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 74
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_75:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 75
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_76:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 76
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_77:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 77
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_78:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 78
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_79:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f37
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 79
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_80:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 80
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_81:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 81
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_82:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 82
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_83:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 83
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_84:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 84
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_85:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 85
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_86:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 86
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_87:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 87
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_88:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 88
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_89:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f38
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 89
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_90:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 90
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_91:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 91
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_92:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 92
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_93:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 93
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_94:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 94
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_95:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 95
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_96:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 96
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_97:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 97
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_98:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 98
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_99:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f304f39
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 99
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_100:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 100
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_101:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 101
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_102:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 102
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_103:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 103
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_104:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 104
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_105:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 105
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_106:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 106
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_107:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 107
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_108:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 108
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_109:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f30
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 109
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_110:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 110
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_111:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 111
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_112:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 112
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_113:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 113
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_114:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 114
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_115:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 115
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_116:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 116
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_117:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 117
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_118:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 118
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_119:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f31
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 119
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_120:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 120
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_121:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 121
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_122:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 122
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_123:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 123
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_124:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 124
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_125:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 125
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_126:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 126
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_127:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 127
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_128:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 128
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_129:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f32
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 129
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_130:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 130
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_131:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 131
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_132:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 132
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_133:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 133
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_134:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 134
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_135:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 135
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_136:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 136
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_137:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 137
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_138:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 138
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_139:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f33
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 139
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_140:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 140
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_141:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 141
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_142:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 142
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_143:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 143
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_144:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 144
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_145:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 145
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_146:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 146
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_147:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 147
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_148:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 148
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_149:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f34
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 149
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_150:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 150
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_151:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 151
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_152:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 152
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_153:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 153
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_154:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 154
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_155:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 155
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_156:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 156
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_157:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 157
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_158:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 158
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_159:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f35
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 159
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_160:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 160
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_161:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 161
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_162:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 162
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_163:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 163
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_164:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 164
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_165:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 165
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_166:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 166
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_167:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 167
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_168:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 168
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_169:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f36
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 169
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_170:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 170
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_171:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 171
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_172:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 172
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_173:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 173
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_174:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 174
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_175:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 175
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_176:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 176
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_177:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 177
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_178:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 178
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_179:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f37
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 179
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_180:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 180
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_181:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 181
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_182:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 182
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_183:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 183
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_184:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 184
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_185:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 185
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_186:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 186
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_187:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 187
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_188:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 188
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_189:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f38
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 189
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_190:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 190
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_191:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 191
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_192:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 192
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_193:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 193
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_194:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 194
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_195:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 195
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_196:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 196
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_197:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 197
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_198:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 198
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_199:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f314f39
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 199
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_200:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 200
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_201:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 201
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_202:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 202
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_203:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 203
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_204:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 204
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_205:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 205
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_206:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 206
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_207:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 207
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_208:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 208
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_209:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f30
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 209
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_210:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 210
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_211:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 211
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_212:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 212
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_213:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 213
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_214:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 214
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_215:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 215
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_216:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 216
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_217:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 217
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_218:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 218
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_219:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f31
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 219
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_220:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 220
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_221:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 221
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_222:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 222
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_223:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 223
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_224:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 224
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_225:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 225
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_226:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 226
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_227:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 227
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_228:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 228
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_229:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f32
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 229
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_230:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 230
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_231:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 231
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_232:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 232
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_233:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 233
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_234:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 234
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_235:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 235
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_236:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 236
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_237:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 237
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_238:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 238
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_239:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f33
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 239
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_240:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 240
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_241:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 241
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_242:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 242
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_243:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 243
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_244:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 244
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_245:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f354f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 245
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_246:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f364f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 246
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_247:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f374f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 247
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_248:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f384f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 248
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_249:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f34
-   mov dword [0xb8008], 0x4f394f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 249
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_250:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f35
-   mov dword [0xb8008], 0x4f304f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 250
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_251:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f35
-   mov dword [0xb8008], 0x4f314f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 251
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_252:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f35
-   mov dword [0xb8008], 0x4f324f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 252
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_253:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f35
-   mov dword [0xb8008], 0x4f334f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 253
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
 isr_254:
-   mov dword [0xb8000], 0x4f524f45
-   mov dword [0xb8004], 0x4f3a4f52
-   mov dword [0xb8008], 0x4f204f20
-   mov dword [0xb8008], 0x4f324f35
-   mov dword [0xb8008], 0x4f344f20
-   iret
+   push rdi
+   push rsi
+   mov rdi, 254
+   mov rsi, [rsp]
+   call isr_normal
+   pop rdi
+   pop rsi
+   iretq
