@@ -11,6 +11,6 @@ errcode_isrs = [8, 10, 11, 12, 13, 14, 17]
 
 for i in range(255):
 	if i in errcode_isrs:
-		output_file.write(err_base % (i, i, i // 100 + 30, (i // 10) % 10 + 30, i % 10 + 30) + "\n")
+		output_file.write(err_base % (i, i) + "\n")
 	else:
-		output_file.write(base % (i, i, i // 100 + 30, (i // 10) % 10 + 30, i % 10 + 30) + "\n")
+		output_file.write(base % (i, i) + "\n")
