@@ -11,4 +11,4 @@ isr_%d:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq

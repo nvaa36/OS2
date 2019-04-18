@@ -19,7 +19,7 @@ isr_0:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_1:
    push rdi
    push rsi
@@ -33,7 +33,7 @@ isr_1:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_2:
    push rdi
    push rsi
@@ -47,7 +47,7 @@ isr_2:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_3:
    push rdi
    push rsi
@@ -61,7 +61,7 @@ isr_3:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_4:
    push rdi
    push rsi
@@ -75,7 +75,7 @@ isr_4:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_5:
    push rdi
    push rsi
@@ -89,7 +89,7 @@ isr_5:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_6:
    push rdi
    push rsi
@@ -103,7 +103,7 @@ isr_6:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_7:
    push rdi
    push rsi
@@ -117,7 +117,7 @@ isr_7:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_8:
    push rdi
    push rsi
@@ -131,7 +131,7 @@ isr_8:
    call isr_errcode
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_9:
    push rdi
    push rsi
@@ -145,7 +145,7 @@ isr_9:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_10:
    push rdi
    push rsi
@@ -159,7 +159,7 @@ isr_10:
    call isr_errcode
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_11:
    push rdi
    push rsi
@@ -173,7 +173,7 @@ isr_11:
    call isr_errcode
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_12:
    push rdi
    push rsi
@@ -187,7 +187,7 @@ isr_12:
    call isr_errcode
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_13:
    push rdi
    push rsi
@@ -201,7 +201,7 @@ isr_13:
    call isr_errcode
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_14:
    push rdi
    push rsi
@@ -215,7 +215,7 @@ isr_14:
    call isr_errcode
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_15:
    push rdi
    push rsi
@@ -229,7 +229,7 @@ isr_15:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_16:
    push rdi
    push rsi
@@ -243,7 +243,7 @@ isr_16:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_17:
    push rdi
    push rsi
@@ -257,7 +257,7 @@ isr_17:
    call isr_errcode
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_18:
    push rdi
    push rsi
@@ -271,7 +271,7 @@ isr_18:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_19:
    push rdi
    push rsi
@@ -285,7 +285,7 @@ isr_19:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_20:
    push rdi
    push rsi
@@ -299,7 +299,7 @@ isr_20:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_21:
    push rdi
    push rsi
@@ -313,7 +313,7 @@ isr_21:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_22:
    push rdi
    push rsi
@@ -327,7 +327,7 @@ isr_22:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_23:
    push rdi
    push rsi
@@ -341,7 +341,7 @@ isr_23:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_24:
    push rdi
    push rsi
@@ -355,7 +355,7 @@ isr_24:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_25:
    push rdi
    push rsi
@@ -369,7 +369,7 @@ isr_25:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_26:
    push rdi
    push rsi
@@ -383,7 +383,7 @@ isr_26:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_27:
    push rdi
    push rsi
@@ -397,7 +397,7 @@ isr_27:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_28:
    push rdi
    push rsi
@@ -411,7 +411,7 @@ isr_28:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_29:
    push rdi
    push rsi
@@ -425,7 +425,7 @@ isr_29:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_30:
    push rdi
    push rsi
@@ -439,7 +439,7 @@ isr_30:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_31:
    push rdi
    push rsi
@@ -453,7 +453,7 @@ isr_31:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_32:
    push rdi
    push rsi
@@ -467,7 +467,7 @@ isr_32:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_33:
    push rdi
    push rsi
@@ -481,7 +481,7 @@ isr_33:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_34:
    push rdi
    push rsi
@@ -495,7 +495,7 @@ isr_34:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_35:
    push rdi
    push rsi
@@ -509,7 +509,7 @@ isr_35:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_36:
    push rdi
    push rsi
@@ -523,7 +523,7 @@ isr_36:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_37:
    push rdi
    push rsi
@@ -537,7 +537,7 @@ isr_37:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_38:
    push rdi
    push rsi
@@ -551,7 +551,7 @@ isr_38:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_39:
    push rdi
    push rsi
@@ -565,7 +565,7 @@ isr_39:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_40:
    push rdi
    push rsi
@@ -579,7 +579,7 @@ isr_40:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_41:
    push rdi
    push rsi
@@ -593,7 +593,7 @@ isr_41:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_42:
    push rdi
    push rsi
@@ -607,7 +607,7 @@ isr_42:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_43:
    push rdi
    push rsi
@@ -621,7 +621,7 @@ isr_43:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_44:
    push rdi
    push rsi
@@ -635,7 +635,7 @@ isr_44:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_45:
    push rdi
    push rsi
@@ -649,7 +649,7 @@ isr_45:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_46:
    push rdi
    push rsi
@@ -663,7 +663,7 @@ isr_46:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_47:
    push rdi
    push rsi
@@ -677,7 +677,7 @@ isr_47:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_48:
    push rdi
    push rsi
@@ -691,7 +691,7 @@ isr_48:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_49:
    push rdi
    push rsi
@@ -705,7 +705,7 @@ isr_49:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_50:
    push rdi
    push rsi
@@ -719,7 +719,7 @@ isr_50:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_51:
    push rdi
    push rsi
@@ -733,7 +733,7 @@ isr_51:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_52:
    push rdi
    push rsi
@@ -747,7 +747,7 @@ isr_52:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_53:
    push rdi
    push rsi
@@ -761,7 +761,7 @@ isr_53:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_54:
    push rdi
    push rsi
@@ -775,7 +775,7 @@ isr_54:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_55:
    push rdi
    push rsi
@@ -789,7 +789,7 @@ isr_55:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_56:
    push rdi
    push rsi
@@ -803,7 +803,7 @@ isr_56:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_57:
    push rdi
    push rsi
@@ -817,7 +817,7 @@ isr_57:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_58:
    push rdi
    push rsi
@@ -831,7 +831,7 @@ isr_58:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_59:
    push rdi
    push rsi
@@ -845,7 +845,7 @@ isr_59:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_60:
    push rdi
    push rsi
@@ -859,7 +859,7 @@ isr_60:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_61:
    push rdi
    push rsi
@@ -873,7 +873,7 @@ isr_61:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_62:
    push rdi
    push rsi
@@ -887,7 +887,7 @@ isr_62:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_63:
    push rdi
    push rsi
@@ -901,7 +901,7 @@ isr_63:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_64:
    push rdi
    push rsi
@@ -915,7 +915,7 @@ isr_64:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_65:
    push rdi
    push rsi
@@ -929,7 +929,7 @@ isr_65:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_66:
    push rdi
    push rsi
@@ -943,7 +943,7 @@ isr_66:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_67:
    push rdi
    push rsi
@@ -957,7 +957,7 @@ isr_67:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_68:
    push rdi
    push rsi
@@ -971,7 +971,7 @@ isr_68:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_69:
    push rdi
    push rsi
@@ -985,7 +985,7 @@ isr_69:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_70:
    push rdi
    push rsi
@@ -999,7 +999,7 @@ isr_70:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_71:
    push rdi
    push rsi
@@ -1013,7 +1013,7 @@ isr_71:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_72:
    push rdi
    push rsi
@@ -1027,7 +1027,7 @@ isr_72:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_73:
    push rdi
    push rsi
@@ -1041,7 +1041,7 @@ isr_73:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_74:
    push rdi
    push rsi
@@ -1055,7 +1055,7 @@ isr_74:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_75:
    push rdi
    push rsi
@@ -1069,7 +1069,7 @@ isr_75:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_76:
    push rdi
    push rsi
@@ -1083,7 +1083,7 @@ isr_76:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_77:
    push rdi
    push rsi
@@ -1097,7 +1097,7 @@ isr_77:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_78:
    push rdi
    push rsi
@@ -1111,7 +1111,7 @@ isr_78:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_79:
    push rdi
    push rsi
@@ -1125,7 +1125,7 @@ isr_79:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_80:
    push rdi
    push rsi
@@ -1139,7 +1139,7 @@ isr_80:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_81:
    push rdi
    push rsi
@@ -1153,7 +1153,7 @@ isr_81:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_82:
    push rdi
    push rsi
@@ -1167,7 +1167,7 @@ isr_82:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_83:
    push rdi
    push rsi
@@ -1181,7 +1181,7 @@ isr_83:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_84:
    push rdi
    push rsi
@@ -1195,7 +1195,7 @@ isr_84:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_85:
    push rdi
    push rsi
@@ -1209,7 +1209,7 @@ isr_85:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_86:
    push rdi
    push rsi
@@ -1223,7 +1223,7 @@ isr_86:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_87:
    push rdi
    push rsi
@@ -1237,7 +1237,7 @@ isr_87:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_88:
    push rdi
    push rsi
@@ -1251,7 +1251,7 @@ isr_88:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_89:
    push rdi
    push rsi
@@ -1265,7 +1265,7 @@ isr_89:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_90:
    push rdi
    push rsi
@@ -1279,7 +1279,7 @@ isr_90:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_91:
    push rdi
    push rsi
@@ -1293,7 +1293,7 @@ isr_91:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_92:
    push rdi
    push rsi
@@ -1307,7 +1307,7 @@ isr_92:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_93:
    push rdi
    push rsi
@@ -1321,7 +1321,7 @@ isr_93:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_94:
    push rdi
    push rsi
@@ -1335,7 +1335,7 @@ isr_94:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_95:
    push rdi
    push rsi
@@ -1349,7 +1349,7 @@ isr_95:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_96:
    push rdi
    push rsi
@@ -1363,7 +1363,7 @@ isr_96:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_97:
    push rdi
    push rsi
@@ -1377,7 +1377,7 @@ isr_97:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_98:
    push rdi
    push rsi
@@ -1391,7 +1391,7 @@ isr_98:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_99:
    push rdi
    push rsi
@@ -1405,7 +1405,7 @@ isr_99:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_100:
    push rdi
    push rsi
@@ -1419,7 +1419,7 @@ isr_100:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_101:
    push rdi
    push rsi
@@ -1433,7 +1433,7 @@ isr_101:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_102:
    push rdi
    push rsi
@@ -1447,7 +1447,7 @@ isr_102:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_103:
    push rdi
    push rsi
@@ -1461,7 +1461,7 @@ isr_103:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_104:
    push rdi
    push rsi
@@ -1475,7 +1475,7 @@ isr_104:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_105:
    push rdi
    push rsi
@@ -1489,7 +1489,7 @@ isr_105:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_106:
    push rdi
    push rsi
@@ -1503,7 +1503,7 @@ isr_106:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_107:
    push rdi
    push rsi
@@ -1517,7 +1517,7 @@ isr_107:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_108:
    push rdi
    push rsi
@@ -1531,7 +1531,7 @@ isr_108:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_109:
    push rdi
    push rsi
@@ -1545,7 +1545,7 @@ isr_109:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_110:
    push rdi
    push rsi
@@ -1559,7 +1559,7 @@ isr_110:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_111:
    push rdi
    push rsi
@@ -1573,7 +1573,7 @@ isr_111:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_112:
    push rdi
    push rsi
@@ -1587,7 +1587,7 @@ isr_112:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_113:
    push rdi
    push rsi
@@ -1601,7 +1601,7 @@ isr_113:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_114:
    push rdi
    push rsi
@@ -1615,7 +1615,7 @@ isr_114:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_115:
    push rdi
    push rsi
@@ -1629,7 +1629,7 @@ isr_115:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_116:
    push rdi
    push rsi
@@ -1643,7 +1643,7 @@ isr_116:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_117:
    push rdi
    push rsi
@@ -1657,7 +1657,7 @@ isr_117:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_118:
    push rdi
    push rsi
@@ -1671,7 +1671,7 @@ isr_118:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_119:
    push rdi
    push rsi
@@ -1685,7 +1685,7 @@ isr_119:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_120:
    push rdi
    push rsi
@@ -1699,7 +1699,7 @@ isr_120:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_121:
    push rdi
    push rsi
@@ -1713,7 +1713,7 @@ isr_121:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_122:
    push rdi
    push rsi
@@ -1727,7 +1727,7 @@ isr_122:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_123:
    push rdi
    push rsi
@@ -1741,7 +1741,7 @@ isr_123:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_124:
    push rdi
    push rsi
@@ -1755,7 +1755,7 @@ isr_124:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_125:
    push rdi
    push rsi
@@ -1769,7 +1769,7 @@ isr_125:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_126:
    push rdi
    push rsi
@@ -1783,7 +1783,7 @@ isr_126:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_127:
    push rdi
    push rsi
@@ -1797,7 +1797,7 @@ isr_127:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_128:
    push rdi
    push rsi
@@ -1811,7 +1811,7 @@ isr_128:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_129:
    push rdi
    push rsi
@@ -1825,7 +1825,7 @@ isr_129:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_130:
    push rdi
    push rsi
@@ -1839,7 +1839,7 @@ isr_130:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_131:
    push rdi
    push rsi
@@ -1853,7 +1853,7 @@ isr_131:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_132:
    push rdi
    push rsi
@@ -1867,7 +1867,7 @@ isr_132:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_133:
    push rdi
    push rsi
@@ -1881,7 +1881,7 @@ isr_133:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_134:
    push rdi
    push rsi
@@ -1895,7 +1895,7 @@ isr_134:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_135:
    push rdi
    push rsi
@@ -1909,7 +1909,7 @@ isr_135:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_136:
    push rdi
    push rsi
@@ -1923,7 +1923,7 @@ isr_136:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_137:
    push rdi
    push rsi
@@ -1937,7 +1937,7 @@ isr_137:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_138:
    push rdi
    push rsi
@@ -1951,7 +1951,7 @@ isr_138:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_139:
    push rdi
    push rsi
@@ -1965,7 +1965,7 @@ isr_139:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_140:
    push rdi
    push rsi
@@ -1979,7 +1979,7 @@ isr_140:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_141:
    push rdi
    push rsi
@@ -1993,7 +1993,7 @@ isr_141:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_142:
    push rdi
    push rsi
@@ -2007,7 +2007,7 @@ isr_142:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_143:
    push rdi
    push rsi
@@ -2021,7 +2021,7 @@ isr_143:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_144:
    push rdi
    push rsi
@@ -2035,7 +2035,7 @@ isr_144:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_145:
    push rdi
    push rsi
@@ -2049,7 +2049,7 @@ isr_145:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_146:
    push rdi
    push rsi
@@ -2063,7 +2063,7 @@ isr_146:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_147:
    push rdi
    push rsi
@@ -2077,7 +2077,7 @@ isr_147:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_148:
    push rdi
    push rsi
@@ -2091,7 +2091,7 @@ isr_148:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_149:
    push rdi
    push rsi
@@ -2105,7 +2105,7 @@ isr_149:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_150:
    push rdi
    push rsi
@@ -2119,7 +2119,7 @@ isr_150:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_151:
    push rdi
    push rsi
@@ -2133,7 +2133,7 @@ isr_151:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_152:
    push rdi
    push rsi
@@ -2147,7 +2147,7 @@ isr_152:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_153:
    push rdi
    push rsi
@@ -2161,7 +2161,7 @@ isr_153:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_154:
    push rdi
    push rsi
@@ -2175,7 +2175,7 @@ isr_154:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_155:
    push rdi
    push rsi
@@ -2189,7 +2189,7 @@ isr_155:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_156:
    push rdi
    push rsi
@@ -2203,7 +2203,7 @@ isr_156:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_157:
    push rdi
    push rsi
@@ -2217,7 +2217,7 @@ isr_157:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_158:
    push rdi
    push rsi
@@ -2231,7 +2231,7 @@ isr_158:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_159:
    push rdi
    push rsi
@@ -2245,7 +2245,7 @@ isr_159:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_160:
    push rdi
    push rsi
@@ -2259,7 +2259,7 @@ isr_160:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_161:
    push rdi
    push rsi
@@ -2273,7 +2273,7 @@ isr_161:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_162:
    push rdi
    push rsi
@@ -2287,7 +2287,7 @@ isr_162:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_163:
    push rdi
    push rsi
@@ -2301,7 +2301,7 @@ isr_163:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_164:
    push rdi
    push rsi
@@ -2315,7 +2315,7 @@ isr_164:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_165:
    push rdi
    push rsi
@@ -2329,7 +2329,7 @@ isr_165:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_166:
    push rdi
    push rsi
@@ -2343,7 +2343,7 @@ isr_166:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_167:
    push rdi
    push rsi
@@ -2357,7 +2357,7 @@ isr_167:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_168:
    push rdi
    push rsi
@@ -2371,7 +2371,7 @@ isr_168:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_169:
    push rdi
    push rsi
@@ -2385,7 +2385,7 @@ isr_169:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_170:
    push rdi
    push rsi
@@ -2399,7 +2399,7 @@ isr_170:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_171:
    push rdi
    push rsi
@@ -2413,7 +2413,7 @@ isr_171:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_172:
    push rdi
    push rsi
@@ -2427,7 +2427,7 @@ isr_172:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_173:
    push rdi
    push rsi
@@ -2441,7 +2441,7 @@ isr_173:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_174:
    push rdi
    push rsi
@@ -2455,7 +2455,7 @@ isr_174:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_175:
    push rdi
    push rsi
@@ -2469,7 +2469,7 @@ isr_175:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_176:
    push rdi
    push rsi
@@ -2483,7 +2483,7 @@ isr_176:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_177:
    push rdi
    push rsi
@@ -2497,7 +2497,7 @@ isr_177:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_178:
    push rdi
    push rsi
@@ -2511,7 +2511,7 @@ isr_178:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_179:
    push rdi
    push rsi
@@ -2525,7 +2525,7 @@ isr_179:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_180:
    push rdi
    push rsi
@@ -2539,7 +2539,7 @@ isr_180:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_181:
    push rdi
    push rsi
@@ -2553,7 +2553,7 @@ isr_181:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_182:
    push rdi
    push rsi
@@ -2567,7 +2567,7 @@ isr_182:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_183:
    push rdi
    push rsi
@@ -2581,7 +2581,7 @@ isr_183:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_184:
    push rdi
    push rsi
@@ -2595,7 +2595,7 @@ isr_184:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_185:
    push rdi
    push rsi
@@ -2609,7 +2609,7 @@ isr_185:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_186:
    push rdi
    push rsi
@@ -2623,7 +2623,7 @@ isr_186:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_187:
    push rdi
    push rsi
@@ -2637,7 +2637,7 @@ isr_187:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_188:
    push rdi
    push rsi
@@ -2651,7 +2651,7 @@ isr_188:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_189:
    push rdi
    push rsi
@@ -2665,7 +2665,7 @@ isr_189:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_190:
    push rdi
    push rsi
@@ -2679,7 +2679,7 @@ isr_190:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_191:
    push rdi
    push rsi
@@ -2693,7 +2693,7 @@ isr_191:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_192:
    push rdi
    push rsi
@@ -2707,7 +2707,7 @@ isr_192:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_193:
    push rdi
    push rsi
@@ -2721,7 +2721,7 @@ isr_193:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_194:
    push rdi
    push rsi
@@ -2735,7 +2735,7 @@ isr_194:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_195:
    push rdi
    push rsi
@@ -2749,7 +2749,7 @@ isr_195:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_196:
    push rdi
    push rsi
@@ -2763,7 +2763,7 @@ isr_196:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_197:
    push rdi
    push rsi
@@ -2777,7 +2777,7 @@ isr_197:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_198:
    push rdi
    push rsi
@@ -2791,7 +2791,7 @@ isr_198:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_199:
    push rdi
    push rsi
@@ -2805,7 +2805,7 @@ isr_199:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_200:
    push rdi
    push rsi
@@ -2819,7 +2819,7 @@ isr_200:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_201:
    push rdi
    push rsi
@@ -2833,7 +2833,7 @@ isr_201:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_202:
    push rdi
    push rsi
@@ -2847,7 +2847,7 @@ isr_202:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_203:
    push rdi
    push rsi
@@ -2861,7 +2861,7 @@ isr_203:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_204:
    push rdi
    push rsi
@@ -2875,7 +2875,7 @@ isr_204:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_205:
    push rdi
    push rsi
@@ -2889,7 +2889,7 @@ isr_205:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_206:
    push rdi
    push rsi
@@ -2903,7 +2903,7 @@ isr_206:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_207:
    push rdi
    push rsi
@@ -2917,7 +2917,7 @@ isr_207:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_208:
    push rdi
    push rsi
@@ -2931,7 +2931,7 @@ isr_208:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_209:
    push rdi
    push rsi
@@ -2945,7 +2945,7 @@ isr_209:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_210:
    push rdi
    push rsi
@@ -2959,7 +2959,7 @@ isr_210:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_211:
    push rdi
    push rsi
@@ -2973,7 +2973,7 @@ isr_211:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_212:
    push rdi
    push rsi
@@ -2987,7 +2987,7 @@ isr_212:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_213:
    push rdi
    push rsi
@@ -3001,7 +3001,7 @@ isr_213:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_214:
    push rdi
    push rsi
@@ -3015,7 +3015,7 @@ isr_214:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_215:
    push rdi
    push rsi
@@ -3029,7 +3029,7 @@ isr_215:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_216:
    push rdi
    push rsi
@@ -3043,7 +3043,7 @@ isr_216:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_217:
    push rdi
    push rsi
@@ -3057,7 +3057,7 @@ isr_217:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_218:
    push rdi
    push rsi
@@ -3071,7 +3071,7 @@ isr_218:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_219:
    push rdi
    push rsi
@@ -3085,7 +3085,7 @@ isr_219:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_220:
    push rdi
    push rsi
@@ -3099,7 +3099,7 @@ isr_220:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_221:
    push rdi
    push rsi
@@ -3113,7 +3113,7 @@ isr_221:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_222:
    push rdi
    push rsi
@@ -3127,7 +3127,7 @@ isr_222:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_223:
    push rdi
    push rsi
@@ -3141,7 +3141,7 @@ isr_223:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_224:
    push rdi
    push rsi
@@ -3155,7 +3155,7 @@ isr_224:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_225:
    push rdi
    push rsi
@@ -3169,7 +3169,7 @@ isr_225:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_226:
    push rdi
    push rsi
@@ -3183,7 +3183,7 @@ isr_226:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_227:
    push rdi
    push rsi
@@ -3197,7 +3197,7 @@ isr_227:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_228:
    push rdi
    push rsi
@@ -3211,7 +3211,7 @@ isr_228:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_229:
    push rdi
    push rsi
@@ -3225,7 +3225,7 @@ isr_229:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_230:
    push rdi
    push rsi
@@ -3239,7 +3239,7 @@ isr_230:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_231:
    push rdi
    push rsi
@@ -3253,7 +3253,7 @@ isr_231:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_232:
    push rdi
    push rsi
@@ -3267,7 +3267,7 @@ isr_232:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_233:
    push rdi
    push rsi
@@ -3281,7 +3281,7 @@ isr_233:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_234:
    push rdi
    push rsi
@@ -3295,7 +3295,7 @@ isr_234:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_235:
    push rdi
    push rsi
@@ -3309,7 +3309,7 @@ isr_235:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_236:
    push rdi
    push rsi
@@ -3323,7 +3323,7 @@ isr_236:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_237:
    push rdi
    push rsi
@@ -3337,7 +3337,7 @@ isr_237:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_238:
    push rdi
    push rsi
@@ -3351,7 +3351,7 @@ isr_238:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_239:
    push rdi
    push rsi
@@ -3365,7 +3365,7 @@ isr_239:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_240:
    push rdi
    push rsi
@@ -3379,7 +3379,7 @@ isr_240:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_241:
    push rdi
    push rsi
@@ -3393,7 +3393,7 @@ isr_241:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_242:
    push rdi
    push rsi
@@ -3407,7 +3407,7 @@ isr_242:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_243:
    push rdi
    push rsi
@@ -3421,7 +3421,7 @@ isr_243:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_244:
    push rdi
    push rsi
@@ -3435,7 +3435,7 @@ isr_244:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_245:
    push rdi
    push rsi
@@ -3449,7 +3449,7 @@ isr_245:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_246:
    push rdi
    push rsi
@@ -3463,7 +3463,7 @@ isr_246:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_247:
    push rdi
    push rsi
@@ -3477,7 +3477,7 @@ isr_247:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_248:
    push rdi
    push rsi
@@ -3491,7 +3491,7 @@ isr_248:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_249:
    push rdi
    push rsi
@@ -3505,7 +3505,7 @@ isr_249:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_250:
    push rdi
    push rsi
@@ -3519,7 +3519,7 @@ isr_250:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_251:
    push rdi
    push rsi
@@ -3533,7 +3533,7 @@ isr_251:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_252:
    push rdi
    push rsi
@@ -3547,7 +3547,7 @@ isr_252:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_253:
    push rdi
    push rsi
@@ -3561,7 +3561,7 @@ isr_253:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
 isr_254:
    push rdi
    push rsi
@@ -3575,4 +3575,4 @@ isr_254:
    call isr_normal
    pop rdi
    pop rsi
-   iret
+   iretq
