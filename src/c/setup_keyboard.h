@@ -2,6 +2,7 @@
 #define SETUP_KB_H
 
 #include "bitio.h"
+#include "interrupts.h"
 #include "printk.h"
 
 #define PS2_DATA 0x60
@@ -37,7 +38,7 @@
 
 #define SCANCODE_SET 2
 
-void setup_keyboard_polling();
+void setup_keyboard();
 unsigned char ps2_poll_read();
 void ps2_poll_write(unsigned char value);
 void ps2_poll_cmd_write(unsigned char value);

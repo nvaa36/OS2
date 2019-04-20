@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "bitio.h"
 #include "gdt.h"
-#include "printk.h"
+#include "tss.h"
 
 #define NUM_IDT_ENTRIES 256
 
@@ -38,6 +38,10 @@
 #define OFFSET2 0x28
 
 #define KB_IRQ 1
+
+#define DF 0x8
+#define GP 0xD
+#define PF 0xE
 
 #define NUM_IRQS 256
 

@@ -22,7 +22,20 @@ void setup_idt() {
       idt[i].offset1 = (uint16_t)offset;
       /* Want index 1 in the GDT */
       idt[i].selector = 0 | (1 << 3);
-      idt[i].ist = 0;
+      switch (i) {
+         case DF:
+            idt[i].ist = DF_IND;
+            break;
+         case GP:
+            idt[i].ist = GP_IND;
+            break;
+         case PF:
+            idt[i].ist = PF_IND;
+            break;
+         default:
+            idt[i].ist = 0;
+            break;
+      }
       idt[i].ign = 0;
       /* Make all types interrupts for now */
       idt[i].type = 0xE;
@@ -57,15 +70,6 @@ arguments:
 */
 void PIC_remap(int offset1, int offset2)
 {
-   unsigned char a1, a2;
-    
-   a1 = inb(PIC1_DATA);                        // save masks
-   a2 = inb(PIC2_DATA);
-   printk("%hx\n", a1);
-   printk("%hx\n", a2);
-   printk("%x\n", (int)pic_get_irr());
-   printk("%x\n", (int)pic_get_isr());
-
    outb(PIC1_COMMAND, ICW1_INIT | ICW1_ICW4);  // starts the initialization sequence (in cascade mode)
    io_wait();
    outb(PIC2_COMMAND, ICW1_INIT | ICW1_ICW4);
@@ -86,13 +90,6 @@ void PIC_remap(int offset1, int offset2)
 
    outb(PIC1_DATA, 0xFF);
    outb(PIC2_DATA, 0xFF);
-
-   a1 = inb(PIC1_DATA);                        // save masks
-   a2 = inb(PIC2_DATA);
-   printk("%hx\n", a1);
-   printk("%hx\n", a2);
-   printk("%x\n", (int)pic_get_irr());
-   printk("%x\n", (int)pic_get_isr());
 }
 
 /* TODO: Abstract out the PIC remap from isr */

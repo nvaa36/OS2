@@ -1,8 +1,10 @@
 #include "setup_keyboard.h"
 
-void setup_keyboard_polling() {
+void setup_keyboard() {
    unsigned char data = 0;
    unsigned char mask = 0;
+
+   disable_interrupts();
 
    /* disable ports 1 and 2 */
    ps2_poll_cmd_write(DISABLE_P1);
@@ -36,6 +38,8 @@ void setup_keyboard_polling() {
 
    /* Enable keyboard */
    kb_poll_write(ENABLE);
+
+   enable_interrupts();
 }
 
 unsigned char ps2_poll_read() {
