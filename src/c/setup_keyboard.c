@@ -49,14 +49,14 @@ void ps2_poll_write(unsigned char value) {
    unsigned char status = inb(PS2_STATUS);
    while ((status & PS2_STATUS_INPUT))
       status = inb(PS2_STATUS);
-   outb(value, PS2_DATA);
+   outb(PS2_DATA, value);
 }
 
 void ps2_poll_cmd_write(unsigned char value) {
    unsigned char status = inb(PS2_STATUS);
    while ((status & PS2_STATUS_INPUT))
       status = inb(PS2_STATUS);
-   outb(value, PS2_CMD);
+   outb(PS2_CMD, value);
 }
 
 void kb_poll_write(unsigned char data) {

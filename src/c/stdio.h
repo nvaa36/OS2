@@ -27,11 +27,13 @@
 #define TILD 0x7E
 
 typedef struct {
+   char release_char;
    char shift;
    char caps;
 } kb_state;
 
 char get_kb_c();
+char get_kb_c_poll();
 char poll_kb();
 unsigned char handle_key(unsigned char c);
 

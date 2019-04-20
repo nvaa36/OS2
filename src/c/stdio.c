@@ -22,6 +22,16 @@ char get_kb_c() {
    unsigned char c;
    char translated_key = 0;
 
+   c = inb(KBDR);
+   translated_key = handle_key(c);
+
+   return translated_key;
+}
+
+char get_kb_c_poll() {
+   unsigned char c;
+   char translated_key = 0;
+
    while (!translated_key) {
       c = poll_kb();
       translated_key = handle_key(c);
@@ -38,6 +48,14 @@ char poll_kb() {
 }
 
 unsigned char handle_key(unsigned char c) {
+   if (state.release_char) {
+      state.release_char = 0;
+      if (c == LSHIFT || c == RSHIFT) {
+         state.shift = 0;
+         return 0;
+      }
+      return 0;
+   }
    if (c == LSHIFT || c == RSHIFT) {
       state.shift = 1;
       return 0;
@@ -69,10 +87,7 @@ unsigned char handle_key(unsigned char c) {
    }
 
    if (c == RELEASED) {
-      c = poll_kb();
-      if (c == LSHIFT || c == RSHIFT) {
-         state.shift = 0;
-      }
+      state.release_char = 1;
    }
    return 0;
    
