@@ -38,6 +38,7 @@
 #define OFFSET2 0x28
 
 #define KB_IRQ 1
+#define SER_IRQ 4
 
 #define DF 0x8
 #define GP 0xD
