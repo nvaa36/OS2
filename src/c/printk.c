@@ -87,11 +87,13 @@ void print_char(char c) {
    }
    else {
       VGA_display_char(c);
+      SER_writec(c);
    }
 }
 
 void print_num_char(char c) {
    VGA_display_char(c + DEC_ZERO);
+   SER_writec(c + DEC_ZERO);
 }
 
 void print_neg(long long i, int *num_chars) {

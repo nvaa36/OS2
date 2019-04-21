@@ -1,7 +1,7 @@
 #include "serial.h"
 
 void SER_init(void) {
-   int init_enabled = interrupts_enabled();
+   uint16_t init_enabled = interrupts_enabled();
    disable_interrupts();
    memset(&(ser_state.buff), 0, BUFF_SIZE);
    ser_state.head = &(ser_state.buff[0]);
@@ -34,7 +34,7 @@ char ser_write(char toAdd) {
 }
 
 int SER_write(const char *buff, int len) {
-   int init_enabled = interrupts_enabled();
+   uint16_t init_enabled = interrupts_enabled();
    disable_interrupts();
 
    int i;
@@ -53,6 +53,23 @@ int SER_write(const char *buff, int len) {
    }
 
    return len;
+}
+
+void SER_writec(char c) {
+   uint16_t init_enabled = interrupts_enabled();
+   disable_interrupts();
+
+   char success = 0;
+
+   while (!(success = ser_write(c)));
+
+   if (is_transmit_empty()) {
+      hw_write_serial();
+   }
+
+   if (init_enabled) {
+      enable_interrupts();
+   }
 }
 
 int is_transmit_empty() {

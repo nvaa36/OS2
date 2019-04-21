@@ -21,6 +21,7 @@ SERState ser_state;
 
 void SER_init(void);
 int SER_write(const char *buff, int len);
+void SER_writec(char c);
 int is_transmit_empty();
 void hw_write_serial();
 

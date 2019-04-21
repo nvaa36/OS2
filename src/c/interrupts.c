@@ -177,10 +177,10 @@ void disable_interrupts() {
    asm("CLI");
 }
 
-char interrupts_enabled() {
-   uint16_t int_en = 0;
+uint16_t interrupts_enabled() {
+   uint16_t int_en, flags = 0;
    asm("pushf"); // Push the flags register
-   asm("pop %0" : "=a"(int_en));
-   int_en &= IF_MASK;
+   asm("pop %0" : "=a"(flags));
+   int_en = flags & IF_MASK;
    return int_en;
 }

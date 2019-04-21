@@ -2,6 +2,7 @@
 #define PRINTK_H
 
 #include <stdarg.h>
+#include "serial.h"
 #include "string.h"
 #include "vga_driver.h"
 

@@ -111,6 +111,6 @@ uint16_t pic_get_isr(void);
 
 void enable_interrupts();
 void disable_interrupts();
-char interrupts_enabled();
+uint16_t interrupts_enabled();
 
 #endif
