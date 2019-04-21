@@ -46,12 +46,15 @@
 
 #define NUM_IRQS 256
 
+#define IF_MASK 1 << 9
+
 /* Labels for the 0th and 1st isrs */
 extern void isr_0(void);
 extern void isr_1(void);
 
 /* ISR function pointers */
 extern void kb_isr(int, int, void*);
+extern void ser_isr(int, int, void*);
 
 struct idte{
    uint16_t offset1;
@@ -108,5 +111,6 @@ uint16_t pic_get_isr(void);
 
 void enable_interrupts();
 void disable_interrupts();
+char interrupts_enabled();
 
 #endif

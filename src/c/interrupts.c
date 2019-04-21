@@ -8,6 +8,7 @@ void setup_interrupts() {
    PIC_remap(OFFSET1, OFFSET2);
    /* Enable keyboard interrupt */
    IRQ_clear_mask(KB_IRQ);
+   IRQ_clear_mask(SER_IRQ);
    setup_isrs();
    enable_interrupts();
 }
@@ -57,6 +58,7 @@ void setup_idt() {
 void setup_isrs() {
    memset((void *)irq_table, 0, sizeof(irq_table));
    irq_table[OFFSET1+KB_IRQ].handler = kb_isr;
+   irq_table[OFFSET1+SER_IRQ].handler = ser_isr;
 }
 
 /* Code from OSDevWiki */
@@ -173,4 +175,12 @@ void enable_interrupts() {
 
 void disable_interrupts() {
    asm("CLI");
+}
+
+char interrupts_enabled() {
+   uint16_t int_en = 0;
+   asm("pushf"); // Push the flags register
+   asm("pop %0" : "=a"(int_en));
+   int_en &= IF_MASK;
+   return int_en;
 }

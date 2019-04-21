@@ -34,3 +34,20 @@ void kb_isr(int isr_num, int err_code, void *arg) {
       printk("%c", c);
    }
 }
+
+void ser_isr(int isr_num, int err_code, void *arg) {
+   unsigned char int_type;
+   int_type = inb(IRR);
+
+   if (int_type & (1 << 1)) {
+      /* Check if it is a LINE interrupt */
+      if (int_type & (1 << 2)) {
+         /* Read LSR */
+         inb(LSR);
+         return;
+      }
+      hw_write_serial();
+      return;
+   }
+   printk("Unhandled serial interrupt type: %u\n", int_type);
+}
