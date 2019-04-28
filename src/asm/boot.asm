@@ -8,6 +8,7 @@ bits 32
 start:
    ; initialize the stack
    mov esp, stack_top
+   mov edi, ebx
 
    call check_multiboot
    call check_multiboot
@@ -161,6 +162,7 @@ gdt64:
 ; data space
 section .bss
 align 4096
+
 p4_table:
    resb 4096
 p3_table:

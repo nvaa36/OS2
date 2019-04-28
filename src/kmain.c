@@ -1,20 +1,21 @@
 #include "kmain.h"
 
-int kmain(int argc, char **argv) {
-   printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
+int kmain(uint32_t *tag_pointer) {
 
    int __loop = 1;
    while (__loop);
-   setup_kernel();
-   asm("INT $0x8");
+   setup_kernel(tag_pointer);
+   printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
    while (1) {
       asm("hlt");
    }
 }
 
-void setup_kernel() {
+void setup_kernel(uint32_t *tag_pointer) {
+   setup_frame_alloc(tag_pointer);
    setup_tss();
    setup_gdt();
-   setup_interrupts();
+   SER_init();
    setup_keyboard();
+   setup_interrupts();
 }

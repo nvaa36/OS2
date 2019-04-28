@@ -29,7 +29,7 @@ run: $(img)
 	qemu-system-x86_64 -s -drive format=raw,file=$(img) -serial stdio
 
 debug: $(img)
-	qemu-system-x86_64 -s -d int -drive format=raw,file=$(img) -serial stdio
+	qemu-system-x86_64 -s -S -d int -drive format=raw,file=$(img) -serial stdio
 
 img: $(kernel) $(grub_cfg)
 	mkdir -p .img/boot/grub
