@@ -8,8 +8,8 @@
 #define ELF 9
 
 // TODO: determine later after actually getting parsing working
-#define MMAP_ARR_SIZE 128
-#define ELF_HEADS_SIZE 128
+#define MMAP_ARR_SIZE 40
+#define ELF_HEADS_SIZE 30
 #define MMAP_HEADER_SIZE 16
 
 #define PAGE_FRAME_SIZE 4096

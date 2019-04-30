@@ -12,10 +12,10 @@ int kmain(uint32_t *tag_pointer) {
 }
 
 void setup_kernel(uint32_t *tag_pointer) {
-   setup_frame_alloc(tag_pointer);
    setup_tss();
    setup_gdt();
    SER_init();
    setup_keyboard();
    setup_interrupts();
+   setup_frame_alloc(tag_pointer);
 }
