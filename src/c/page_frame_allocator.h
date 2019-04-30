@@ -7,7 +7,6 @@
 #define MMAP 6
 #define ELF 9
 
-// TODO: determine later after actually getting parsing working
 #define MMAP_ARR_SIZE 40
 #define ELF_HEADS_SIZE 30
 #define MMAP_HEADER_SIZE 16
@@ -28,6 +27,26 @@ typedef struct {
    uint64_t address;
    uint64_t size;
 } elf_header;
+
+typedef struct {
+   uint64_t start;
+   uint64_t length;
+   uint32_t type;
+   uint32_t reserved;
+} mem_entry;
+
+typedef struct {
+   uint32_t name;
+   uint32_t type;
+   uint64_t flags;
+   uint64_t address;
+   uint64_t offset;
+   uint64_t size;
+   uint32_t tab_ind;
+   uint32_t info;
+   uint64_t addr_align;
+   uint64_t fix_entry;
+} elf_entry;
 
 mem_region mem_regions[MMAP_ARR_SIZE];
 int mem_arr_size;

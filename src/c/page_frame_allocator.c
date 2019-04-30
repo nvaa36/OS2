@@ -3,11 +3,37 @@
 void setup_frame_alloc(uint32_t *tag_pointer) {
    parse_multiboot_tags(tag_pointer);
    setup_open_frames();
+   printk("%p\n", MMU_pf_alloc());
+   printk("%p\n", MMU_pf_alloc());
+   int __loop = 1;
+   uint64_t *f_ind, *frame = 0;
+   while (__loop) {
+      frame = (uint64_t *)MMU_pf_alloc();
+      f_ind = frame;
+      printk("%p\n", frame);
+      for (int i = 0; i < PAGE_FRAME_SIZE / 64; i++) {
+         *f_ind = (uint64_t)frame;
+         f_ind++;
+      }
+      f_ind = frame;
+      for (int i = 0; i < PAGE_FRAME_SIZE / 64; i++) {
+         if (*f_ind != (uint64_t)frame) {
+            printk("Error with %lx\n", (long unsigned int)frame);
+            break;
+         }
+         f_ind++;
+      }
+   }
+   MMU_pf_free((uint64_t *)0x1000);
+   MMU_pf_free((uint64_t *)0x00);
+   printk("%p\n", MMU_pf_alloc());
 }
 
 void parse_multiboot_tags(uint32_t *tag_pointer) {
    char done = 0;
    int i, m_ind = 0;
+   mem_entry *mentry;
+   elf_entry *elentry;
    uint32_t type, size, actual_size, entry_size, num_entries;
    uint64_t start, length;
 
@@ -23,7 +49,6 @@ void parse_multiboot_tags(uint32_t *tag_pointer) {
       size = *(tag_pointer++);
       // The actual size, 8-byte aligned
       actual_size = ((size + 7) / 8) * 8;
-      printk("type: %x, size: %x\n", type, size);
       switch (type) {
          case END_TYPE:
             done = 1;
@@ -33,18 +58,15 @@ void parse_multiboot_tags(uint32_t *tag_pointer) {
             // throw away version
             tag_pointer++;
             for (i = 0; i < (size - MMAP_HEADER_SIZE) / entry_size; i++) {
-               start = (uint64_t)*(tag_pointer++) << 32;
-               start |= *(tag_pointer++);
-               length = (uint64_t)*(tag_pointer++) << 32;
-               length |= *(tag_pointer++);
-               type = *(tag_pointer++);
-               if (type == 1) {
+               mentry = (mem_entry *)tag_pointer;
+               start = mentry->start;
+               length = mentry->length;
+               if (mentry->type == 1) {
                   mem_regions[m_ind].start = start;
                   mem_regions[m_ind].length = length;
                   m_ind++;
                }
-               // throw away the reserved bytes
-               tag_pointer++;
+               tag_pointer += entry_size / 4;
             }
             mem_arr_size = m_ind;
             if (size != actual_size) {
@@ -58,16 +80,10 @@ void parse_multiboot_tags(uint32_t *tag_pointer) {
             // throw away str table ind
             tag_pointer++;
             for (i = 0; i < num_entries; i++) {
-               // throw away 16 bytes of info
-               tag_pointer += 4;
-               elf_headers[i].address = (uint64_t)*(tag_pointer++) << 32;
-               elf_headers[i].address |= *(tag_pointer++);
-               // throw away 8 bytes of info
-               tag_pointer += 2;
-               elf_headers[i].size = (uint64_t)*(tag_pointer++) << 32;
-               elf_headers[i].size |= *(tag_pointer++);
-               // throw away 24 more bytes of data
-               tag_pointer += 6;
+               elentry = (elf_entry *)tag_pointer;
+               elf_headers[i].address = elentry->address;
+               elf_headers[i].size = elentry->size;
+               tag_pointer += entry_size / 4;
             }
             elf_arr_size = i;
             if (size != actual_size) {
@@ -160,6 +176,11 @@ void *MMU_pf_alloc() {
 }
 
 void MMU_pf_free(void *pf) {
+   if (!free_frames.head) {
+      free_frames.head = (uint64_t *)pf;
+      *free_frames.head = 0;
+   }
    *free_frames.tail = (uint64_t)pf;
    free_frames.tail = (uint64_t *)pf;
+   *free_frames.tail = 0;
 }
