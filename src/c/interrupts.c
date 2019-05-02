@@ -23,6 +23,7 @@ void setup_idt() {
       idt[i].offset1 = (uint16_t)offset;
       /* Want index 1 in the GDT */
       idt[i].selector = 0 | (1 << 3);
+      // Set the ist to be the fault specific one for some of the interrupts
       switch (i) {
          case DF:
             idt[i].ist = DF_IND;
@@ -55,6 +56,8 @@ void setup_idt() {
    lidt((void *)idt, sizeof(idt));
 }
 
+// By default all irqs go to the default handler, but kb and ser have actual
+// handlers.
 void setup_isrs() {
    memset((void *)irq_table, 0, sizeof(irq_table));
    irq_table[OFFSET1+KB_IRQ].handler = kb_isr;
@@ -93,8 +96,6 @@ void PIC_remap(int offset1, int offset2)
    outb(PIC1_DATA, 0xFF);
    outb(PIC2_DATA, 0xFF);
 }
-
-/* TODO: Abstract out the PIC remap from isr */
 
 void IRQ_end_of_interrupt(int irq) {
    if(irq >= 8)

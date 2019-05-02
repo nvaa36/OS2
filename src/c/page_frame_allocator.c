@@ -3,7 +3,7 @@
 void setup_frame_alloc(uint32_t *tag_pointer) {
    parse_multiboot_tags(tag_pointer);
    setup_open_frames();
-   printk("%p\n", MMU_pf_alloc());
+   /*printk("%p\n", MMU_pf_alloc());
    printk("%p\n", MMU_pf_alloc());
    int __loop = 1;
    uint64_t *f_ind, *frame = 0;
@@ -26,7 +26,7 @@ void setup_frame_alloc(uint32_t *tag_pointer) {
    }
    MMU_pf_free((uint64_t *)0x1000);
    MMU_pf_free((uint64_t *)0x00);
-   printk("%p\n", MMU_pf_alloc());
+   printk("%p\n", MMU_pf_alloc());*/
 }
 
 void parse_multiboot_tags(uint32_t *tag_pointer) {
@@ -151,21 +151,25 @@ void setup_open_frames() {
 
 void *MMU_pf_alloc() {
    uint64_t *tmp;
+   // If there are free frames in the linked list, get them from there
    if (free_frames.head != NULL) {
       tmp = free_frames.head;
       free_frames.head = (uint64_t *)*free_frames.head;
       return tmp;
    }
 
+   // If there are no frames left in the mem_regions, then we are out of frames
    if (mem_arr_size == 0) {
       printk("OOM!!!!!\n");
       asm("hlt");
    }
 
+   // Get a new frame and move the start of the region a frame size
    tmp = (uint64_t *)mem_regions[0].start;
    mem_regions[0].start += PAGE_FRAME_SIZE;
    mem_regions[0].length -= PAGE_FRAME_SIZE;
 
+   // If the mem_region is less than a frame size, then don't use it anymore
    if (mem_regions[0].length < PAGE_FRAME_SIZE) {
       mem_regions[0].start = mem_regions[mem_arr_size - 1].start;
       mem_regions[0].length = mem_regions[mem_arr_size - 1].length;
