@@ -13,6 +13,7 @@ int kmain(uint32_t *tag_pointer) {
 
 void setup_kernel(uint32_t *tag_pointer) {
    setup_frame_alloc(tag_pointer);
+   setup_kernel_page_tables();
    setup_tss();
    setup_gdt();
    SER_init();

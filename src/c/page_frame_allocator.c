@@ -3,30 +3,6 @@
 void setup_frame_alloc(uint32_t *tag_pointer) {
    parse_multiboot_tags(tag_pointer);
    setup_open_frames();
-   /*printk("%p\n", MMU_pf_alloc());
-   printk("%p\n", MMU_pf_alloc());
-   int __loop = 1;
-   uint64_t *f_ind, *frame = 0;
-   while (__loop) {
-      frame = (uint64_t *)MMU_pf_alloc();
-      f_ind = frame;
-      printk("%p\n", frame);
-      for (int i = 0; i < PAGE_FRAME_SIZE / 64; i++) {
-         *f_ind = (uint64_t)frame;
-         f_ind++;
-      }
-      f_ind = frame;
-      for (int i = 0; i < PAGE_FRAME_SIZE / 64; i++) {
-         if (*f_ind != (uint64_t)frame) {
-            printk("Error with %lx\n", (long unsigned int)frame);
-            break;
-         }
-         f_ind++;
-      }
-   }
-   MMU_pf_free((uint64_t *)0x1000);
-   MMU_pf_free((uint64_t *)0x00);
-   printk("%p\n", MMU_pf_alloc());*/
 }
 
 void parse_multiboot_tags(uint32_t *tag_pointer) {
@@ -147,6 +123,9 @@ void setup_open_frames() {
       }
    }
    free_frames.head = NULL;
+   // Throw out the first page. Don't want anything at 0x0
+   mem_regions[0].start += PAGE_FRAME_SIZE;
+   mem_regions[0].length -= PAGE_FRAME_SIZE;
 }
 
 void *MMU_pf_alloc() {
