@@ -55,6 +55,7 @@ extern void isr_1(void);
 /* ISR function pointers */
 extern void kb_isr(int, int, void*);
 extern void ser_isr(int, int, void*);
+extern void pf_isr(int, int, void*);
 
 struct idte{
    uint16_t offset1;
@@ -95,15 +96,11 @@ void PIC_remap(int offset1, int offset2);
 void setup_isrs();
 
 /* interface for setting/clearing irqs */
-/* TODO: implement this function. */
-void IRQ_init(void);
 void IRQ_set_mask(int irq);
 void IRQ_clear_mask(int irq);
 int IRQ_get_mask(int IRQline);
 void IRQ_end_of_interrupt(int irq);
 
-/* TODO: implement this function. */
-typedef void (*irq_handler_t)(int, int, void*);
 void IRQ_set_handler(int irq, irq_handler_t handler, void *arg);
 
 uint16_t pic_get_irr(void);

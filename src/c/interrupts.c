@@ -56,12 +56,13 @@ void setup_idt() {
    lidt((void *)idt, sizeof(idt));
 }
 
-// By default all irqs go to the default handler, but kb and ser have actual
-// handlers.
+// By default all irqs go to the default handler, but some interrupts have
+// actual handlers.
 void setup_isrs() {
    memset((void *)irq_table, 0, sizeof(irq_table));
    irq_table[OFFSET1+KB_IRQ].handler = kb_isr;
    irq_table[OFFSET1+SER_IRQ].handler = ser_isr;
+   irq_table[PF].handler = pf_isr;
 }
 
 /* Code from OSDevWiki */

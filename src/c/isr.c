@@ -51,3 +51,13 @@ void ser_isr(int isr_num, int err_code, void *arg) {
    }
    printk("Unhandled serial interrupt type: %u\n", int_type);
 }
+
+void pf_isr(int isr_num, int err_code, void *arg) {
+   void *addr = get_cr2();
+   void *pt4 = get_cr3();
+   
+   if (1) {
+      printk("Unhandled Page Fault. Addr: %p, table: %p, error code: %d\n",
+             addr, pt4, err_code);
+   }
+}
