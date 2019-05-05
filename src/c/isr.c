@@ -52,12 +52,20 @@ void ser_isr(int isr_num, int err_code, void *arg) {
    printk("Unhandled serial interrupt type: %u\n", int_type);
 }
 
+void gp_isr(int isr_num, int err_code, void *arg) {
+   printk("General Protection Fault. Error code: %x\n", err_code);
+   asm("hlt");
+}
+
 void pf_isr(int isr_num, int err_code, void *arg) {
    void *addr = get_cr2();
    void *pt4 = get_cr3();
-   
-   if (1) {
+   PT1_Entry *pt1e = get_pt1_entry(pt4, addr);
+
+   if (pt1e->avl != ALLOC_ON_DEMAND) {
       printk("Unhandled Page Fault. Addr: %p, table: %p, error code: %d\n",
              addr, pt4, err_code);
    }
+
+   set_page_frame_pt1e(pt4, pt1e);
 }

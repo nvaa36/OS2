@@ -17,6 +17,7 @@
 
 #define ONE_GIG 0x40000000
 
+#define BIG_PAGE_ADDR_SHIFT 30
 #define ADDR_SHIFT 12
 
 #define ALLOC_ON_DEMAND 1
@@ -135,10 +136,11 @@ void MMU_free_pages(PT4_Entry *, void *, int num);
 void *MMU_alloc_pages(int num);*/
 
 // Gets the pt1 entry of the address given.
-PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address, char set_present);
+PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address);
 // Assigns a new page frame to an address given the address, sets all the
 // present bits along the way and allocates the needed page tables. Used in the
 // page fault handler.
+void set_page_frame_pt1e(PT4_Entry *pt4, PT1_Entry *pt1e);
 void set_page_frame(PT4_Entry *pt4, void *address);
 
 // Functions for interacting with the CR registers.

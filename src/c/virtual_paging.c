@@ -16,7 +16,7 @@ void set_page_kern_frame(void *address) {
 // allocate a frame.
 void *MMU_alloc_kern_page() {
    void *virt_addr = (void *)kern_heap_mem_addr;
-   PT1_Entry *pt1e = get_pt1_entry(kern_pt4, virt_addr, TRUE);
+   PT1_Entry *pt1e = get_pt1_entry(kern_pt4, virt_addr);
 
    pt1e->avl = ALLOC_ON_DEMAND;
    kern_heap_mem_addr += PAGE_FRAME_SIZE;
@@ -29,7 +29,7 @@ void *MMU_alloc_kern_pages(int num) {
    int i;
 
    for (i = 0; i < num; i++) {
-      pt1e = get_pt1_entry(kern_pt4, virt_addr + i * PAGE_FRAME_SIZE, FALSE);
+      pt1e = get_pt1_entry(kern_pt4, virt_addr + i * PAGE_FRAME_SIZE);
       pt1e->avl = ALLOC_ON_DEMAND;
    }
 
@@ -62,7 +62,7 @@ static void init_identity_frames(PT4_Entry *pt4) {
       pt3[i].present = 1;
       pt3[i].page_size = 1;
       pt3[i].rw = 1;
-      pt3[i].pt2_ba = i * ONE_GIG >> ADDR_SHIFT;
+      pt3[i].pt2_ba = i * ONE_GIG >> BIG_PAGE_ADDR_SHIFT;
    }
 }
 
@@ -81,43 +81,9 @@ PT4_Entry *setup_page_tables() {
    return pt4;
 }
 
-/*
-// Returns the page frame that is connected to the virtual address and sets the
-// present bit in the page table to 0 if set_not_present is true. If exact
-// address is true, then returns the exact address, otherwise returns the
-// frame. You don't want the exact address if you are freeing the frame.
-
-// Assumes the address given points to a valid page.
-static void *get_page_frame(void *address, char exact_address, char set_not_present) {
-   PT4_Entry *pt4e;
-   PT3_Entry *pt3e;
-   PT2_Entry *pt2e;
-   PT1_Entry *pt1e;
-   void *frame;
-   virtual_address *addr = (virtual_address *)(&address);
-
-   pt4e = &pt4[addr->pt4_ind];
-   pt3e = &((PT3_Entry *)(uint64_t)pt4e->pt3_ba)[addr->pt3_ind];
-   pt2e = &((PT2_Entry *)(uint64_t)pt3e->pt2_ba)[addr->pt2_ind];
-   pt1e = &((PT1_Entry *)(uint64_t)pt2e->pt1_ba)[addr->pt1_ind];
-   frame = (void *)(uint64_t)pt1e->pf_ba;
-
-   if (set_not_present) {
-      pt1e->present = 0;
-   }
-
-   if (exact_address) {
-      frame += addr->frame_ind;
-   }
-
-   return frame;
-}
-*/
-
 // Walks the page table of the address and allocates new tables if need be.
-// Returns the pt1 entry at the end. Sets the present bits as it walks if
-// set_present is set to TRUE.
-PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address, char set_present) {
+// Returns the pt1 entry at the end.
+PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address) {
    PT4_Entry *pt4e;
    PT3_Entry *pt3e;
    PT2_Entry *pt2e;
@@ -128,43 +94,62 @@ PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address, char set_present) {
 
    if (!pt4e->present) {
       pt3e = (PT3_Entry *)MMU_pf_alloc();
+      memset(pt3e, 0, sizeof(PAGE_FRAME_SIZE));
       pt4e->pt3_ba = (uint64_t)pt3e >> ADDR_SHIFT;
-      if (set_present)
-         pt4e->present = 1;
+      pt4e->present = 1;
+      pt4e->rw = 1;
    }
 
-   pt3e = &((PT3_Entry *)(uint64_t)pt4e->pt3_ba)[addr->pt3_ind];
+   pt3e = &((PT3_Entry *)((uint64_t)pt4e->pt3_ba << ADDR_SHIFT))
+          [addr->pt3_ind];
 
    if (!pt3e->present) {
       pt2e = (PT2_Entry *)MMU_pf_alloc();
+      memset(pt2e, 0, sizeof(PAGE_FRAME_SIZE));
       pt3e->present = 1;
       pt3e->pt2_ba = (uint64_t)pt2e >> ADDR_SHIFT;
-      if (set_present)
-         pt4e->present = 1;
+      pt3e->rw = 1;
    }
 
-   pt2e = &((PT2_Entry *)(uint64_t)pt3e->pt2_ba)[addr->pt2_ind];
+   pt2e = &((PT2_Entry *)((uint64_t)pt3e->pt2_ba << ADDR_SHIFT))
+          [addr->pt2_ind];
 
    if (!pt2e->present) {
       pt1e = (PT1_Entry *)MMU_pf_alloc();
+      memset(pt1e, 0, sizeof(PAGE_FRAME_SIZE));
       pt2e->present = 1;
       pt2e->pt1_ba = (uint64_t)pt1e >> ADDR_SHIFT;
-      if (set_present)
-         pt4e->present = 1;
+      pt2e->rw = 1;
    }
 
-   return &((PT1_Entry *)(uint64_t)pt2e->pt1_ba)[addr->pt1_ind];
+   return &((PT1_Entry *)((uint64_t)pt2e->pt1_ba << ADDR_SHIFT))
+          [addr->pt1_ind];
+}
+
+// Assigns a new page frame to the given pt1 entry.
+void set_page_frame_pt1e(PT4_Entry *pt4, PT1_Entry *pt1e) {
+   void *frame = MMU_pf_alloc();
+   memset(frame, 0, sizeof(PAGE_FRAME_SIZE));
+
+   if (!pt1e->present) {
+      pt1e->present = 1;
+      pt1e->rw = 1;
+      pt1e->avl = 0;
+      pt1e->pf_ba = (uint64_t)frame >> ADDR_SHIFT;
+   }
 }
 
 // Assigns a new page frame to an address given the address, sets all the
 // present bits along the way and allocates the needed page tables. Used in the
 // page fault handler.
 void set_page_frame(PT4_Entry *pt4, void *address) {
-   PT1_Entry *pt1e = get_pt1_entry(pt4, address, TRUE);
+   PT1_Entry *pt1e = get_pt1_entry(pt4, address);
    void *frame = MMU_pf_alloc();
+   memset(frame, 0, sizeof(PAGE_FRAME_SIZE));
 
    if (!pt1e->present) {
       pt1e->present = 1;
+      pt1e->avl = 0;
       pt1e->pf_ba = (uint64_t)frame >> ADDR_SHIFT;
    }
 }
@@ -186,28 +171,31 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
       return;
    }
 
-   pt3e = &((PT3_Entry *)(uint64_t)pt4e->pt3_ba)[addr->pt3_ind];
+   pt3e = &((PT3_Entry *)((uint64_t)pt4e->pt3_ba << ADDR_SHIFT))
+          [addr->pt3_ind];
 
    if (!pt3e->present) {
       printk("Tried to free invlaid page %p.\n", address);
       return;
    }
 
-   pt2e = &((PT2_Entry *)(uint64_t)pt3e->pt2_ba)[addr->pt2_ind];
+   pt2e = &((PT2_Entry *)((uint64_t)pt3e->pt2_ba << ADDR_SHIFT))
+          [addr->pt2_ind];
 
    if (!pt2e->present) {
       printk("Tried to free invlaid page %p.\n", address);
       return;
    }
 
-   pt1e = &((PT1_Entry *)(uint64_t)pt2e->pt1_ba)[addr->pt1_ind];
+   pt1e = &((PT1_Entry *)((uint64_t)pt2e->pt1_ba << ADDR_SHIFT))
+          [addr->pt1_ind];
 
    if (!pt1e->present) {
       printk("Tried to free invlaid page %p.\n", address);
       return;
    }
 
-   frame = (void *)(uint64_t)pt1e->pf_ba;
+   frame = (void *)((uint64_t)pt1e->pf_ba << ADDR_SHIFT);
 
    pt1e->present = 0;
    

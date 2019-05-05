@@ -44,6 +44,9 @@ void handle_flag(const char *fmt, int *ind, char c, va_list va, int *num_chars) 
          print_long_long((long long)va_arg(va, int), num_chars);
          return;
       case 'x':
+         print_char('0');
+         print_char('x');
+         *num_chars += 2;
          print_long_hex((long long)va_arg(va, int), num_chars);
          return;
       case 'p':

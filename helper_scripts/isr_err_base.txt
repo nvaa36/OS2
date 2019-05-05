@@ -2,8 +2,15 @@ isr_%d:
    push rdi
    push rsi
    mov rdi, %d
-   mov rsi, [rsp]
+   mov rsi, [rsp + 16]
+   push rax
+   push r10
+   push r11
    call isr_errcode
-   pop rdi
+   pop r11
+   pop r10
+   pop rax
    pop rsi
+   pop rdi
+   add rsp, 8
    iretq

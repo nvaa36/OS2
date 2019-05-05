@@ -63,6 +63,7 @@ void setup_isrs() {
    irq_table[OFFSET1+KB_IRQ].handler = kb_isr;
    irq_table[OFFSET1+SER_IRQ].handler = ser_isr;
    irq_table[PF].handler = pf_isr;
+   irq_table[GP].handler = gp_isr;
 }
 
 /* Code from OSDevWiki */
