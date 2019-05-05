@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include "c/gdt.h"
 #include "c/interrupts.h"
+#include "c/kmalloc.h"
 #include "c/page_frame_allocator.h"
 #include "c/printk.h"
 #include "c/serial.h"
