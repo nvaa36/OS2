@@ -48,14 +48,6 @@ typedef struct {
    uint64_t fix_entry;
 } elf_entry;
 
-mem_region mem_regions[MMAP_ARR_SIZE];
-int mem_arr_size;
-
-elf_header elf_headers[ELF_HEADS_SIZE];
-int elf_arr_size;
-
-frameList free_frames;
-
 void setup_frame_alloc(uint32_t *tag_pointer);
 void parse_multiboot_tags(uint32_t *tag_pointer);
 void setup_open_frames();

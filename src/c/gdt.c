@@ -1,5 +1,7 @@
 #include "gdt.h"
 
+uint64_t gdt[NUM_GDT_ENTRIES];
+
 void setup_gdt() {
    /* Zero first entry. */
    memset(gdt, 0, sizeof(uint64_t));

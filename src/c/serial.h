@@ -17,8 +17,6 @@ typedef struct {
    char busy;
 } SERState;
 
-SERState ser_state;
-
 void SER_init(void);
 int SER_write(const char *buff, int len);
 void SER_writec(char c);

@@ -1,6 +1,8 @@
 #include "setup_keyboard.h"
 
 void setup_keyboard() {
+   uint16_t init_enabled = interrupts_enabled();
+   disable_interrupts();
    unsigned char data = 0;
    unsigned char mask = 0;
 
@@ -36,6 +38,12 @@ void setup_keyboard() {
 
    /* Enable keyboard */
    kb_poll_write(ENABLE);
+
+   IRQ_clear_mask(KB_IRQ);
+   
+   if (init_enabled) {
+      enable_interrupts();
+   }
 }
 
 unsigned char ps2_poll_read() {

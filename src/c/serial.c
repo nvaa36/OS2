@@ -1,5 +1,7 @@
 #include "serial.h"
 
+SERState ser_state;
+
 void SER_init(void) {
    uint16_t init_enabled = interrupts_enabled();
    disable_interrupts();
@@ -15,6 +17,7 @@ void SER_init(void) {
    outb(COM1_PORT + 3, 0x03);    // 8 bits, no parity, one stop bit
    outb(COM1_PORT + 2, 0xC7);    // Enable FIFO, clear them, with 14-byte threshold
    outb(COM1_PORT + 4, 0x02);    // Only transmit IRQ enabled
+   IRQ_clear_mask(SER_IRQ);
    if (init_enabled) {
       enable_interrupts();
    }

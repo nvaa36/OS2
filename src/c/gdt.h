@@ -70,8 +70,6 @@ struct {
    void* base;
 } __attribute__((packed)) GDTR;
 
-uint64_t gdt[NUM_GDT_ENTRIES];
-
 void setup_gdt();
 void setup_kernel_segment();
 void setup_tss_desc();
