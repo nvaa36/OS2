@@ -33,6 +33,8 @@ void *MMU_alloc_kern_pages(int num) {
       pt1e->avl = ALLOC_ON_DEMAND;
    }
 
+   kern_heap_mem_addr += PAGE_FRAME_SIZE * num;
+
    return virt_addr;
 }
 
@@ -167,7 +169,7 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
    pt4e = &pt4[addr->pt4_ind];
 
    if (!pt4e->present) {
-      printk("Tried to free invlaid page %p.\n", address);
+      printk("Tried to free invalid page %p.\n", address);
       return;
    }
 
@@ -175,7 +177,7 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
           [addr->pt3_ind];
 
    if (!pt3e->present) {
-      printk("Tried to free invlaid page %p.\n", address);
+      printk("Tried to free invalid page %p.\n", address);
       return;
    }
 
@@ -183,7 +185,7 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
           [addr->pt2_ind];
 
    if (!pt2e->present) {
-      printk("Tried to free invlaid page %p.\n", address);
+      printk("Tried to free invalid page %p.\n", address);
       return;
    }
 
@@ -191,7 +193,7 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
           [addr->pt1_ind];
 
    if (!pt1e->present) {
-      printk("Tried to free invlaid page %p.\n", address);
+      printk("Tried to free invalid page %p.\n", address);
       return;
    }
 

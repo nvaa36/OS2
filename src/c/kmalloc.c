@@ -60,6 +60,7 @@ void *kmalloc(size_t size) {
          ((kmalloc_extra *)pointer)->pool = &pools[i];
          ((kmalloc_extra *)pointer)->size = size;
          pointer += sizeof(kmalloc_extra);
+         pools[i].avail--;
          return pointer;
       }
    }
