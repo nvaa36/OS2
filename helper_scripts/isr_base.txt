@@ -2,7 +2,6 @@ isr_%d:
    push rdi
    push rsi
    mov rdi, %d
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -12,5 +11,4 @@ isr_%d:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq

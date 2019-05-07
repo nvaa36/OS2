@@ -14,3 +14,7 @@ for i in range(255):
 		output_file.write(err_base % (i, i) + "\n")
 	else:
 		output_file.write(base % (i, i) + "\n")
+
+output_file.write("isr_locs:\n")
+for i in range(255):
+   output_file.write("dq isr_%d\n" % i)

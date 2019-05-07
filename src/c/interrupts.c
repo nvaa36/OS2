@@ -16,7 +16,7 @@ void setup_idt() {
 
    for (i = 0; i < NUM_IDT_ENTRIES; i++) {
       /* Offset calculated from asm labels for the 1st and second isrs */
-      offset = (uint64_t)(&isr_0 + i * (isr_1-isr_0));
+      offset = (uint64_t)isr_locs[i];
       idt[i].offset1 = (uint16_t)offset;
       /* Want index 1 in the GDT */
       idt[i].selector = 0 | (1 << 3);
@@ -61,6 +61,7 @@ void setup_isrs() {
    irq_table[OFFSET1+SER_IRQ].handler = ser_isr;
    irq_table[PF].handler = pf_isr;
    irq_table[GP].handler = gp_isr;
+   irq_table[SYS_CALL].handler = sc_isr;
 }
 
 /* Code from OSDevWiki */

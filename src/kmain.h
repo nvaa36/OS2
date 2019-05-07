@@ -10,6 +10,7 @@
 #include "c/serial.h"
 #include "c/setup_keyboard.h"
 #include "c/stdio.h"
+#include "c/system_calls.h"
 #include "c/virtual_paging.h"
 
 int kmain(uint32_t *tag_pointer);

@@ -1,5 +1,4 @@
-global isr_0
-global isr_1
+global isr_locs
 
 extern isr_normal
 extern isr_errcode

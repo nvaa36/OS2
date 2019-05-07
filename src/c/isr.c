@@ -1,6 +1,6 @@
 #include "isr.h"
 
-void isr_normal(int isr_num) {
+void isr_normal(int isr_num, int sys_call_num) {
    if (isr_num > 256) {
       printk("Interrupt #%d out of bounds.\n", isr_num);
       asm("hlt");
@@ -10,7 +10,7 @@ void isr_normal(int isr_num) {
       printk("Interrupt #%d not supported.\n", isr_num);
       asm("hlt");
    }
-   isr(isr_num, 0, NULL);
+   isr(isr_num, sys_call_num, irq_table[isr_num].arg);
    IRQ_end_of_interrupt(isr_num);
 }
 
@@ -68,4 +68,8 @@ void pf_isr(int isr_num, int err_code, void *arg) {
    }
 
    set_page_frame_pt1e(pt4, pt1e);
+}
+
+void sc_isr(int isr_num, int sys_call_num, void *arg) {
+   system_call(sys_call_num);
 }

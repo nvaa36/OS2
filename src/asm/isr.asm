@@ -1,16 +1,15 @@
-global isr_0
-global isr_1
+global isr_locs
 
 extern isr_normal
 extern isr_errcode
 
 section .text
 bits 64
+
 isr_0:
    push rdi
    push rsi
    mov rdi, 0
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -20,14 +19,12 @@ isr_0:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_1:
    push rdi
    push rsi
    mov rdi, 1
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -37,14 +34,12 @@ isr_1:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_2:
    push rdi
    push rsi
    mov rdi, 2
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -54,14 +49,12 @@ isr_2:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_3:
    push rdi
    push rsi
    mov rdi, 3
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -71,14 +64,12 @@ isr_3:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_4:
    push rdi
    push rsi
    mov rdi, 4
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -88,14 +79,12 @@ isr_4:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_5:
    push rdi
    push rsi
    mov rdi, 5
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -105,14 +94,12 @@ isr_5:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_6:
    push rdi
    push rsi
    mov rdi, 6
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -122,14 +109,12 @@ isr_6:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_7:
    push rdi
    push rsi
    mov rdi, 7
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -139,7 +124,6 @@ isr_7:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_8:
@@ -163,7 +147,6 @@ isr_9:
    push rdi
    push rsi
    mov rdi, 9
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -173,7 +156,6 @@ isr_9:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_10:
@@ -265,7 +247,6 @@ isr_15:
    push rdi
    push rsi
    mov rdi, 15
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -275,14 +256,12 @@ isr_15:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_16:
    push rdi
    push rsi
    mov rdi, 16
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -292,7 +271,6 @@ isr_16:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_17:
@@ -316,7 +294,6 @@ isr_18:
    push rdi
    push rsi
    mov rdi, 18
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -326,14 +303,12 @@ isr_18:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_19:
    push rdi
    push rsi
    mov rdi, 19
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -343,14 +318,12 @@ isr_19:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_20:
    push rdi
    push rsi
    mov rdi, 20
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -360,14 +333,12 @@ isr_20:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_21:
    push rdi
    push rsi
    mov rdi, 21
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -377,14 +348,12 @@ isr_21:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_22:
    push rdi
    push rsi
    mov rdi, 22
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -394,14 +363,12 @@ isr_22:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_23:
    push rdi
    push rsi
    mov rdi, 23
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -411,14 +378,12 @@ isr_23:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_24:
    push rdi
    push rsi
    mov rdi, 24
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -428,14 +393,12 @@ isr_24:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_25:
    push rdi
    push rsi
    mov rdi, 25
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -445,14 +408,12 @@ isr_25:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_26:
    push rdi
    push rsi
    mov rdi, 26
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -462,14 +423,12 @@ isr_26:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_27:
    push rdi
    push rsi
    mov rdi, 27
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -479,14 +438,12 @@ isr_27:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_28:
    push rdi
    push rsi
    mov rdi, 28
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -496,14 +453,12 @@ isr_28:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_29:
    push rdi
    push rsi
    mov rdi, 29
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -513,14 +468,12 @@ isr_29:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_30:
    push rdi
    push rsi
    mov rdi, 30
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -530,14 +483,12 @@ isr_30:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_31:
    push rdi
    push rsi
    mov rdi, 31
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -547,14 +498,12 @@ isr_31:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_32:
    push rdi
    push rsi
    mov rdi, 32
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -564,14 +513,12 @@ isr_32:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_33:
    push rdi
    push rsi
    mov rdi, 33
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -581,14 +528,12 @@ isr_33:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_34:
    push rdi
    push rsi
    mov rdi, 34
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -598,14 +543,12 @@ isr_34:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_35:
    push rdi
    push rsi
    mov rdi, 35
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -615,14 +558,12 @@ isr_35:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_36:
    push rdi
    push rsi
    mov rdi, 36
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -632,14 +573,12 @@ isr_36:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_37:
    push rdi
    push rsi
    mov rdi, 37
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -649,14 +588,12 @@ isr_37:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_38:
    push rdi
    push rsi
    mov rdi, 38
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -666,14 +603,12 @@ isr_38:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_39:
    push rdi
    push rsi
    mov rdi, 39
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -683,14 +618,12 @@ isr_39:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_40:
    push rdi
    push rsi
    mov rdi, 40
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -700,14 +633,12 @@ isr_40:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_41:
    push rdi
    push rsi
    mov rdi, 41
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -717,14 +648,12 @@ isr_41:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_42:
    push rdi
    push rsi
    mov rdi, 42
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -734,14 +663,12 @@ isr_42:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_43:
    push rdi
    push rsi
    mov rdi, 43
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -751,14 +678,12 @@ isr_43:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_44:
    push rdi
    push rsi
    mov rdi, 44
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -768,14 +693,12 @@ isr_44:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_45:
    push rdi
    push rsi
    mov rdi, 45
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -785,14 +708,12 @@ isr_45:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_46:
    push rdi
    push rsi
    mov rdi, 46
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -802,14 +723,12 @@ isr_46:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_47:
    push rdi
    push rsi
    mov rdi, 47
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -819,14 +738,12 @@ isr_47:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_48:
    push rdi
    push rsi
    mov rdi, 48
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -836,14 +753,12 @@ isr_48:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_49:
    push rdi
    push rsi
    mov rdi, 49
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -853,14 +768,12 @@ isr_49:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_50:
    push rdi
    push rsi
    mov rdi, 50
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -870,14 +783,12 @@ isr_50:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_51:
    push rdi
    push rsi
    mov rdi, 51
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -887,14 +798,12 @@ isr_51:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_52:
    push rdi
    push rsi
    mov rdi, 52
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -904,14 +813,12 @@ isr_52:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_53:
    push rdi
    push rsi
    mov rdi, 53
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -921,14 +828,12 @@ isr_53:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_54:
    push rdi
    push rsi
    mov rdi, 54
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -938,14 +843,12 @@ isr_54:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_55:
    push rdi
    push rsi
    mov rdi, 55
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -955,14 +858,12 @@ isr_55:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_56:
    push rdi
    push rsi
    mov rdi, 56
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -972,14 +873,12 @@ isr_56:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_57:
    push rdi
    push rsi
    mov rdi, 57
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -989,14 +888,12 @@ isr_57:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_58:
    push rdi
    push rsi
    mov rdi, 58
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1006,14 +903,12 @@ isr_58:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_59:
    push rdi
    push rsi
    mov rdi, 59
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1023,14 +918,12 @@ isr_59:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_60:
    push rdi
    push rsi
    mov rdi, 60
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1040,14 +933,12 @@ isr_60:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_61:
    push rdi
    push rsi
    mov rdi, 61
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1057,14 +948,12 @@ isr_61:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_62:
    push rdi
    push rsi
    mov rdi, 62
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1074,14 +963,12 @@ isr_62:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_63:
    push rdi
    push rsi
    mov rdi, 63
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1091,14 +978,12 @@ isr_63:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_64:
    push rdi
    push rsi
    mov rdi, 64
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1108,14 +993,12 @@ isr_64:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_65:
    push rdi
    push rsi
    mov rdi, 65
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1125,14 +1008,12 @@ isr_65:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_66:
    push rdi
    push rsi
    mov rdi, 66
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1142,14 +1023,12 @@ isr_66:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_67:
    push rdi
    push rsi
    mov rdi, 67
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1159,14 +1038,12 @@ isr_67:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_68:
    push rdi
    push rsi
    mov rdi, 68
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1176,14 +1053,12 @@ isr_68:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_69:
    push rdi
    push rsi
    mov rdi, 69
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1193,14 +1068,12 @@ isr_69:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_70:
    push rdi
    push rsi
    mov rdi, 70
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1210,14 +1083,12 @@ isr_70:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_71:
    push rdi
    push rsi
    mov rdi, 71
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1227,14 +1098,12 @@ isr_71:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_72:
    push rdi
    push rsi
    mov rdi, 72
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1244,14 +1113,12 @@ isr_72:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_73:
    push rdi
    push rsi
    mov rdi, 73
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1261,14 +1128,12 @@ isr_73:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_74:
    push rdi
    push rsi
    mov rdi, 74
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1278,14 +1143,12 @@ isr_74:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_75:
    push rdi
    push rsi
    mov rdi, 75
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1295,14 +1158,12 @@ isr_75:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_76:
    push rdi
    push rsi
    mov rdi, 76
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1312,14 +1173,12 @@ isr_76:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_77:
    push rdi
    push rsi
    mov rdi, 77
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1329,14 +1188,12 @@ isr_77:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_78:
    push rdi
    push rsi
    mov rdi, 78
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1346,14 +1203,12 @@ isr_78:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_79:
    push rdi
    push rsi
    mov rdi, 79
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1363,14 +1218,12 @@ isr_79:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_80:
    push rdi
    push rsi
    mov rdi, 80
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1380,14 +1233,12 @@ isr_80:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_81:
    push rdi
    push rsi
    mov rdi, 81
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1397,14 +1248,12 @@ isr_81:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_82:
    push rdi
    push rsi
    mov rdi, 82
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1414,14 +1263,12 @@ isr_82:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_83:
    push rdi
    push rsi
    mov rdi, 83
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1431,14 +1278,12 @@ isr_83:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_84:
    push rdi
    push rsi
    mov rdi, 84
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1448,14 +1293,12 @@ isr_84:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_85:
    push rdi
    push rsi
    mov rdi, 85
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1465,14 +1308,12 @@ isr_85:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_86:
    push rdi
    push rsi
    mov rdi, 86
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1482,14 +1323,12 @@ isr_86:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_87:
    push rdi
    push rsi
    mov rdi, 87
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1499,14 +1338,12 @@ isr_87:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_88:
    push rdi
    push rsi
    mov rdi, 88
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1516,14 +1353,12 @@ isr_88:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_89:
    push rdi
    push rsi
    mov rdi, 89
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1533,14 +1368,12 @@ isr_89:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_90:
    push rdi
    push rsi
    mov rdi, 90
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1550,14 +1383,12 @@ isr_90:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_91:
    push rdi
    push rsi
    mov rdi, 91
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1567,14 +1398,12 @@ isr_91:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_92:
    push rdi
    push rsi
    mov rdi, 92
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1584,14 +1413,12 @@ isr_92:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_93:
    push rdi
    push rsi
    mov rdi, 93
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1601,14 +1428,12 @@ isr_93:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_94:
    push rdi
    push rsi
    mov rdi, 94
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1618,14 +1443,12 @@ isr_94:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_95:
    push rdi
    push rsi
    mov rdi, 95
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1635,14 +1458,12 @@ isr_95:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_96:
    push rdi
    push rsi
    mov rdi, 96
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1652,14 +1473,12 @@ isr_96:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_97:
    push rdi
    push rsi
    mov rdi, 97
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1669,14 +1488,12 @@ isr_97:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_98:
    push rdi
    push rsi
    mov rdi, 98
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1686,14 +1503,12 @@ isr_98:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_99:
    push rdi
    push rsi
    mov rdi, 99
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1703,14 +1518,12 @@ isr_99:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_100:
    push rdi
    push rsi
    mov rdi, 100
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1720,14 +1533,12 @@ isr_100:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_101:
    push rdi
    push rsi
    mov rdi, 101
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1737,14 +1548,12 @@ isr_101:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_102:
    push rdi
    push rsi
    mov rdi, 102
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1754,14 +1563,12 @@ isr_102:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_103:
    push rdi
    push rsi
    mov rdi, 103
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1771,14 +1578,12 @@ isr_103:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_104:
    push rdi
    push rsi
    mov rdi, 104
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1788,14 +1593,12 @@ isr_104:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_105:
    push rdi
    push rsi
    mov rdi, 105
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1805,14 +1608,12 @@ isr_105:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_106:
    push rdi
    push rsi
    mov rdi, 106
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1822,14 +1623,12 @@ isr_106:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_107:
    push rdi
    push rsi
    mov rdi, 107
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1839,14 +1638,12 @@ isr_107:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_108:
    push rdi
    push rsi
    mov rdi, 108
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1856,14 +1653,12 @@ isr_108:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_109:
    push rdi
    push rsi
    mov rdi, 109
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1873,14 +1668,12 @@ isr_109:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_110:
    push rdi
    push rsi
    mov rdi, 110
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1890,14 +1683,12 @@ isr_110:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_111:
    push rdi
    push rsi
    mov rdi, 111
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1907,14 +1698,12 @@ isr_111:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_112:
    push rdi
    push rsi
    mov rdi, 112
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1924,14 +1713,12 @@ isr_112:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_113:
    push rdi
    push rsi
    mov rdi, 113
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1941,14 +1728,12 @@ isr_113:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_114:
    push rdi
    push rsi
    mov rdi, 114
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1958,14 +1743,12 @@ isr_114:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_115:
    push rdi
    push rsi
    mov rdi, 115
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1975,14 +1758,12 @@ isr_115:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_116:
    push rdi
    push rsi
    mov rdi, 116
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -1992,14 +1773,12 @@ isr_116:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_117:
    push rdi
    push rsi
    mov rdi, 117
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2009,14 +1788,12 @@ isr_117:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_118:
    push rdi
    push rsi
    mov rdi, 118
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2026,14 +1803,12 @@ isr_118:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_119:
    push rdi
    push rsi
    mov rdi, 119
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2043,14 +1818,12 @@ isr_119:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_120:
    push rdi
    push rsi
    mov rdi, 120
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2060,14 +1833,12 @@ isr_120:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_121:
    push rdi
    push rsi
    mov rdi, 121
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2077,14 +1848,12 @@ isr_121:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_122:
    push rdi
    push rsi
    mov rdi, 122
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2094,14 +1863,12 @@ isr_122:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_123:
    push rdi
    push rsi
    mov rdi, 123
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2111,14 +1878,12 @@ isr_123:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_124:
    push rdi
    push rsi
    mov rdi, 124
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2128,14 +1893,12 @@ isr_124:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_125:
    push rdi
    push rsi
    mov rdi, 125
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2145,14 +1908,12 @@ isr_125:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_126:
    push rdi
    push rsi
    mov rdi, 126
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2162,14 +1923,12 @@ isr_126:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_127:
    push rdi
    push rsi
    mov rdi, 127
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2179,14 +1938,12 @@ isr_127:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_128:
    push rdi
    push rsi
    mov rdi, 128
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2196,14 +1953,12 @@ isr_128:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_129:
    push rdi
    push rsi
    mov rdi, 129
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2213,14 +1968,12 @@ isr_129:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_130:
    push rdi
    push rsi
    mov rdi, 130
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2230,14 +1983,12 @@ isr_130:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_131:
    push rdi
    push rsi
    mov rdi, 131
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2247,14 +1998,12 @@ isr_131:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_132:
    push rdi
    push rsi
    mov rdi, 132
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2264,14 +2013,12 @@ isr_132:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_133:
    push rdi
    push rsi
    mov rdi, 133
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2281,14 +2028,12 @@ isr_133:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_134:
    push rdi
    push rsi
    mov rdi, 134
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2298,14 +2043,12 @@ isr_134:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_135:
    push rdi
    push rsi
    mov rdi, 135
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2315,14 +2058,12 @@ isr_135:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_136:
    push rdi
    push rsi
    mov rdi, 136
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2332,14 +2073,12 @@ isr_136:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_137:
    push rdi
    push rsi
    mov rdi, 137
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2349,14 +2088,12 @@ isr_137:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_138:
    push rdi
    push rsi
    mov rdi, 138
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2366,14 +2103,12 @@ isr_138:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_139:
    push rdi
    push rsi
    mov rdi, 139
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2383,14 +2118,12 @@ isr_139:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_140:
    push rdi
    push rsi
    mov rdi, 140
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2400,14 +2133,12 @@ isr_140:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_141:
    push rdi
    push rsi
    mov rdi, 141
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2417,14 +2148,12 @@ isr_141:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_142:
    push rdi
    push rsi
    mov rdi, 142
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2434,14 +2163,12 @@ isr_142:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_143:
    push rdi
    push rsi
    mov rdi, 143
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2451,14 +2178,12 @@ isr_143:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_144:
    push rdi
    push rsi
    mov rdi, 144
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2468,14 +2193,12 @@ isr_144:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_145:
    push rdi
    push rsi
    mov rdi, 145
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2485,14 +2208,12 @@ isr_145:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_146:
    push rdi
    push rsi
    mov rdi, 146
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2502,14 +2223,12 @@ isr_146:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_147:
    push rdi
    push rsi
    mov rdi, 147
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2519,14 +2238,12 @@ isr_147:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_148:
    push rdi
    push rsi
    mov rdi, 148
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2536,14 +2253,12 @@ isr_148:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_149:
    push rdi
    push rsi
    mov rdi, 149
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2553,14 +2268,12 @@ isr_149:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_150:
    push rdi
    push rsi
    mov rdi, 150
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2570,14 +2283,12 @@ isr_150:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_151:
    push rdi
    push rsi
    mov rdi, 151
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2587,14 +2298,12 @@ isr_151:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_152:
    push rdi
    push rsi
    mov rdi, 152
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2604,14 +2313,12 @@ isr_152:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_153:
    push rdi
    push rsi
    mov rdi, 153
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2621,14 +2328,12 @@ isr_153:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_154:
    push rdi
    push rsi
    mov rdi, 154
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2638,14 +2343,12 @@ isr_154:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_155:
    push rdi
    push rsi
    mov rdi, 155
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2655,14 +2358,12 @@ isr_155:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_156:
    push rdi
    push rsi
    mov rdi, 156
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2672,14 +2373,12 @@ isr_156:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_157:
    push rdi
    push rsi
    mov rdi, 157
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2689,14 +2388,12 @@ isr_157:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_158:
    push rdi
    push rsi
    mov rdi, 158
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2706,14 +2403,12 @@ isr_158:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_159:
    push rdi
    push rsi
    mov rdi, 159
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2723,14 +2418,12 @@ isr_159:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_160:
    push rdi
    push rsi
    mov rdi, 160
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2740,14 +2433,12 @@ isr_160:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_161:
    push rdi
    push rsi
    mov rdi, 161
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2757,14 +2448,12 @@ isr_161:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_162:
    push rdi
    push rsi
    mov rdi, 162
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2774,14 +2463,12 @@ isr_162:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_163:
    push rdi
    push rsi
    mov rdi, 163
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2791,14 +2478,12 @@ isr_163:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_164:
    push rdi
    push rsi
    mov rdi, 164
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2808,14 +2493,12 @@ isr_164:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_165:
    push rdi
    push rsi
    mov rdi, 165
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2825,14 +2508,12 @@ isr_165:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_166:
    push rdi
    push rsi
    mov rdi, 166
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2842,14 +2523,12 @@ isr_166:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_167:
    push rdi
    push rsi
    mov rdi, 167
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2859,14 +2538,12 @@ isr_167:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_168:
    push rdi
    push rsi
    mov rdi, 168
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2876,14 +2553,12 @@ isr_168:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_169:
    push rdi
    push rsi
    mov rdi, 169
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2893,14 +2568,12 @@ isr_169:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_170:
    push rdi
    push rsi
    mov rdi, 170
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2910,14 +2583,12 @@ isr_170:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_171:
    push rdi
    push rsi
    mov rdi, 171
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2927,14 +2598,12 @@ isr_171:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_172:
    push rdi
    push rsi
    mov rdi, 172
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2944,14 +2613,12 @@ isr_172:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_173:
    push rdi
    push rsi
    mov rdi, 173
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2961,14 +2628,12 @@ isr_173:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_174:
    push rdi
    push rsi
    mov rdi, 174
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2978,14 +2643,12 @@ isr_174:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_175:
    push rdi
    push rsi
    mov rdi, 175
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -2995,14 +2658,12 @@ isr_175:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_176:
    push rdi
    push rsi
    mov rdi, 176
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3012,14 +2673,12 @@ isr_176:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_177:
    push rdi
    push rsi
    mov rdi, 177
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3029,14 +2688,12 @@ isr_177:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_178:
    push rdi
    push rsi
    mov rdi, 178
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3046,14 +2703,12 @@ isr_178:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_179:
    push rdi
    push rsi
    mov rdi, 179
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3063,14 +2718,12 @@ isr_179:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_180:
    push rdi
    push rsi
    mov rdi, 180
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3080,14 +2733,12 @@ isr_180:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_181:
    push rdi
    push rsi
    mov rdi, 181
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3097,14 +2748,12 @@ isr_181:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_182:
    push rdi
    push rsi
    mov rdi, 182
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3114,14 +2763,12 @@ isr_182:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_183:
    push rdi
    push rsi
    mov rdi, 183
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3131,14 +2778,12 @@ isr_183:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_184:
    push rdi
    push rsi
    mov rdi, 184
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3148,14 +2793,12 @@ isr_184:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_185:
    push rdi
    push rsi
    mov rdi, 185
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3165,14 +2808,12 @@ isr_185:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_186:
    push rdi
    push rsi
    mov rdi, 186
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3182,14 +2823,12 @@ isr_186:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_187:
    push rdi
    push rsi
    mov rdi, 187
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3199,14 +2838,12 @@ isr_187:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_188:
    push rdi
    push rsi
    mov rdi, 188
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3216,14 +2853,12 @@ isr_188:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_189:
    push rdi
    push rsi
    mov rdi, 189
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3233,14 +2868,12 @@ isr_189:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_190:
    push rdi
    push rsi
    mov rdi, 190
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3250,14 +2883,12 @@ isr_190:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_191:
    push rdi
    push rsi
    mov rdi, 191
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3267,14 +2898,12 @@ isr_191:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_192:
    push rdi
    push rsi
    mov rdi, 192
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3284,14 +2913,12 @@ isr_192:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_193:
    push rdi
    push rsi
    mov rdi, 193
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3301,14 +2928,12 @@ isr_193:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_194:
    push rdi
    push rsi
    mov rdi, 194
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3318,14 +2943,12 @@ isr_194:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_195:
    push rdi
    push rsi
    mov rdi, 195
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3335,14 +2958,12 @@ isr_195:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_196:
    push rdi
    push rsi
    mov rdi, 196
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3352,14 +2973,12 @@ isr_196:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_197:
    push rdi
    push rsi
    mov rdi, 197
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3369,14 +2988,12 @@ isr_197:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_198:
    push rdi
    push rsi
    mov rdi, 198
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3386,14 +3003,12 @@ isr_198:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_199:
    push rdi
    push rsi
    mov rdi, 199
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3403,14 +3018,12 @@ isr_199:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_200:
    push rdi
    push rsi
    mov rdi, 200
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3420,14 +3033,12 @@ isr_200:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_201:
    push rdi
    push rsi
    mov rdi, 201
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3437,14 +3048,12 @@ isr_201:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_202:
    push rdi
    push rsi
    mov rdi, 202
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3454,14 +3063,12 @@ isr_202:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_203:
    push rdi
    push rsi
    mov rdi, 203
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3471,14 +3078,12 @@ isr_203:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_204:
    push rdi
    push rsi
    mov rdi, 204
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3488,14 +3093,12 @@ isr_204:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_205:
    push rdi
    push rsi
    mov rdi, 205
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3505,14 +3108,12 @@ isr_205:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_206:
    push rdi
    push rsi
    mov rdi, 206
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3522,14 +3123,12 @@ isr_206:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_207:
    push rdi
    push rsi
    mov rdi, 207
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3539,14 +3138,12 @@ isr_207:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_208:
    push rdi
    push rsi
    mov rdi, 208
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3556,14 +3153,12 @@ isr_208:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_209:
    push rdi
    push rsi
    mov rdi, 209
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3573,14 +3168,12 @@ isr_209:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_210:
    push rdi
    push rsi
    mov rdi, 210
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3590,14 +3183,12 @@ isr_210:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_211:
    push rdi
    push rsi
    mov rdi, 211
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3607,14 +3198,12 @@ isr_211:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_212:
    push rdi
    push rsi
    mov rdi, 212
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3624,14 +3213,12 @@ isr_212:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_213:
    push rdi
    push rsi
    mov rdi, 213
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3641,14 +3228,12 @@ isr_213:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_214:
    push rdi
    push rsi
    mov rdi, 214
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3658,14 +3243,12 @@ isr_214:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_215:
    push rdi
    push rsi
    mov rdi, 215
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3675,14 +3258,12 @@ isr_215:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_216:
    push rdi
    push rsi
    mov rdi, 216
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3692,14 +3273,12 @@ isr_216:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_217:
    push rdi
    push rsi
    mov rdi, 217
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3709,14 +3288,12 @@ isr_217:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_218:
    push rdi
    push rsi
    mov rdi, 218
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3726,14 +3303,12 @@ isr_218:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_219:
    push rdi
    push rsi
    mov rdi, 219
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3743,14 +3318,12 @@ isr_219:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_220:
    push rdi
    push rsi
    mov rdi, 220
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3760,14 +3333,12 @@ isr_220:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_221:
    push rdi
    push rsi
    mov rdi, 221
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3777,14 +3348,12 @@ isr_221:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_222:
    push rdi
    push rsi
    mov rdi, 222
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3794,14 +3363,12 @@ isr_222:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_223:
    push rdi
    push rsi
    mov rdi, 223
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3811,14 +3378,12 @@ isr_223:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_224:
    push rdi
    push rsi
    mov rdi, 224
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3828,14 +3393,12 @@ isr_224:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_225:
    push rdi
    push rsi
    mov rdi, 225
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3845,14 +3408,12 @@ isr_225:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_226:
    push rdi
    push rsi
    mov rdi, 226
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3862,14 +3423,12 @@ isr_226:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_227:
    push rdi
    push rsi
    mov rdi, 227
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3879,14 +3438,12 @@ isr_227:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_228:
    push rdi
    push rsi
    mov rdi, 228
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3896,14 +3453,12 @@ isr_228:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_229:
    push rdi
    push rsi
    mov rdi, 229
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3913,14 +3468,12 @@ isr_229:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_230:
    push rdi
    push rsi
    mov rdi, 230
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3930,14 +3483,12 @@ isr_230:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_231:
    push rdi
    push rsi
    mov rdi, 231
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3947,14 +3498,12 @@ isr_231:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_232:
    push rdi
    push rsi
    mov rdi, 232
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3964,14 +3513,12 @@ isr_232:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_233:
    push rdi
    push rsi
    mov rdi, 233
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3981,14 +3528,12 @@ isr_233:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_234:
    push rdi
    push rsi
    mov rdi, 234
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -3998,14 +3543,12 @@ isr_234:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_235:
    push rdi
    push rsi
    mov rdi, 235
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4015,14 +3558,12 @@ isr_235:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_236:
    push rdi
    push rsi
    mov rdi, 236
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4032,14 +3573,12 @@ isr_236:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_237:
    push rdi
    push rsi
    mov rdi, 237
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4049,14 +3588,12 @@ isr_237:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_238:
    push rdi
    push rsi
    mov rdi, 238
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4066,14 +3603,12 @@ isr_238:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_239:
    push rdi
    push rsi
    mov rdi, 239
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4083,14 +3618,12 @@ isr_239:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_240:
    push rdi
    push rsi
    mov rdi, 240
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4100,14 +3633,12 @@ isr_240:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_241:
    push rdi
    push rsi
    mov rdi, 241
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4117,14 +3648,12 @@ isr_241:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_242:
    push rdi
    push rsi
    mov rdi, 242
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4134,14 +3663,12 @@ isr_242:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_243:
    push rdi
    push rsi
    mov rdi, 243
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4151,14 +3678,12 @@ isr_243:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_244:
    push rdi
    push rsi
    mov rdi, 244
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4168,14 +3693,12 @@ isr_244:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_245:
    push rdi
    push rsi
    mov rdi, 245
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4185,14 +3708,12 @@ isr_245:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_246:
    push rdi
    push rsi
    mov rdi, 246
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4202,14 +3723,12 @@ isr_246:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_247:
    push rdi
    push rsi
    mov rdi, 247
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4219,14 +3738,12 @@ isr_247:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_248:
    push rdi
    push rsi
    mov rdi, 248
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4236,14 +3753,12 @@ isr_248:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_249:
    push rdi
    push rsi
    mov rdi, 249
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4253,14 +3768,12 @@ isr_249:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_250:
    push rdi
    push rsi
    mov rdi, 250
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4270,14 +3783,12 @@ isr_250:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_251:
    push rdi
    push rsi
    mov rdi, 251
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4287,14 +3798,12 @@ isr_251:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_252:
    push rdi
    push rsi
    mov rdi, 252
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4304,14 +3813,12 @@ isr_252:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_253:
    push rdi
    push rsi
    mov rdi, 253
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4321,14 +3828,12 @@ isr_253:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
 isr_254:
    push rdi
    push rsi
    mov rdi, 254
-   mov rsi, [rsp + 16]
    push rax
    push r10
    push r11
@@ -4338,6 +3843,261 @@ isr_254:
    pop rax
    pop rsi
    pop rdi
-   add rsp, 0
    iretq
 
+isr_locs:
+dq isr_0
+dq isr_1
+dq isr_2
+dq isr_3
+dq isr_4
+dq isr_5
+dq isr_6
+dq isr_7
+dq isr_8
+dq isr_9
+dq isr_10
+dq isr_11
+dq isr_12
+dq isr_13
+dq isr_14
+dq isr_15
+dq isr_16
+dq isr_17
+dq isr_18
+dq isr_19
+dq isr_20
+dq isr_21
+dq isr_22
+dq isr_23
+dq isr_24
+dq isr_25
+dq isr_26
+dq isr_27
+dq isr_28
+dq isr_29
+dq isr_30
+dq isr_31
+dq isr_32
+dq isr_33
+dq isr_34
+dq isr_35
+dq isr_36
+dq isr_37
+dq isr_38
+dq isr_39
+dq isr_40
+dq isr_41
+dq isr_42
+dq isr_43
+dq isr_44
+dq isr_45
+dq isr_46
+dq isr_47
+dq isr_48
+dq isr_49
+dq isr_50
+dq isr_51
+dq isr_52
+dq isr_53
+dq isr_54
+dq isr_55
+dq isr_56
+dq isr_57
+dq isr_58
+dq isr_59
+dq isr_60
+dq isr_61
+dq isr_62
+dq isr_63
+dq isr_64
+dq isr_65
+dq isr_66
+dq isr_67
+dq isr_68
+dq isr_69
+dq isr_70
+dq isr_71
+dq isr_72
+dq isr_73
+dq isr_74
+dq isr_75
+dq isr_76
+dq isr_77
+dq isr_78
+dq isr_79
+dq isr_80
+dq isr_81
+dq isr_82
+dq isr_83
+dq isr_84
+dq isr_85
+dq isr_86
+dq isr_87
+dq isr_88
+dq isr_89
+dq isr_90
+dq isr_91
+dq isr_92
+dq isr_93
+dq isr_94
+dq isr_95
+dq isr_96
+dq isr_97
+dq isr_98
+dq isr_99
+dq isr_100
+dq isr_101
+dq isr_102
+dq isr_103
+dq isr_104
+dq isr_105
+dq isr_106
+dq isr_107
+dq isr_108
+dq isr_109
+dq isr_110
+dq isr_111
+dq isr_112
+dq isr_113
+dq isr_114
+dq isr_115
+dq isr_116
+dq isr_117
+dq isr_118
+dq isr_119
+dq isr_120
+dq isr_121
+dq isr_122
+dq isr_123
+dq isr_124
+dq isr_125
+dq isr_126
+dq isr_127
+dq isr_128
+dq isr_129
+dq isr_130
+dq isr_131
+dq isr_132
+dq isr_133
+dq isr_134
+dq isr_135
+dq isr_136
+dq isr_137
+dq isr_138
+dq isr_139
+dq isr_140
+dq isr_141
+dq isr_142
+dq isr_143
+dq isr_144
+dq isr_145
+dq isr_146
+dq isr_147
+dq isr_148
+dq isr_149
+dq isr_150
+dq isr_151
+dq isr_152
+dq isr_153
+dq isr_154
+dq isr_155
+dq isr_156
+dq isr_157
+dq isr_158
+dq isr_159
+dq isr_160
+dq isr_161
+dq isr_162
+dq isr_163
+dq isr_164
+dq isr_165
+dq isr_166
+dq isr_167
+dq isr_168
+dq isr_169
+dq isr_170
+dq isr_171
+dq isr_172
+dq isr_173
+dq isr_174
+dq isr_175
+dq isr_176
+dq isr_177
+dq isr_178
+dq isr_179
+dq isr_180
+dq isr_181
+dq isr_182
+dq isr_183
+dq isr_184
+dq isr_185
+dq isr_186
+dq isr_187
+dq isr_188
+dq isr_189
+dq isr_190
+dq isr_191
+dq isr_192
+dq isr_193
+dq isr_194
+dq isr_195
+dq isr_196
+dq isr_197
+dq isr_198
+dq isr_199
+dq isr_200
+dq isr_201
+dq isr_202
+dq isr_203
+dq isr_204
+dq isr_205
+dq isr_206
+dq isr_207
+dq isr_208
+dq isr_209
+dq isr_210
+dq isr_211
+dq isr_212
+dq isr_213
+dq isr_214
+dq isr_215
+dq isr_216
+dq isr_217
+dq isr_218
+dq isr_219
+dq isr_220
+dq isr_221
+dq isr_222
+dq isr_223
+dq isr_224
+dq isr_225
+dq isr_226
+dq isr_227
+dq isr_228
+dq isr_229
+dq isr_230
+dq isr_231
+dq isr_232
+dq isr_233
+dq isr_234
+dq isr_235
+dq isr_236
+dq isr_237
+dq isr_238
+dq isr_239
+dq isr_240
+dq isr_241
+dq isr_242
+dq isr_243
+dq isr_244
+dq isr_245
+dq isr_246
+dq isr_247
+dq isr_248
+dq isr_249
+dq isr_250
+dq isr_251
+dq isr_252
+dq isr_253
+dq isr_254
