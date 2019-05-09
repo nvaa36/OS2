@@ -6,9 +6,4 @@ isr_%d:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end

@@ -2,6 +2,8 @@ global isr_locs
 
 extern isr_normal
 extern isr_errcode
+extern curr_proc
+extern next_proc
 
 section .text
 bits 64

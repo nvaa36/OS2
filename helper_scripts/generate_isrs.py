@@ -18,3 +18,7 @@ for i in range(255):
 output_file.write("isr_locs:\n")
 for i in range(255):
    output_file.write("dq isr_%d\n" % i)
+
+footer = open("isr_footer.txt", "r").read()
+output_file.write("\n")
+output_file.write(footer)

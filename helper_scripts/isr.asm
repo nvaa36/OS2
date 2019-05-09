@@ -2,6 +2,8 @@ global isr_locs
 
 extern isr_normal
 extern isr_errcode
+extern curr_proc
+extern next_proc
 
 section .text
 bits 64
@@ -14,12 +16,7 @@ isr_0:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_1:
    push rdi
@@ -29,12 +26,7 @@ isr_1:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_2:
    push rdi
@@ -44,12 +36,7 @@ isr_2:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_3:
    push rdi
@@ -59,12 +46,7 @@ isr_3:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_4:
    push rdi
@@ -74,12 +56,7 @@ isr_4:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_5:
    push rdi
@@ -89,12 +66,7 @@ isr_5:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_6:
    push rdi
@@ -104,12 +76,7 @@ isr_6:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_7:
    push rdi
@@ -119,12 +86,7 @@ isr_7:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_8:
    push rdi
@@ -151,12 +113,7 @@ isr_9:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_10:
    push rdi
@@ -251,12 +208,7 @@ isr_15:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_16:
    push rdi
@@ -266,12 +218,7 @@ isr_16:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_17:
    push rdi
@@ -298,12 +245,7 @@ isr_18:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_19:
    push rdi
@@ -313,12 +255,7 @@ isr_19:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_20:
    push rdi
@@ -328,12 +265,7 @@ isr_20:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_21:
    push rdi
@@ -343,12 +275,7 @@ isr_21:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_22:
    push rdi
@@ -358,12 +285,7 @@ isr_22:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_23:
    push rdi
@@ -373,12 +295,7 @@ isr_23:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_24:
    push rdi
@@ -388,12 +305,7 @@ isr_24:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_25:
    push rdi
@@ -403,12 +315,7 @@ isr_25:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_26:
    push rdi
@@ -418,12 +325,7 @@ isr_26:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_27:
    push rdi
@@ -433,12 +335,7 @@ isr_27:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_28:
    push rdi
@@ -448,12 +345,7 @@ isr_28:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_29:
    push rdi
@@ -463,12 +355,7 @@ isr_29:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_30:
    push rdi
@@ -478,12 +365,7 @@ isr_30:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_31:
    push rdi
@@ -493,12 +375,7 @@ isr_31:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_32:
    push rdi
@@ -508,12 +385,7 @@ isr_32:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_33:
    push rdi
@@ -523,12 +395,7 @@ isr_33:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_34:
    push rdi
@@ -538,12 +405,7 @@ isr_34:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_35:
    push rdi
@@ -553,12 +415,7 @@ isr_35:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_36:
    push rdi
@@ -568,12 +425,7 @@ isr_36:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_37:
    push rdi
@@ -583,12 +435,7 @@ isr_37:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_38:
    push rdi
@@ -598,12 +445,7 @@ isr_38:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_39:
    push rdi
@@ -613,12 +455,7 @@ isr_39:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_40:
    push rdi
@@ -628,12 +465,7 @@ isr_40:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_41:
    push rdi
@@ -643,12 +475,7 @@ isr_41:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_42:
    push rdi
@@ -658,12 +485,7 @@ isr_42:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_43:
    push rdi
@@ -673,12 +495,7 @@ isr_43:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_44:
    push rdi
@@ -688,12 +505,7 @@ isr_44:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_45:
    push rdi
@@ -703,12 +515,7 @@ isr_45:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_46:
    push rdi
@@ -718,12 +525,7 @@ isr_46:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_47:
    push rdi
@@ -733,12 +535,7 @@ isr_47:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_48:
    push rdi
@@ -748,12 +545,7 @@ isr_48:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_49:
    push rdi
@@ -763,12 +555,7 @@ isr_49:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_50:
    push rdi
@@ -778,12 +565,7 @@ isr_50:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_51:
    push rdi
@@ -793,12 +575,7 @@ isr_51:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_52:
    push rdi
@@ -808,12 +585,7 @@ isr_52:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_53:
    push rdi
@@ -823,12 +595,7 @@ isr_53:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_54:
    push rdi
@@ -838,12 +605,7 @@ isr_54:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_55:
    push rdi
@@ -853,12 +615,7 @@ isr_55:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_56:
    push rdi
@@ -868,12 +625,7 @@ isr_56:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_57:
    push rdi
@@ -883,12 +635,7 @@ isr_57:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_58:
    push rdi
@@ -898,12 +645,7 @@ isr_58:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_59:
    push rdi
@@ -913,12 +655,7 @@ isr_59:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_60:
    push rdi
@@ -928,12 +665,7 @@ isr_60:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_61:
    push rdi
@@ -943,12 +675,7 @@ isr_61:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_62:
    push rdi
@@ -958,12 +685,7 @@ isr_62:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_63:
    push rdi
@@ -973,12 +695,7 @@ isr_63:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_64:
    push rdi
@@ -988,12 +705,7 @@ isr_64:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_65:
    push rdi
@@ -1003,12 +715,7 @@ isr_65:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_66:
    push rdi
@@ -1018,12 +725,7 @@ isr_66:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_67:
    push rdi
@@ -1033,12 +735,7 @@ isr_67:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_68:
    push rdi
@@ -1048,12 +745,7 @@ isr_68:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_69:
    push rdi
@@ -1063,12 +755,7 @@ isr_69:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_70:
    push rdi
@@ -1078,12 +765,7 @@ isr_70:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_71:
    push rdi
@@ -1093,12 +775,7 @@ isr_71:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_72:
    push rdi
@@ -1108,12 +785,7 @@ isr_72:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_73:
    push rdi
@@ -1123,12 +795,7 @@ isr_73:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_74:
    push rdi
@@ -1138,12 +805,7 @@ isr_74:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_75:
    push rdi
@@ -1153,12 +815,7 @@ isr_75:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_76:
    push rdi
@@ -1168,12 +825,7 @@ isr_76:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_77:
    push rdi
@@ -1183,12 +835,7 @@ isr_77:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_78:
    push rdi
@@ -1198,12 +845,7 @@ isr_78:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_79:
    push rdi
@@ -1213,12 +855,7 @@ isr_79:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_80:
    push rdi
@@ -1228,12 +865,7 @@ isr_80:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_81:
    push rdi
@@ -1243,12 +875,7 @@ isr_81:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_82:
    push rdi
@@ -1258,12 +885,7 @@ isr_82:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_83:
    push rdi
@@ -1273,12 +895,7 @@ isr_83:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_84:
    push rdi
@@ -1288,12 +905,7 @@ isr_84:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_85:
    push rdi
@@ -1303,12 +915,7 @@ isr_85:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_86:
    push rdi
@@ -1318,12 +925,7 @@ isr_86:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_87:
    push rdi
@@ -1333,12 +935,7 @@ isr_87:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_88:
    push rdi
@@ -1348,12 +945,7 @@ isr_88:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_89:
    push rdi
@@ -1363,12 +955,7 @@ isr_89:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_90:
    push rdi
@@ -1378,12 +965,7 @@ isr_90:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_91:
    push rdi
@@ -1393,12 +975,7 @@ isr_91:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_92:
    push rdi
@@ -1408,12 +985,7 @@ isr_92:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_93:
    push rdi
@@ -1423,12 +995,7 @@ isr_93:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_94:
    push rdi
@@ -1438,12 +1005,7 @@ isr_94:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_95:
    push rdi
@@ -1453,12 +1015,7 @@ isr_95:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_96:
    push rdi
@@ -1468,12 +1025,7 @@ isr_96:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_97:
    push rdi
@@ -1483,12 +1035,7 @@ isr_97:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_98:
    push rdi
@@ -1498,12 +1045,7 @@ isr_98:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_99:
    push rdi
@@ -1513,12 +1055,7 @@ isr_99:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_100:
    push rdi
@@ -1528,12 +1065,7 @@ isr_100:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_101:
    push rdi
@@ -1543,12 +1075,7 @@ isr_101:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_102:
    push rdi
@@ -1558,12 +1085,7 @@ isr_102:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_103:
    push rdi
@@ -1573,12 +1095,7 @@ isr_103:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_104:
    push rdi
@@ -1588,12 +1105,7 @@ isr_104:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_105:
    push rdi
@@ -1603,12 +1115,7 @@ isr_105:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_106:
    push rdi
@@ -1618,12 +1125,7 @@ isr_106:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_107:
    push rdi
@@ -1633,12 +1135,7 @@ isr_107:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_108:
    push rdi
@@ -1648,12 +1145,7 @@ isr_108:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_109:
    push rdi
@@ -1663,12 +1155,7 @@ isr_109:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_110:
    push rdi
@@ -1678,12 +1165,7 @@ isr_110:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_111:
    push rdi
@@ -1693,12 +1175,7 @@ isr_111:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_112:
    push rdi
@@ -1708,12 +1185,7 @@ isr_112:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_113:
    push rdi
@@ -1723,12 +1195,7 @@ isr_113:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_114:
    push rdi
@@ -1738,12 +1205,7 @@ isr_114:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_115:
    push rdi
@@ -1753,12 +1215,7 @@ isr_115:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_116:
    push rdi
@@ -1768,12 +1225,7 @@ isr_116:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_117:
    push rdi
@@ -1783,12 +1235,7 @@ isr_117:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_118:
    push rdi
@@ -1798,12 +1245,7 @@ isr_118:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_119:
    push rdi
@@ -1813,12 +1255,7 @@ isr_119:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_120:
    push rdi
@@ -1828,12 +1265,7 @@ isr_120:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_121:
    push rdi
@@ -1843,12 +1275,7 @@ isr_121:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_122:
    push rdi
@@ -1858,12 +1285,7 @@ isr_122:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_123:
    push rdi
@@ -1873,12 +1295,7 @@ isr_123:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_124:
    push rdi
@@ -1888,12 +1305,7 @@ isr_124:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_125:
    push rdi
@@ -1903,12 +1315,7 @@ isr_125:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_126:
    push rdi
@@ -1918,12 +1325,7 @@ isr_126:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_127:
    push rdi
@@ -1933,12 +1335,7 @@ isr_127:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_128:
    push rdi
@@ -1948,12 +1345,7 @@ isr_128:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_129:
    push rdi
@@ -1963,12 +1355,7 @@ isr_129:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_130:
    push rdi
@@ -1978,12 +1365,7 @@ isr_130:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_131:
    push rdi
@@ -1993,12 +1375,7 @@ isr_131:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_132:
    push rdi
@@ -2008,12 +1385,7 @@ isr_132:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_133:
    push rdi
@@ -2023,12 +1395,7 @@ isr_133:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_134:
    push rdi
@@ -2038,12 +1405,7 @@ isr_134:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_135:
    push rdi
@@ -2053,12 +1415,7 @@ isr_135:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_136:
    push rdi
@@ -2068,12 +1425,7 @@ isr_136:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_137:
    push rdi
@@ -2083,12 +1435,7 @@ isr_137:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_138:
    push rdi
@@ -2098,12 +1445,7 @@ isr_138:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_139:
    push rdi
@@ -2113,12 +1455,7 @@ isr_139:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_140:
    push rdi
@@ -2128,12 +1465,7 @@ isr_140:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_141:
    push rdi
@@ -2143,12 +1475,7 @@ isr_141:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_142:
    push rdi
@@ -2158,12 +1485,7 @@ isr_142:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_143:
    push rdi
@@ -2173,12 +1495,7 @@ isr_143:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_144:
    push rdi
@@ -2188,12 +1505,7 @@ isr_144:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_145:
    push rdi
@@ -2203,12 +1515,7 @@ isr_145:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_146:
    push rdi
@@ -2218,12 +1525,7 @@ isr_146:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_147:
    push rdi
@@ -2233,12 +1535,7 @@ isr_147:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_148:
    push rdi
@@ -2248,12 +1545,7 @@ isr_148:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_149:
    push rdi
@@ -2263,12 +1555,7 @@ isr_149:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_150:
    push rdi
@@ -2278,12 +1565,7 @@ isr_150:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_151:
    push rdi
@@ -2293,12 +1575,7 @@ isr_151:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_152:
    push rdi
@@ -2308,12 +1585,7 @@ isr_152:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_153:
    push rdi
@@ -2323,12 +1595,7 @@ isr_153:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_154:
    push rdi
@@ -2338,12 +1605,7 @@ isr_154:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_155:
    push rdi
@@ -2353,12 +1615,7 @@ isr_155:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_156:
    push rdi
@@ -2368,12 +1625,7 @@ isr_156:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_157:
    push rdi
@@ -2383,12 +1635,7 @@ isr_157:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_158:
    push rdi
@@ -2398,12 +1645,7 @@ isr_158:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_159:
    push rdi
@@ -2413,12 +1655,7 @@ isr_159:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_160:
    push rdi
@@ -2428,12 +1665,7 @@ isr_160:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_161:
    push rdi
@@ -2443,12 +1675,7 @@ isr_161:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_162:
    push rdi
@@ -2458,12 +1685,7 @@ isr_162:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_163:
    push rdi
@@ -2473,12 +1695,7 @@ isr_163:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_164:
    push rdi
@@ -2488,12 +1705,7 @@ isr_164:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_165:
    push rdi
@@ -2503,12 +1715,7 @@ isr_165:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_166:
    push rdi
@@ -2518,12 +1725,7 @@ isr_166:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_167:
    push rdi
@@ -2533,12 +1735,7 @@ isr_167:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_168:
    push rdi
@@ -2548,12 +1745,7 @@ isr_168:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_169:
    push rdi
@@ -2563,12 +1755,7 @@ isr_169:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_170:
    push rdi
@@ -2578,12 +1765,7 @@ isr_170:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_171:
    push rdi
@@ -2593,12 +1775,7 @@ isr_171:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_172:
    push rdi
@@ -2608,12 +1785,7 @@ isr_172:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_173:
    push rdi
@@ -2623,12 +1795,7 @@ isr_173:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_174:
    push rdi
@@ -2638,12 +1805,7 @@ isr_174:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_175:
    push rdi
@@ -2653,12 +1815,7 @@ isr_175:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_176:
    push rdi
@@ -2668,12 +1825,7 @@ isr_176:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_177:
    push rdi
@@ -2683,12 +1835,7 @@ isr_177:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_178:
    push rdi
@@ -2698,12 +1845,7 @@ isr_178:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_179:
    push rdi
@@ -2713,12 +1855,7 @@ isr_179:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_180:
    push rdi
@@ -2728,12 +1865,7 @@ isr_180:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_181:
    push rdi
@@ -2743,12 +1875,7 @@ isr_181:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_182:
    push rdi
@@ -2758,12 +1885,7 @@ isr_182:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_183:
    push rdi
@@ -2773,12 +1895,7 @@ isr_183:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_184:
    push rdi
@@ -2788,12 +1905,7 @@ isr_184:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_185:
    push rdi
@@ -2803,12 +1915,7 @@ isr_185:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_186:
    push rdi
@@ -2818,12 +1925,7 @@ isr_186:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_187:
    push rdi
@@ -2833,12 +1935,7 @@ isr_187:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_188:
    push rdi
@@ -2848,12 +1945,7 @@ isr_188:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_189:
    push rdi
@@ -2863,12 +1955,7 @@ isr_189:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_190:
    push rdi
@@ -2878,12 +1965,7 @@ isr_190:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_191:
    push rdi
@@ -2893,12 +1975,7 @@ isr_191:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_192:
    push rdi
@@ -2908,12 +1985,7 @@ isr_192:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_193:
    push rdi
@@ -2923,12 +1995,7 @@ isr_193:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_194:
    push rdi
@@ -2938,12 +2005,7 @@ isr_194:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_195:
    push rdi
@@ -2953,12 +2015,7 @@ isr_195:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_196:
    push rdi
@@ -2968,12 +2025,7 @@ isr_196:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_197:
    push rdi
@@ -2983,12 +2035,7 @@ isr_197:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_198:
    push rdi
@@ -2998,12 +2045,7 @@ isr_198:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_199:
    push rdi
@@ -3013,12 +2055,7 @@ isr_199:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_200:
    push rdi
@@ -3028,12 +2065,7 @@ isr_200:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_201:
    push rdi
@@ -3043,12 +2075,7 @@ isr_201:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_202:
    push rdi
@@ -3058,12 +2085,7 @@ isr_202:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_203:
    push rdi
@@ -3073,12 +2095,7 @@ isr_203:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_204:
    push rdi
@@ -3088,12 +2105,7 @@ isr_204:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_205:
    push rdi
@@ -3103,12 +2115,7 @@ isr_205:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_206:
    push rdi
@@ -3118,12 +2125,7 @@ isr_206:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_207:
    push rdi
@@ -3133,12 +2135,7 @@ isr_207:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_208:
    push rdi
@@ -3148,12 +2145,7 @@ isr_208:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_209:
    push rdi
@@ -3163,12 +2155,7 @@ isr_209:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_210:
    push rdi
@@ -3178,12 +2165,7 @@ isr_210:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_211:
    push rdi
@@ -3193,12 +2175,7 @@ isr_211:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_212:
    push rdi
@@ -3208,12 +2185,7 @@ isr_212:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_213:
    push rdi
@@ -3223,12 +2195,7 @@ isr_213:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_214:
    push rdi
@@ -3238,12 +2205,7 @@ isr_214:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_215:
    push rdi
@@ -3253,12 +2215,7 @@ isr_215:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_216:
    push rdi
@@ -3268,12 +2225,7 @@ isr_216:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_217:
    push rdi
@@ -3283,12 +2235,7 @@ isr_217:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_218:
    push rdi
@@ -3298,12 +2245,7 @@ isr_218:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_219:
    push rdi
@@ -3313,12 +2255,7 @@ isr_219:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_220:
    push rdi
@@ -3328,12 +2265,7 @@ isr_220:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_221:
    push rdi
@@ -3343,12 +2275,7 @@ isr_221:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_222:
    push rdi
@@ -3358,12 +2285,7 @@ isr_222:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_223:
    push rdi
@@ -3373,12 +2295,7 @@ isr_223:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_224:
    push rdi
@@ -3388,12 +2305,7 @@ isr_224:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_225:
    push rdi
@@ -3403,12 +2315,7 @@ isr_225:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_226:
    push rdi
@@ -3418,12 +2325,7 @@ isr_226:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_227:
    push rdi
@@ -3433,12 +2335,7 @@ isr_227:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_228:
    push rdi
@@ -3448,12 +2345,7 @@ isr_228:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_229:
    push rdi
@@ -3463,12 +2355,7 @@ isr_229:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_230:
    push rdi
@@ -3478,12 +2365,7 @@ isr_230:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_231:
    push rdi
@@ -3493,12 +2375,7 @@ isr_231:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_232:
    push rdi
@@ -3508,12 +2385,7 @@ isr_232:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_233:
    push rdi
@@ -3523,12 +2395,7 @@ isr_233:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_234:
    push rdi
@@ -3538,12 +2405,7 @@ isr_234:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_235:
    push rdi
@@ -3553,12 +2415,7 @@ isr_235:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_236:
    push rdi
@@ -3568,12 +2425,7 @@ isr_236:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_237:
    push rdi
@@ -3583,12 +2435,7 @@ isr_237:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_238:
    push rdi
@@ -3598,12 +2445,7 @@ isr_238:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_239:
    push rdi
@@ -3613,12 +2455,7 @@ isr_239:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_240:
    push rdi
@@ -3628,12 +2465,7 @@ isr_240:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_241:
    push rdi
@@ -3643,12 +2475,7 @@ isr_241:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_242:
    push rdi
@@ -3658,12 +2485,7 @@ isr_242:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_243:
    push rdi
@@ -3673,12 +2495,7 @@ isr_243:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_244:
    push rdi
@@ -3688,12 +2505,7 @@ isr_244:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_245:
    push rdi
@@ -3703,12 +2515,7 @@ isr_245:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_246:
    push rdi
@@ -3718,12 +2525,7 @@ isr_246:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_247:
    push rdi
@@ -3733,12 +2535,7 @@ isr_247:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_248:
    push rdi
@@ -3748,12 +2545,7 @@ isr_248:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_249:
    push rdi
@@ -3763,12 +2555,7 @@ isr_249:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_250:
    push rdi
@@ -3778,12 +2565,7 @@ isr_250:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_251:
    push rdi
@@ -3793,12 +2575,7 @@ isr_251:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_252:
    push rdi
@@ -3808,12 +2585,7 @@ isr_252:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_253:
    push rdi
@@ -3823,12 +2595,7 @@ isr_253:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_254:
    push rdi
@@ -3838,12 +2605,7 @@ isr_254:
    push r10
    push r11
    call isr_normal
-   pop r11
-   pop r10
-   pop rax
-   pop rsi
-   pop rdi
-   iretq
+   jmp isr_end
 
 isr_locs:
 dq isr_0
@@ -4101,3 +2863,63 @@ dq isr_251
 dq isr_252
 dq isr_253
 dq isr_254
+
+
+isr_end:
+   mov [curr_proc], rdi
+   mov [next_proc], rsi
+   cmp rdi, rsi
+   je return
+
+   ; Save current into curr_proc
+   mov rax, [rdi]
+   mov rbx, [rdi + 8]
+   mov rcx, [rdi + 16]
+   mov rdx, [rdi + 24]
+   mov rsp, [rdi + 32]
+   mov r8, [rdi + 40]
+   mov r9, [rdi + 48]
+   mov r10, [rdi + 56]
+   mov r11, [rdi + 64]
+   mov r12, [rdi + 72]
+   mov r13, [rdi + 80]
+   mov r14, [rdi + 88]
+   mov r15, [rdi + 96]
+   mov cs, [rdi + 104]
+   mov ss, [rdi + 112]
+   mov ds, [rdi + 120]
+   mov es, [rdi + 128]
+   mov fs, [rdi + 136]
+   mov gs, [rdi + 144]
+
+   ; Set curr_proc to next proc
+   mov rsi, [curr_proc]
+
+   ; Restore from next proc
+   mov [rsi], rax
+   mov [rsi + 8], rbx
+   mov [rsi + 16], rcx
+   mov [rsi + 24], rdx
+   mov [rsi + 40], r8
+   mov [rsi + 48], r9
+   mov [rsi + 56], r10
+   mov [rsi + 64], r11
+   mov [rsi + 72], r12
+   mov [rsi + 80], r13
+   mov [rsi + 88], r14
+   mov [rsi + 96], r15
+   mov [rsi + 104], cs
+   mov [rsi + 112], ss
+   mov [rsi + 120], ds
+   mov [rsi + 128], es
+   mov [rsi + 136], fs
+   mov [rsi + 144], gs
+   mov [rsi + 32], rsp
+
+return:
+   pop r11
+   pop r10
+   pop rax
+   pop rsi
+   pop rdi
+   iretq
