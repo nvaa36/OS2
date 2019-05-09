@@ -37,9 +37,8 @@ void setup_idt() {
       }
       idt[i].ign = 0;
       /* Make all types interrupts for now */
-      idt[i].type = 0xE;
+      idt[i].type = INT_TYPE;
       idt[i].zero = 0;
-      /* TODO: Don't know what to set this to */
       idt[i].dpl = 0;
       /* Set all of them to present, print an error message if unimplemented */
       idt[i].p = 1;
@@ -62,6 +61,7 @@ void setup_isrs() {
    irq_table[PF].handler = pf_isr;
    irq_table[GP].handler = gp_isr;
    irq_table[SYS_CALL].handler = sc_isr;
+   idt[SYS_CALL].type = TRAP_TYPE;
 }
 
 /* Code from OSDevWiki */
@@ -184,4 +184,8 @@ uint16_t interrupts_enabled() {
    asm("pop %0" : "=a"(flags));
    int_en = flags & IF_MASK;
    return int_en;
+}
+
+void wait_for_interrupt() {
+   asm("hlt");
 }

@@ -7,6 +7,7 @@
 #include "c/kmalloc.h"
 #include "c/page_frame_allocator.h"
 #include "c/printk.h"
+#include "c/processes.h"
 #include "c/serial.h"
 #include "c/setup_keyboard.h"
 #include "c/stdio.h"

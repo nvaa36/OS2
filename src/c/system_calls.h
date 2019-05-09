@@ -2,11 +2,12 @@
 #define SYSTEM_CALLS_H
 
 #include "printk.h"
+#include "processes.h"
 
 #define TRAP 0x80
 
 #define YIELD 0x01
-#define EXIT 0x02
+#define KEXIT 0x02
 #define TEST 36
 
 #define NUM_SYS_CALLS 2
@@ -18,8 +19,8 @@ void make_system_call(int sys_call_num, void *params);
 
 void system_call(int sys_call_num);
 
-void test();
 void yield();
-void exit();
+void kexit();
+void test();
 
 #endif

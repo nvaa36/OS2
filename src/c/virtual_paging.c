@@ -12,6 +12,10 @@ void set_page_kern_frame(void *address) {
    set_page_frame(kern_pt4, address);
 }
 
+void *MMU_alloc_kern_stack() {
+   return MMU_alloc_kern_pages(STACK_NUM_PAGES);
+}
+
 // Allocates the virtual space and creates page table entries, but doesn't
 // allocate a frame.
 void *MMU_alloc_kern_page() {

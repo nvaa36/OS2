@@ -37,6 +37,9 @@
 #define OFFSET1 0x20
 #define OFFSET2 0x28
 
+#define INT_TYPE 0xE
+#define TRAP_TYPE 0xF
+
 #define KB_IRQ 1
 #define SER_IRQ 4
 
@@ -110,5 +113,6 @@ uint16_t pic_get_isr(void);
 void enable_interrupts();
 void disable_interrupts();
 uint16_t interrupts_enabled();
+void wait_for_interrupt();
 
 #endif
