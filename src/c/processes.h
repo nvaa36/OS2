@@ -5,6 +5,9 @@
 #include "kmalloc.h"
 #include "system_calls.h"
 
+#define DEFAULT_SS 0
+#define DEFAULT_CS 8
+
 typedef struct Process{
    uint64_t rax;
    uint64_t rbx;
@@ -19,8 +22,6 @@ typedef struct Process{
    uint64_t r13;
    uint64_t r14;
    uint64_t r15;
-   uint64_t cs;
-   uint64_t ss;
    uint64_t ds;
    uint64_t es;
    uint64_t fs;
@@ -33,6 +34,10 @@ typedef struct Process{
 typedef struct {
    uint64_t r11;
    uint64_t r10;
+   uint64_t r9;
+   uint64_t r8;
+   uint64_t rcx;
+   uint64_t rdx;
    uint64_t rax;
    uint64_t rsi;
    uint64_t rdi;
@@ -45,11 +50,12 @@ typedef struct {
    uint64_t entry_arg;
 } __attribute__ ((packed)) start_stack;
 
-extern process *curr_proc;
-extern process *next_proc;
-extern process kern_proc;
-
 typedef void (*kproc_t)(void*);
+
+process kern_proc;
+process *curr_proc, *next_proc;
+
+void setup_multiprocessing();
 
 void PROC_run(void);
 void PROC_reschedule();

@@ -2,6 +2,10 @@ isr_%d:
    push rdi
    push rsi
    mov rdi, %d
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11

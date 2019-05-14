@@ -12,6 +12,10 @@ isr_0:
    push rdi
    push rsi
    mov rdi, 0
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -22,6 +26,10 @@ isr_1:
    push rdi
    push rsi
    mov rdi, 1
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -32,6 +40,10 @@ isr_2:
    push rdi
    push rsi
    mov rdi, 2
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -42,6 +54,10 @@ isr_3:
    push rdi
    push rsi
    mov rdi, 3
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -52,6 +68,10 @@ isr_4:
    push rdi
    push rsi
    mov rdi, 4
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -62,6 +82,10 @@ isr_5:
    push rdi
    push rsi
    mov rdi, 5
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -72,6 +96,10 @@ isr_6:
    push rdi
    push rsi
    mov rdi, 6
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -82,6 +110,10 @@ isr_7:
    push rdi
    push rsi
    mov rdi, 7
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -93,6 +125,10 @@ isr_8:
    push rsi
    mov rdi, 8
    mov rsi, [rsp + 16]
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -100,6 +136,10 @@ isr_8:
    pop r11
    pop r10
    pop rax
+   pop r9
+   pop r8
+   pop rcx
+   pop rdx
    pop rsi
    pop rdi
    add rsp, 8
@@ -109,6 +149,10 @@ isr_9:
    push rdi
    push rsi
    mov rdi, 9
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -120,6 +164,10 @@ isr_10:
    push rsi
    mov rdi, 10
    mov rsi, [rsp + 16]
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -127,6 +175,10 @@ isr_10:
    pop r11
    pop r10
    pop rax
+   pop r9
+   pop r8
+   pop rcx
+   pop rdx
    pop rsi
    pop rdi
    add rsp, 8
@@ -137,6 +189,10 @@ isr_11:
    push rsi
    mov rdi, 11
    mov rsi, [rsp + 16]
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -144,6 +200,10 @@ isr_11:
    pop r11
    pop r10
    pop rax
+   pop r9
+   pop r8
+   pop rcx
+   pop rdx
    pop rsi
    pop rdi
    add rsp, 8
@@ -154,6 +214,10 @@ isr_12:
    push rsi
    mov rdi, 12
    mov rsi, [rsp + 16]
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -161,6 +225,10 @@ isr_12:
    pop r11
    pop r10
    pop rax
+   pop r9
+   pop r8
+   pop rcx
+   pop rdx
    pop rsi
    pop rdi
    add rsp, 8
@@ -171,6 +239,10 @@ isr_13:
    push rsi
    mov rdi, 13
    mov rsi, [rsp + 16]
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -178,6 +250,10 @@ isr_13:
    pop r11
    pop r10
    pop rax
+   pop r9
+   pop r8
+   pop rcx
+   pop rdx
    pop rsi
    pop rdi
    add rsp, 8
@@ -188,6 +264,10 @@ isr_14:
    push rsi
    mov rdi, 14
    mov rsi, [rsp + 16]
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -195,6 +275,10 @@ isr_14:
    pop r11
    pop r10
    pop rax
+   pop r9
+   pop r8
+   pop rcx
+   pop rdx
    pop rsi
    pop rdi
    add rsp, 8
@@ -204,6 +288,10 @@ isr_15:
    push rdi
    push rsi
    mov rdi, 15
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -214,6 +302,10 @@ isr_16:
    push rdi
    push rsi
    mov rdi, 16
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -225,6 +317,10 @@ isr_17:
    push rsi
    mov rdi, 17
    mov rsi, [rsp + 16]
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -232,6 +328,10 @@ isr_17:
    pop r11
    pop r10
    pop rax
+   pop r9
+   pop r8
+   pop rcx
+   pop rdx
    pop rsi
    pop rdi
    add rsp, 8
@@ -241,6 +341,10 @@ isr_18:
    push rdi
    push rsi
    mov rdi, 18
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -251,6 +355,10 @@ isr_19:
    push rdi
    push rsi
    mov rdi, 19
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -261,6 +369,10 @@ isr_20:
    push rdi
    push rsi
    mov rdi, 20
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -271,6 +383,10 @@ isr_21:
    push rdi
    push rsi
    mov rdi, 21
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -281,6 +397,10 @@ isr_22:
    push rdi
    push rsi
    mov rdi, 22
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -291,6 +411,10 @@ isr_23:
    push rdi
    push rsi
    mov rdi, 23
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -301,6 +425,10 @@ isr_24:
    push rdi
    push rsi
    mov rdi, 24
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -311,6 +439,10 @@ isr_25:
    push rdi
    push rsi
    mov rdi, 25
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -321,6 +453,10 @@ isr_26:
    push rdi
    push rsi
    mov rdi, 26
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -331,6 +467,10 @@ isr_27:
    push rdi
    push rsi
    mov rdi, 27
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -341,6 +481,10 @@ isr_28:
    push rdi
    push rsi
    mov rdi, 28
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -351,6 +495,10 @@ isr_29:
    push rdi
    push rsi
    mov rdi, 29
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -361,6 +509,10 @@ isr_30:
    push rdi
    push rsi
    mov rdi, 30
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -371,6 +523,10 @@ isr_31:
    push rdi
    push rsi
    mov rdi, 31
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -381,6 +537,10 @@ isr_32:
    push rdi
    push rsi
    mov rdi, 32
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -391,6 +551,10 @@ isr_33:
    push rdi
    push rsi
    mov rdi, 33
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -401,6 +565,10 @@ isr_34:
    push rdi
    push rsi
    mov rdi, 34
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -411,6 +579,10 @@ isr_35:
    push rdi
    push rsi
    mov rdi, 35
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -421,6 +593,10 @@ isr_36:
    push rdi
    push rsi
    mov rdi, 36
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -431,6 +607,10 @@ isr_37:
    push rdi
    push rsi
    mov rdi, 37
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -441,6 +621,10 @@ isr_38:
    push rdi
    push rsi
    mov rdi, 38
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -451,6 +635,10 @@ isr_39:
    push rdi
    push rsi
    mov rdi, 39
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -461,6 +649,10 @@ isr_40:
    push rdi
    push rsi
    mov rdi, 40
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -471,6 +663,10 @@ isr_41:
    push rdi
    push rsi
    mov rdi, 41
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -481,6 +677,10 @@ isr_42:
    push rdi
    push rsi
    mov rdi, 42
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -491,6 +691,10 @@ isr_43:
    push rdi
    push rsi
    mov rdi, 43
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -501,6 +705,10 @@ isr_44:
    push rdi
    push rsi
    mov rdi, 44
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -511,6 +719,10 @@ isr_45:
    push rdi
    push rsi
    mov rdi, 45
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -521,6 +733,10 @@ isr_46:
    push rdi
    push rsi
    mov rdi, 46
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -531,6 +747,10 @@ isr_47:
    push rdi
    push rsi
    mov rdi, 47
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -541,6 +761,10 @@ isr_48:
    push rdi
    push rsi
    mov rdi, 48
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -551,6 +775,10 @@ isr_49:
    push rdi
    push rsi
    mov rdi, 49
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -561,6 +789,10 @@ isr_50:
    push rdi
    push rsi
    mov rdi, 50
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -571,6 +803,10 @@ isr_51:
    push rdi
    push rsi
    mov rdi, 51
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -581,6 +817,10 @@ isr_52:
    push rdi
    push rsi
    mov rdi, 52
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -591,6 +831,10 @@ isr_53:
    push rdi
    push rsi
    mov rdi, 53
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -601,6 +845,10 @@ isr_54:
    push rdi
    push rsi
    mov rdi, 54
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -611,6 +859,10 @@ isr_55:
    push rdi
    push rsi
    mov rdi, 55
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -621,6 +873,10 @@ isr_56:
    push rdi
    push rsi
    mov rdi, 56
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -631,6 +887,10 @@ isr_57:
    push rdi
    push rsi
    mov rdi, 57
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -641,6 +901,10 @@ isr_58:
    push rdi
    push rsi
    mov rdi, 58
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -651,6 +915,10 @@ isr_59:
    push rdi
    push rsi
    mov rdi, 59
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -661,6 +929,10 @@ isr_60:
    push rdi
    push rsi
    mov rdi, 60
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -671,6 +943,10 @@ isr_61:
    push rdi
    push rsi
    mov rdi, 61
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -681,6 +957,10 @@ isr_62:
    push rdi
    push rsi
    mov rdi, 62
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -691,6 +971,10 @@ isr_63:
    push rdi
    push rsi
    mov rdi, 63
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -701,6 +985,10 @@ isr_64:
    push rdi
    push rsi
    mov rdi, 64
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -711,6 +999,10 @@ isr_65:
    push rdi
    push rsi
    mov rdi, 65
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -721,6 +1013,10 @@ isr_66:
    push rdi
    push rsi
    mov rdi, 66
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -731,6 +1027,10 @@ isr_67:
    push rdi
    push rsi
    mov rdi, 67
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -741,6 +1041,10 @@ isr_68:
    push rdi
    push rsi
    mov rdi, 68
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -751,6 +1055,10 @@ isr_69:
    push rdi
    push rsi
    mov rdi, 69
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -761,6 +1069,10 @@ isr_70:
    push rdi
    push rsi
    mov rdi, 70
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -771,6 +1083,10 @@ isr_71:
    push rdi
    push rsi
    mov rdi, 71
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -781,6 +1097,10 @@ isr_72:
    push rdi
    push rsi
    mov rdi, 72
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -791,6 +1111,10 @@ isr_73:
    push rdi
    push rsi
    mov rdi, 73
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -801,6 +1125,10 @@ isr_74:
    push rdi
    push rsi
    mov rdi, 74
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -811,6 +1139,10 @@ isr_75:
    push rdi
    push rsi
    mov rdi, 75
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -821,6 +1153,10 @@ isr_76:
    push rdi
    push rsi
    mov rdi, 76
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -831,6 +1167,10 @@ isr_77:
    push rdi
    push rsi
    mov rdi, 77
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -841,6 +1181,10 @@ isr_78:
    push rdi
    push rsi
    mov rdi, 78
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -851,6 +1195,10 @@ isr_79:
    push rdi
    push rsi
    mov rdi, 79
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -861,6 +1209,10 @@ isr_80:
    push rdi
    push rsi
    mov rdi, 80
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -871,6 +1223,10 @@ isr_81:
    push rdi
    push rsi
    mov rdi, 81
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -881,6 +1237,10 @@ isr_82:
    push rdi
    push rsi
    mov rdi, 82
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -891,6 +1251,10 @@ isr_83:
    push rdi
    push rsi
    mov rdi, 83
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -901,6 +1265,10 @@ isr_84:
    push rdi
    push rsi
    mov rdi, 84
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -911,6 +1279,10 @@ isr_85:
    push rdi
    push rsi
    mov rdi, 85
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -921,6 +1293,10 @@ isr_86:
    push rdi
    push rsi
    mov rdi, 86
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -931,6 +1307,10 @@ isr_87:
    push rdi
    push rsi
    mov rdi, 87
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -941,6 +1321,10 @@ isr_88:
    push rdi
    push rsi
    mov rdi, 88
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -951,6 +1335,10 @@ isr_89:
    push rdi
    push rsi
    mov rdi, 89
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -961,6 +1349,10 @@ isr_90:
    push rdi
    push rsi
    mov rdi, 90
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -971,6 +1363,10 @@ isr_91:
    push rdi
    push rsi
    mov rdi, 91
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -981,6 +1377,10 @@ isr_92:
    push rdi
    push rsi
    mov rdi, 92
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -991,6 +1391,10 @@ isr_93:
    push rdi
    push rsi
    mov rdi, 93
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1001,6 +1405,10 @@ isr_94:
    push rdi
    push rsi
    mov rdi, 94
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1011,6 +1419,10 @@ isr_95:
    push rdi
    push rsi
    mov rdi, 95
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1021,6 +1433,10 @@ isr_96:
    push rdi
    push rsi
    mov rdi, 96
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1031,6 +1447,10 @@ isr_97:
    push rdi
    push rsi
    mov rdi, 97
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1041,6 +1461,10 @@ isr_98:
    push rdi
    push rsi
    mov rdi, 98
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1051,6 +1475,10 @@ isr_99:
    push rdi
    push rsi
    mov rdi, 99
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1061,6 +1489,10 @@ isr_100:
    push rdi
    push rsi
    mov rdi, 100
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1071,6 +1503,10 @@ isr_101:
    push rdi
    push rsi
    mov rdi, 101
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1081,6 +1517,10 @@ isr_102:
    push rdi
    push rsi
    mov rdi, 102
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1091,6 +1531,10 @@ isr_103:
    push rdi
    push rsi
    mov rdi, 103
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1101,6 +1545,10 @@ isr_104:
    push rdi
    push rsi
    mov rdi, 104
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1111,6 +1559,10 @@ isr_105:
    push rdi
    push rsi
    mov rdi, 105
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1121,6 +1573,10 @@ isr_106:
    push rdi
    push rsi
    mov rdi, 106
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1131,6 +1587,10 @@ isr_107:
    push rdi
    push rsi
    mov rdi, 107
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1141,6 +1601,10 @@ isr_108:
    push rdi
    push rsi
    mov rdi, 108
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1151,6 +1615,10 @@ isr_109:
    push rdi
    push rsi
    mov rdi, 109
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1161,6 +1629,10 @@ isr_110:
    push rdi
    push rsi
    mov rdi, 110
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1171,6 +1643,10 @@ isr_111:
    push rdi
    push rsi
    mov rdi, 111
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1181,6 +1657,10 @@ isr_112:
    push rdi
    push rsi
    mov rdi, 112
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1191,6 +1671,10 @@ isr_113:
    push rdi
    push rsi
    mov rdi, 113
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1201,6 +1685,10 @@ isr_114:
    push rdi
    push rsi
    mov rdi, 114
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1211,6 +1699,10 @@ isr_115:
    push rdi
    push rsi
    mov rdi, 115
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1221,6 +1713,10 @@ isr_116:
    push rdi
    push rsi
    mov rdi, 116
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1231,6 +1727,10 @@ isr_117:
    push rdi
    push rsi
    mov rdi, 117
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1241,6 +1741,10 @@ isr_118:
    push rdi
    push rsi
    mov rdi, 118
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1251,6 +1755,10 @@ isr_119:
    push rdi
    push rsi
    mov rdi, 119
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1261,6 +1769,10 @@ isr_120:
    push rdi
    push rsi
    mov rdi, 120
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1271,6 +1783,10 @@ isr_121:
    push rdi
    push rsi
    mov rdi, 121
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1281,6 +1797,10 @@ isr_122:
    push rdi
    push rsi
    mov rdi, 122
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1291,6 +1811,10 @@ isr_123:
    push rdi
    push rsi
    mov rdi, 123
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1301,6 +1825,10 @@ isr_124:
    push rdi
    push rsi
    mov rdi, 124
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1311,6 +1839,10 @@ isr_125:
    push rdi
    push rsi
    mov rdi, 125
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1321,6 +1853,10 @@ isr_126:
    push rdi
    push rsi
    mov rdi, 126
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1331,6 +1867,10 @@ isr_127:
    push rdi
    push rsi
    mov rdi, 127
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1341,6 +1881,10 @@ isr_128:
    push rdi
    push rsi
    mov rdi, 128
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1351,6 +1895,10 @@ isr_129:
    push rdi
    push rsi
    mov rdi, 129
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1361,6 +1909,10 @@ isr_130:
    push rdi
    push rsi
    mov rdi, 130
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1371,6 +1923,10 @@ isr_131:
    push rdi
    push rsi
    mov rdi, 131
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1381,6 +1937,10 @@ isr_132:
    push rdi
    push rsi
    mov rdi, 132
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1391,6 +1951,10 @@ isr_133:
    push rdi
    push rsi
    mov rdi, 133
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1401,6 +1965,10 @@ isr_134:
    push rdi
    push rsi
    mov rdi, 134
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1411,6 +1979,10 @@ isr_135:
    push rdi
    push rsi
    mov rdi, 135
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1421,6 +1993,10 @@ isr_136:
    push rdi
    push rsi
    mov rdi, 136
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1431,6 +2007,10 @@ isr_137:
    push rdi
    push rsi
    mov rdi, 137
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1441,6 +2021,10 @@ isr_138:
    push rdi
    push rsi
    mov rdi, 138
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1451,6 +2035,10 @@ isr_139:
    push rdi
    push rsi
    mov rdi, 139
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1461,6 +2049,10 @@ isr_140:
    push rdi
    push rsi
    mov rdi, 140
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1471,6 +2063,10 @@ isr_141:
    push rdi
    push rsi
    mov rdi, 141
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1481,6 +2077,10 @@ isr_142:
    push rdi
    push rsi
    mov rdi, 142
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1491,6 +2091,10 @@ isr_143:
    push rdi
    push rsi
    mov rdi, 143
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1501,6 +2105,10 @@ isr_144:
    push rdi
    push rsi
    mov rdi, 144
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1511,6 +2119,10 @@ isr_145:
    push rdi
    push rsi
    mov rdi, 145
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1521,6 +2133,10 @@ isr_146:
    push rdi
    push rsi
    mov rdi, 146
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1531,6 +2147,10 @@ isr_147:
    push rdi
    push rsi
    mov rdi, 147
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1541,6 +2161,10 @@ isr_148:
    push rdi
    push rsi
    mov rdi, 148
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1551,6 +2175,10 @@ isr_149:
    push rdi
    push rsi
    mov rdi, 149
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1561,6 +2189,10 @@ isr_150:
    push rdi
    push rsi
    mov rdi, 150
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1571,6 +2203,10 @@ isr_151:
    push rdi
    push rsi
    mov rdi, 151
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1581,6 +2217,10 @@ isr_152:
    push rdi
    push rsi
    mov rdi, 152
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1591,6 +2231,10 @@ isr_153:
    push rdi
    push rsi
    mov rdi, 153
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1601,6 +2245,10 @@ isr_154:
    push rdi
    push rsi
    mov rdi, 154
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1611,6 +2259,10 @@ isr_155:
    push rdi
    push rsi
    mov rdi, 155
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1621,6 +2273,10 @@ isr_156:
    push rdi
    push rsi
    mov rdi, 156
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1631,6 +2287,10 @@ isr_157:
    push rdi
    push rsi
    mov rdi, 157
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1641,6 +2301,10 @@ isr_158:
    push rdi
    push rsi
    mov rdi, 158
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1651,6 +2315,10 @@ isr_159:
    push rdi
    push rsi
    mov rdi, 159
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1661,6 +2329,10 @@ isr_160:
    push rdi
    push rsi
    mov rdi, 160
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1671,6 +2343,10 @@ isr_161:
    push rdi
    push rsi
    mov rdi, 161
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1681,6 +2357,10 @@ isr_162:
    push rdi
    push rsi
    mov rdi, 162
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1691,6 +2371,10 @@ isr_163:
    push rdi
    push rsi
    mov rdi, 163
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1701,6 +2385,10 @@ isr_164:
    push rdi
    push rsi
    mov rdi, 164
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1711,6 +2399,10 @@ isr_165:
    push rdi
    push rsi
    mov rdi, 165
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1721,6 +2413,10 @@ isr_166:
    push rdi
    push rsi
    mov rdi, 166
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1731,6 +2427,10 @@ isr_167:
    push rdi
    push rsi
    mov rdi, 167
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1741,6 +2441,10 @@ isr_168:
    push rdi
    push rsi
    mov rdi, 168
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1751,6 +2455,10 @@ isr_169:
    push rdi
    push rsi
    mov rdi, 169
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1761,6 +2469,10 @@ isr_170:
    push rdi
    push rsi
    mov rdi, 170
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1771,6 +2483,10 @@ isr_171:
    push rdi
    push rsi
    mov rdi, 171
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1781,6 +2497,10 @@ isr_172:
    push rdi
    push rsi
    mov rdi, 172
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1791,6 +2511,10 @@ isr_173:
    push rdi
    push rsi
    mov rdi, 173
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1801,6 +2525,10 @@ isr_174:
    push rdi
    push rsi
    mov rdi, 174
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1811,6 +2539,10 @@ isr_175:
    push rdi
    push rsi
    mov rdi, 175
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1821,6 +2553,10 @@ isr_176:
    push rdi
    push rsi
    mov rdi, 176
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1831,6 +2567,10 @@ isr_177:
    push rdi
    push rsi
    mov rdi, 177
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1841,6 +2581,10 @@ isr_178:
    push rdi
    push rsi
    mov rdi, 178
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1851,6 +2595,10 @@ isr_179:
    push rdi
    push rsi
    mov rdi, 179
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1861,6 +2609,10 @@ isr_180:
    push rdi
    push rsi
    mov rdi, 180
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1871,6 +2623,10 @@ isr_181:
    push rdi
    push rsi
    mov rdi, 181
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1881,6 +2637,10 @@ isr_182:
    push rdi
    push rsi
    mov rdi, 182
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1891,6 +2651,10 @@ isr_183:
    push rdi
    push rsi
    mov rdi, 183
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1901,6 +2665,10 @@ isr_184:
    push rdi
    push rsi
    mov rdi, 184
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1911,6 +2679,10 @@ isr_185:
    push rdi
    push rsi
    mov rdi, 185
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1921,6 +2693,10 @@ isr_186:
    push rdi
    push rsi
    mov rdi, 186
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1931,6 +2707,10 @@ isr_187:
    push rdi
    push rsi
    mov rdi, 187
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1941,6 +2721,10 @@ isr_188:
    push rdi
    push rsi
    mov rdi, 188
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1951,6 +2735,10 @@ isr_189:
    push rdi
    push rsi
    mov rdi, 189
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1961,6 +2749,10 @@ isr_190:
    push rdi
    push rsi
    mov rdi, 190
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1971,6 +2763,10 @@ isr_191:
    push rdi
    push rsi
    mov rdi, 191
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1981,6 +2777,10 @@ isr_192:
    push rdi
    push rsi
    mov rdi, 192
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -1991,6 +2791,10 @@ isr_193:
    push rdi
    push rsi
    mov rdi, 193
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2001,6 +2805,10 @@ isr_194:
    push rdi
    push rsi
    mov rdi, 194
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2011,6 +2819,10 @@ isr_195:
    push rdi
    push rsi
    mov rdi, 195
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2021,6 +2833,10 @@ isr_196:
    push rdi
    push rsi
    mov rdi, 196
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2031,6 +2847,10 @@ isr_197:
    push rdi
    push rsi
    mov rdi, 197
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2041,6 +2861,10 @@ isr_198:
    push rdi
    push rsi
    mov rdi, 198
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2051,6 +2875,10 @@ isr_199:
    push rdi
    push rsi
    mov rdi, 199
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2061,6 +2889,10 @@ isr_200:
    push rdi
    push rsi
    mov rdi, 200
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2071,6 +2903,10 @@ isr_201:
    push rdi
    push rsi
    mov rdi, 201
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2081,6 +2917,10 @@ isr_202:
    push rdi
    push rsi
    mov rdi, 202
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2091,6 +2931,10 @@ isr_203:
    push rdi
    push rsi
    mov rdi, 203
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2101,6 +2945,10 @@ isr_204:
    push rdi
    push rsi
    mov rdi, 204
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2111,6 +2959,10 @@ isr_205:
    push rdi
    push rsi
    mov rdi, 205
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2121,6 +2973,10 @@ isr_206:
    push rdi
    push rsi
    mov rdi, 206
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2131,6 +2987,10 @@ isr_207:
    push rdi
    push rsi
    mov rdi, 207
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2141,6 +3001,10 @@ isr_208:
    push rdi
    push rsi
    mov rdi, 208
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2151,6 +3015,10 @@ isr_209:
    push rdi
    push rsi
    mov rdi, 209
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2161,6 +3029,10 @@ isr_210:
    push rdi
    push rsi
    mov rdi, 210
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2171,6 +3043,10 @@ isr_211:
    push rdi
    push rsi
    mov rdi, 211
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2181,6 +3057,10 @@ isr_212:
    push rdi
    push rsi
    mov rdi, 212
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2191,6 +3071,10 @@ isr_213:
    push rdi
    push rsi
    mov rdi, 213
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2201,6 +3085,10 @@ isr_214:
    push rdi
    push rsi
    mov rdi, 214
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2211,6 +3099,10 @@ isr_215:
    push rdi
    push rsi
    mov rdi, 215
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2221,6 +3113,10 @@ isr_216:
    push rdi
    push rsi
    mov rdi, 216
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2231,6 +3127,10 @@ isr_217:
    push rdi
    push rsi
    mov rdi, 217
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2241,6 +3141,10 @@ isr_218:
    push rdi
    push rsi
    mov rdi, 218
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2251,6 +3155,10 @@ isr_219:
    push rdi
    push rsi
    mov rdi, 219
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2261,6 +3169,10 @@ isr_220:
    push rdi
    push rsi
    mov rdi, 220
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2271,6 +3183,10 @@ isr_221:
    push rdi
    push rsi
    mov rdi, 221
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2281,6 +3197,10 @@ isr_222:
    push rdi
    push rsi
    mov rdi, 222
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2291,6 +3211,10 @@ isr_223:
    push rdi
    push rsi
    mov rdi, 223
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2301,6 +3225,10 @@ isr_224:
    push rdi
    push rsi
    mov rdi, 224
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2311,6 +3239,10 @@ isr_225:
    push rdi
    push rsi
    mov rdi, 225
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2321,6 +3253,10 @@ isr_226:
    push rdi
    push rsi
    mov rdi, 226
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2331,6 +3267,10 @@ isr_227:
    push rdi
    push rsi
    mov rdi, 227
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2341,6 +3281,10 @@ isr_228:
    push rdi
    push rsi
    mov rdi, 228
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2351,6 +3295,10 @@ isr_229:
    push rdi
    push rsi
    mov rdi, 229
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2361,6 +3309,10 @@ isr_230:
    push rdi
    push rsi
    mov rdi, 230
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2371,6 +3323,10 @@ isr_231:
    push rdi
    push rsi
    mov rdi, 231
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2381,6 +3337,10 @@ isr_232:
    push rdi
    push rsi
    mov rdi, 232
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2391,6 +3351,10 @@ isr_233:
    push rdi
    push rsi
    mov rdi, 233
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2401,6 +3365,10 @@ isr_234:
    push rdi
    push rsi
    mov rdi, 234
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2411,6 +3379,10 @@ isr_235:
    push rdi
    push rsi
    mov rdi, 235
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2421,6 +3393,10 @@ isr_236:
    push rdi
    push rsi
    mov rdi, 236
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2431,6 +3407,10 @@ isr_237:
    push rdi
    push rsi
    mov rdi, 237
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2441,6 +3421,10 @@ isr_238:
    push rdi
    push rsi
    mov rdi, 238
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2451,6 +3435,10 @@ isr_239:
    push rdi
    push rsi
    mov rdi, 239
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2461,6 +3449,10 @@ isr_240:
    push rdi
    push rsi
    mov rdi, 240
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2471,6 +3463,10 @@ isr_241:
    push rdi
    push rsi
    mov rdi, 241
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2481,6 +3477,10 @@ isr_242:
    push rdi
    push rsi
    mov rdi, 242
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2491,6 +3491,10 @@ isr_243:
    push rdi
    push rsi
    mov rdi, 243
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2501,6 +3505,10 @@ isr_244:
    push rdi
    push rsi
    mov rdi, 244
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2511,6 +3519,10 @@ isr_245:
    push rdi
    push rsi
    mov rdi, 245
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2521,6 +3533,10 @@ isr_246:
    push rdi
    push rsi
    mov rdi, 246
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2531,6 +3547,10 @@ isr_247:
    push rdi
    push rsi
    mov rdi, 247
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2541,6 +3561,10 @@ isr_248:
    push rdi
    push rsi
    mov rdi, 248
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2551,6 +3575,10 @@ isr_249:
    push rdi
    push rsi
    mov rdi, 249
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2561,6 +3589,10 @@ isr_250:
    push rdi
    push rsi
    mov rdi, 250
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2571,6 +3603,10 @@ isr_251:
    push rdi
    push rsi
    mov rdi, 251
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2581,6 +3617,10 @@ isr_252:
    push rdi
    push rsi
    mov rdi, 252
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2591,6 +3631,10 @@ isr_253:
    push rdi
    push rsi
    mov rdi, 253
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2601,6 +3645,10 @@ isr_254:
    push rdi
    push rsi
    mov rdi, 254
+   push rdx
+   push rcx
+   push r8
+   push r9
    push rax
    push r10
    push r11
@@ -2866,12 +3914,34 @@ dq isr_254
 
 
 isr_end:
-   mov [curr_proc], rdi
-   mov [next_proc], rsi
+   mov rsi, [curr_proc]
+   mov rdi, [next_proc]
    cmp rdi, rsi
    je return
 
    ; Save current into curr_proc
+   mov [rsi], rax
+   mov [rsi + 8], rbx
+   mov [rsi + 16], rcx
+   mov [rsi + 24], rdx
+   mov [rsi + 40], r8
+   mov [rsi + 48], r9
+   mov [rsi + 56], r10
+   mov [rsi + 64], r11
+   mov [rsi + 72], r12
+   mov [rsi + 80], r13
+   mov [rsi + 88], r14
+   mov [rsi + 96], r15
+   mov [rsi + 120], ds
+   mov [rsi + 128], es
+   mov [rsi + 136], fs
+   mov [rsi + 144], gs
+   mov [rsi + 32], rsp
+
+   ; Set curr_proc to next proc
+   mov [curr_proc], rdi
+
+   ; Restore from next proc
    mov rax, [rdi]
    mov rbx, [rdi + 8]
    mov rcx, [rdi + 16]
@@ -2885,41 +3955,19 @@ isr_end:
    mov r13, [rdi + 80]
    mov r14, [rdi + 88]
    mov r15, [rdi + 96]
-   mov cs, [rdi + 104]
-   mov ss, [rdi + 112]
    mov ds, [rdi + 120]
    mov es, [rdi + 128]
    mov fs, [rdi + 136]
    mov gs, [rdi + 144]
 
-   ; Set curr_proc to next proc
-   mov rsi, [curr_proc]
-
-   ; Restore from next proc
-   mov [rsi], rax
-   mov [rsi + 8], rbx
-   mov [rsi + 16], rcx
-   mov [rsi + 24], rdx
-   mov [rsi + 40], r8
-   mov [rsi + 48], r9
-   mov [rsi + 56], r10
-   mov [rsi + 64], r11
-   mov [rsi + 72], r12
-   mov [rsi + 80], r13
-   mov [rsi + 88], r14
-   mov [rsi + 96], r15
-   mov [rsi + 104], cs
-   mov [rsi + 112], ss
-   mov [rsi + 120], ds
-   mov [rsi + 128], es
-   mov [rsi + 136], fs
-   mov [rsi + 144], gs
-   mov [rsi + 32], rsp
-
 return:
    pop r11
    pop r10
    pop rax
+   pop r9
+   pop r8
+   pop rcx
+   pop rdx
    pop rsi
    pop rdi
    iretq
