@@ -26,6 +26,8 @@ typedef struct Process{
    uint64_t es;
    uint64_t fs;
    uint64_t gs;
+   uint64_t rbp;
+   void *stack_base;
    struct Process *next;
    struct Process *prev;
    char blocked;

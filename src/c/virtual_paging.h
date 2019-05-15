@@ -16,7 +16,7 @@
 */
 
 #define ONE_GIG 0x40000000
-#define STACK_NUM_PAGES 512
+#define STACK_NUM_PAGES 128
 
 #define BIG_PAGE_ADDR_SHIFT 30
 #define ADDR_SHIFT 12
@@ -120,7 +120,7 @@ void set_page_kern_frame(void *address);
 
 // Allocates a kernel stack of the default size of 512 pages or 2 MB
 void *MMU_alloc_kern_stack();
-//void MMU_free_kern_stack(void *);
+void MMU_free_kern_stack(void *);
 
 // Functions to allocate pages from the kernel heap.
 void *MMU_alloc_kern_page();

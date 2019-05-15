@@ -22,7 +22,8 @@ void yield() {
 }
 
 void kexit() {
-   make_system_call(KEXIT, NULL);
+   asm("movq %0, %%rsi" : : "i"(KEXIT) : "rsi");
+   asm("int %0" : : "i"(KEXIT_TRAP));
 }
 
 void test() {

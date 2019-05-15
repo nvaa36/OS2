@@ -88,6 +88,11 @@ void kfree(void *addr) {
       return;
    }
 
+   if (pool > &pools[NUM_POOLS - 1] || pool < pools) {
+      printk("Trying to free with invalid pool num: %p\n", pool);
+      asm("hlt");
+   }
+
    pool->avail++;
    ((free_list *)header)->next = pool->head.next;
    pool->head.next = (free_list *)header;

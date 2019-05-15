@@ -3924,6 +3924,7 @@ isr_end:
    mov [rsi + 8], rbx
    mov [rsi + 16], rcx
    mov [rsi + 24], rdx
+   mov [rsi + 32], rsp
    mov [rsi + 40], r8
    mov [rsi + 48], r9
    mov [rsi + 56], r10
@@ -3932,33 +3933,34 @@ isr_end:
    mov [rsi + 80], r13
    mov [rsi + 88], r14
    mov [rsi + 96], r15
-   mov [rsi + 120], ds
-   mov [rsi + 128], es
-   mov [rsi + 136], fs
-   mov [rsi + 144], gs
-   mov [rsi + 32], rsp
+   mov [rsi + 104], ds
+   mov [rsi + 112], es
+   mov [rsi + 120], fs
+   mov [rsi + 128], gs
+   mov [rsi + 136], rbp
 
    ; Set curr_proc to next proc
    mov [curr_proc], rdi
 
    ; Restore from next proc
-   mov rax, [rdi]
-   mov rbx, [rdi + 8]
-   mov rcx, [rdi + 16]
-   mov rdx, [rdi + 24]
-   mov rsp, [rdi + 32]
-   mov r8, [rdi + 40]
-   mov r9, [rdi + 48]
-   mov r10, [rdi + 56]
-   mov r11, [rdi + 64]
-   mov r12, [rdi + 72]
-   mov r13, [rdi + 80]
-   mov r14, [rdi + 88]
-   mov r15, [rdi + 96]
-   mov ds, [rdi + 120]
-   mov es, [rdi + 128]
-   mov fs, [rdi + 136]
-   mov gs, [rdi + 144]
+   mov qword rax, [rdi]
+   mov qword rbx, [rdi + 8]
+   mov qword rcx, [rdi + 16]
+   mov qword rdx, [rdi + 24]
+   mov qword r8, [rdi + 40]
+   mov qword r9, [rdi + 48]
+   mov qword r10, [rdi + 56]
+   mov qword r11, [rdi + 64]
+   mov qword r12, [rdi + 72]
+   mov qword r13, [rdi + 80]
+   mov qword r14, [rdi + 88]
+   mov qword r15, [rdi + 96]
+   mov ds, [rdi + 104]
+   mov es, [rdi + 112]
+   mov qword fs, [rdi + 120]
+   mov qword gs, [rdi + 128]
+   mov qword rbp, [rdi + 136]
+   mov qword rsp, [rdi + 32]
 
 return:
    pop r11

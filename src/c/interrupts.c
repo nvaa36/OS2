@@ -31,6 +31,9 @@ void setup_idt() {
          case PF:
             idt[i].ist = PF_IND;
             break;
+         case KEXIT_ISR_NUM:
+            idt[i].ist = KEXIT_IND;
+            break;
          default:
             idt[i].ist = 0;
             break;
@@ -62,6 +65,8 @@ void setup_isrs() {
    irq_table[GP].handler = gp_isr;
    irq_table[SYS_CALL].handler = sc_isr;
    idt[SYS_CALL].type = TRAP_TYPE;
+   irq_table[KEXIT_ISR_NUM].handler = sc_isr;
+   idt[KEXIT_ISR_NUM].type = TRAP_TYPE;
 }
 
 /* Code from OSDevWiki */

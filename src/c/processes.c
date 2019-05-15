@@ -20,6 +20,7 @@ void setup_multiprocessing() {
    asm("movq %%fs, %0" : "=r"(kern_proc.fs));
    asm("movq %%gs, %0" : "=r"(kern_proc.gs));
    asm("movq %%rsp, %0" : "=r"(kern_proc.rsp));
+   asm("movq %%rbp, %0" : "=r"(kern_proc.rbp));
    kern_proc.next = &kern_proc;
    kern_proc.prev = &kern_proc;
 }
@@ -30,7 +31,6 @@ void PROC_run(void) {
 }
 
 void PROC_reschedule() {
-   //TODO: Think about this case more.
    if (curr_proc == NULL) {
       next_proc = &kern_proc;
       return;
@@ -44,9 +44,9 @@ void PROC_create_kthread(kproc_t entry_point, void *arg) {
    process *new_proc;
    uint16_t rflags;
 
-   void *stack_loc = MMU_alloc_kern_stack() + STACK_NUM_PAGES * PAGE_FRAME_SIZE -
-                 sizeof(start_stack);
-   stack = (start_stack *)stack_loc;
+   void *stack_loc = MMU_alloc_kern_stack();
+   stack = (start_stack *)(stack_loc + STACK_NUM_PAGES * PAGE_FRAME_SIZE -
+                 sizeof(start_stack));
    memset(stack, 0, sizeof(start_stack));
 
    stack->ret_rip = (uint64_t)entry_point;
@@ -63,6 +63,7 @@ void PROC_create_kthread(kproc_t entry_point, void *arg) {
    new_proc = kmalloc(sizeof(process));
    memset(new_proc, 0, sizeof(process));
    new_proc->rsp = (uint64_t)stack;
+   new_proc->stack_base = stack_loc;
 
    new_proc->prev = curr_proc->prev;
    curr_proc->prev->next = new_proc;
@@ -75,4 +76,9 @@ void yield_internal() {
 }
 
 void kexit_internal() {
+   curr_proc->prev->next = curr_proc->next;
+   curr_proc->next->prev = curr_proc->prev;
+   next_proc = curr_proc->next;
+   MMU_free_kern_stack(curr_proc->stack_base);
+   kfree(curr_proc);
 }

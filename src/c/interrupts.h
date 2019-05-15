@@ -47,6 +47,7 @@
 #define GP 0xD
 #define PF 0xE
 #define SYS_CALL 0x80
+#define KEXIT_ISR_NUM 0x81
 
 #define NUM_IRQS 256
 

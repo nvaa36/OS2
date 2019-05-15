@@ -3,8 +3,10 @@
 
 #include "printk.h"
 #include "processes.h"
+#include "tss.h"
 
 #define TRAP 0x80
+#define KEXIT_TRAP 0x81
 
 #define YIELD 0x01
 #define KEXIT 0x02

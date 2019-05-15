@@ -16,6 +16,10 @@ void *MMU_alloc_kern_stack() {
    return MMU_alloc_kern_pages(STACK_NUM_PAGES);
 }
 
+void MMU_free_kern_stack(void *address) {
+   return MMU_free_kern_pages(address, STACK_NUM_PAGES);
+}
+
 // Allocates the virtual space and creates page table entries, but doesn't
 // allocate a frame.
 void *MMU_alloc_kern_page() {
@@ -173,7 +177,6 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
    pt4e = &pt4[addr->pt4_ind];
 
    if (!pt4e->present) {
-      printk("Tried to free invalid page %p.\n", address);
       return;
    }
 
@@ -181,7 +184,6 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
           [addr->pt3_ind];
 
    if (!pt3e->present) {
-      printk("Tried to free invalid page %p.\n", address);
       return;
    }
 
@@ -189,7 +191,6 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
           [addr->pt2_ind];
 
    if (!pt2e->present) {
-      printk("Tried to free invalid page %p.\n", address);
       return;
    }
 
@@ -197,7 +198,6 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
           [addr->pt1_ind];
 
    if (!pt1e->present) {
-      printk("Tried to free invalid page %p.\n", address);
       return;
    }
 
@@ -208,16 +208,12 @@ void MMU_free_page(PT4_Entry *pt4, void *address) {
    MMU_pf_free(frame);
 }
 
-// This function must be called with a valid address with a page frame
-// attached to every address in all of the pages.
 void MMU_free_pages(PT4_Entry *pt4, void *address, int num) {
    uint64_t i;
 
    for (i = 0; i < num; i++) {
       MMU_free_page(pt4, address + i * PAGE_FRAME_SIZE);
    }
-
-   MMU_free_page(pt4, address + i * PAGE_FRAME_SIZE - 1);
 }
 
 void set_cr3(PT4_Entry *pt4) {
