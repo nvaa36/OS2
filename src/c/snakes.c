@@ -30,11 +30,9 @@
  */
 
 #include "snakes.h"
-#include "types.h"
 #include "kmalloc.h"
-#include "vga_console.h"
-#include "asm.h"
-#include "proc.h"
+#include "vga_driver.h"
+#include "processes.h"
 
 #define SN_LENGTH 10
 #define SN_BODY_CHAR '*'

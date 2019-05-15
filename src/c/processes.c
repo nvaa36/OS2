@@ -1,6 +1,9 @@
 #include "processes.h"
 
+int proc_count;
+
 void setup_multiprocessing() {
+   proc_count = 1;
    curr_proc = &kern_proc;
    next_proc = curr_proc;
    asm("movq %%rax, %0" : "=r"(kern_proc.rax));
@@ -21,8 +24,8 @@ void setup_multiprocessing() {
    asm("movq %%gs, %0" : "=r"(kern_proc.gs));
    asm("movq %%rsp, %0" : "=r"(kern_proc.rsp));
    asm("movq %%rbp, %0" : "=r"(kern_proc.rbp));
-   kern_proc.next = &kern_proc;
-   kern_proc.prev = &kern_proc;
+   proc_head = NULL;
+   proc_tail = NULL;
 }
 
 void PROC_run(void) {
@@ -31,15 +34,24 @@ void PROC_run(void) {
 }
 
 void PROC_reschedule() {
-   if (curr_proc == NULL) {
+   if (proc_head == NULL) {
       next_proc = &kern_proc;
       return;
    }
 
-   next_proc = curr_proc->next;
+   next_proc = proc_head;
+   if (proc_head == proc_tail) {
+      return;
+   }
+   proc_head = proc_head->next;
+   proc_head->prev = NULL;
+   next_proc->next = NULL;
+   proc_tail->next = next_proc;
+   next_proc->prev = proc_tail;
+   proc_tail = next_proc;
 }
 
-void PROC_create_kthread(kproc_t entry_point, void *arg) {
+process *PROC_create_kthread(kproc_t entry_point, void *arg) {
    start_stack *stack;
    process *new_proc;
    uint16_t rflags;
@@ -64,11 +76,19 @@ void PROC_create_kthread(kproc_t entry_point, void *arg) {
    memset(new_proc, 0, sizeof(process));
    new_proc->rsp = (uint64_t)stack;
    new_proc->stack_base = stack_loc;
+   new_proc->pid = proc_count++;
 
-   new_proc->prev = curr_proc->prev;
-   curr_proc->prev->next = new_proc;
-   new_proc->next = curr_proc;
-   curr_proc->prev = new_proc;
+   if (!proc_head) {
+      proc_head = new_proc;
+      proc_tail = new_proc;
+   }
+   else {
+      new_proc->prev = proc_tail;
+      proc_tail->next = new_proc;
+      proc_tail = new_proc;
+   }
+
+   return new_proc;
 }
 
 void yield_internal() {
@@ -76,9 +96,14 @@ void yield_internal() {
 }
 
 void kexit_internal() {
-   curr_proc->prev->next = curr_proc->next;
-   curr_proc->next->prev = curr_proc->prev;
-   next_proc = curr_proc->next;
+   if (proc_head == proc_tail) {
+      proc_head = NULL;
+      proc_tail = NULL;
+   }
+   else {
+      proc_head = proc_head->next;
+   }
+   PROC_reschedule();
    MMU_free_kern_stack(curr_proc->stack_base);
    kfree(curr_proc);
 }

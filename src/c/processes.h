@@ -28,8 +28,9 @@ typedef struct Process{
    uint64_t gs;
    uint64_t rbp;
    void *stack_base;
-   struct Process *next;
    struct Process *prev;
+   struct Process *next;
+   int pid;
    char blocked;
 } __attribute__ ((packed)) process;
 
@@ -56,12 +57,13 @@ typedef void (*kproc_t)(void*);
 
 process kern_proc;
 process *curr_proc, *next_proc;
+process *proc_head, *proc_tail;
 
 void setup_multiprocessing();
 
 void PROC_run(void);
 void PROC_reschedule();
-void PROC_create_kthread(kproc_t entry_point, void *arg);
+process *PROC_create_kthread(kproc_t entry_point, void *arg);
 
 void yield_internal();
 void kexit_internal();

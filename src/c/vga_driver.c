@@ -48,3 +48,15 @@ void backspace() {
    }
    vgaBuff[cursor] = (color << 8) | 0;
 }
+
+int VGA_row_count(void) {
+   return height;
+}
+
+int VGA_col_count(void) {
+   return width;
+}
+
+void VGA_display_attr_char(int x, int y, char c, int fg, int bg) {
+   vgaBuff[x + y * width] = (bg << 12) | (fg << 8) | c;
+}
