@@ -10,6 +10,7 @@
 #include "c/processes.h"
 #include "c/serial.h"
 #include "c/setup_keyboard.h"
+#include "c/snakes.h"
 #include "c/stdio.h"
 #include "c/system_calls.h"
 #include "c/virtual_paging.h"

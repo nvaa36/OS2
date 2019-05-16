@@ -68,6 +68,9 @@ process *PROC_create_kthread(kproc_t entry_point, void *arg) {
    stack->ret_rflags = (uint64_t)rflags;
    stack->ret_rsp = (uint64_t)&stack->entry_ret_addr;
    stack->ret_ss = DEFAULT_SS;
+   // Make the first argument when you start the function be the argument
+   // passed in.
+   stack->rdi = (uint64_t)arg;
 
    stack->entry_ret_addr = (uint64_t)kexit;
    stack->entry_arg = (uint64_t)arg;

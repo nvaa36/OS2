@@ -16,7 +16,7 @@
 */
 
 #define ONE_GIG 0x40000000
-#define STACK_NUM_PAGES 128
+#define STACK_NUM_PAGES 1024
 
 #define BIG_PAGE_ADDR_SHIFT 30
 #define ADDR_SHIFT 12

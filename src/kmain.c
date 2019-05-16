@@ -13,8 +13,9 @@ int kmain(uint32_t *tag_pointer) {
    page = (int *)kmalloc(sizeof(int) * 12);
    printk("%p\n", page);
    make_system_call(TEST, NULL);
-   PROC_create_kthread(tester, NULL);
+   setup_snakes(0);
    while (1) {
+      printk("REady to run!\n");
       PROC_run();
       wait_for_interrupt();
    }
