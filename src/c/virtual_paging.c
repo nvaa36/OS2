@@ -104,7 +104,7 @@ PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address) {
 
    if (!pt4e->present) {
       pt3e = (PT3_Entry *)MMU_pf_alloc();
-      memset(pt3e, 0, sizeof(PAGE_FRAME_SIZE));
+      memset(pt3e, 0, PAGE_FRAME_SIZE);
       pt4e->pt3_ba = (uint64_t)pt3e >> ADDR_SHIFT;
       pt4e->present = 1;
       pt4e->rw = 1;
@@ -115,7 +115,7 @@ PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address) {
 
    if (!pt3e->present) {
       pt2e = (PT2_Entry *)MMU_pf_alloc();
-      memset(pt2e, 0, sizeof(PAGE_FRAME_SIZE));
+      memset(pt2e, 0, PAGE_FRAME_SIZE);
       pt3e->present = 1;
       pt3e->pt2_ba = (uint64_t)pt2e >> ADDR_SHIFT;
       pt3e->rw = 1;
@@ -126,7 +126,7 @@ PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address) {
 
    if (!pt2e->present) {
       pt1e = (PT1_Entry *)MMU_pf_alloc();
-      memset(pt1e, 0, sizeof(PAGE_FRAME_SIZE));
+      memset(pt1e, 0, PAGE_FRAME_SIZE);
       pt2e->present = 1;
       pt2e->pt1_ba = (uint64_t)pt1e >> ADDR_SHIFT;
       pt2e->rw = 1;
