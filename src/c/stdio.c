@@ -1,5 +1,7 @@
 #include "stdio.h"
 
+#include "processes.h"
+
 static char keycode_translation [] = {'\t', '`', '_', '_', '_', '_', '_', '_',
    'q', '1', '_', '_', '_', 'z', 's', 'a', 'w', '2', '_', '_', 'c', 'x', 'd',
    'e', '4', '3', '_', '_', ' ', 'v', 'f', 't', 'r', '5', '_', '_', 'n', 'b',
@@ -16,8 +18,34 @@ static char shift_translation [] = {'_', '_', '_', '_', '_', '_', '_', '_',
    '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_',
    '_', '_', '_', '_', '_', '_', '_', '_', '{', '|', '}'};
 
-static kb_state state = {0, 0};
+KBstate kb_state;
 
+void setup_kb_state() {
+   memset(&(kb_state), 0, sizeof(kb_state));
+}
+
+char get_char_head(int *read) {
+   char character = 0;
+   character = kb_state.buff[(*read)++];
+   if (*read >= BUFF_SIZE)
+      *read = 0;
+
+   if (!character) {
+      printk("Error reading character.\n");
+   }
+   
+   return character;
+}
+
+void getc_block(void *arg) {
+   disable_interrupts();
+   while (curr_proc->kb_read == kb_state.tail) {
+      PROC_block_on(&kb_blocked, 1);
+      disable_interrupts();
+   }
+}
+
+// Returns the key if a valid key was pressed, 0 otherwise
 char get_kb_c() {
    unsigned char c;
    char translated_key = 0;
@@ -25,16 +53,10 @@ char get_kb_c() {
    c = inb(KBDR);
    translated_key = handle_key(c);
 
-   return translated_key;
-}
-
-char get_kb_c_poll() {
-   unsigned char c;
-   char translated_key = 0;
-
-   while (!translated_key) {
-      c = poll_kb();
-      translated_key = handle_key(c);
+   if (translated_key) {
+      kb_state.buff[kb_state.tail++] = translated_key;
+      if (kb_state.tail >= BUFF_SIZE)
+         kb_state.tail = 0;
    }
    return translated_key;
 }
@@ -48,20 +70,20 @@ char poll_kb() {
 }
 
 unsigned char handle_key(unsigned char c) {
-   if (state.release_char) {
-      state.release_char = 0;
+   if (kb_state.release_char) {
+      kb_state.release_char = 0;
       if (c == LSHIFT || c == RSHIFT) {
-         state.shift = 0;
+         kb_state.shift = 0;
          return 0;
       }
       return 0;
    }
    if (c == LSHIFT || c == RSHIFT) {
-      state.shift = 1;
+      kb_state.shift = 1;
       return 0;
    }
    if (c == CAPS) {
-      state.caps = !state.caps;
+      kb_state.caps = !kb_state.caps;
       return 0;
    }
    if (c <= BKSP) {
@@ -71,10 +93,10 @@ unsigned char handle_key(unsigned char c) {
             return c;
          }
          /* capitalize if caps lock and a letter */
-         if (state.caps && c >= LOW_A && c <= LOW_Z) {
+         if (kb_state.caps && c >= LOW_A && c <= LOW_Z) {
             return c - LOW_A + UPPER_A;
          }
-         if (state.shift) {
+         if (kb_state.shift) {
             if (c >= LOW_A && c <= LOW_Z) {
                return c - LOW_A + UPPER_A;
             }
@@ -87,7 +109,7 @@ unsigned char handle_key(unsigned char c) {
    }
 
    if (c == RELEASED) {
-      state.release_char = 1;
+      kb_state.release_char = 1;
    }
    return 0;
    

@@ -31,7 +31,7 @@ void isr_errcode(int isr_num, int errcode) {
 void kb_isr(int isr_num, int err_code, void *arg) {
    char c = get_kb_c();
    if (c) {
-      printk("%c", c);
+      PROC_unblock_all(&kb_blocked);
    }
 }
 
@@ -71,5 +71,5 @@ void pf_isr(int isr_num, int err_code, void *arg) {
 }
 
 void sc_isr(int isr_num, int sys_call_num, void *arg) {
-   system_call(sys_call_num);
+   system_call(sys_call_num, arg);
 }

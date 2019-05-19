@@ -1,5 +1,9 @@
 #include "processes.h"
 
+#include "interrupts.h"
+#include "kmalloc.h"
+#include "system_calls.h"
+
 int proc_count;
 
 void setup_multiprocessing() {
@@ -24,8 +28,40 @@ void setup_multiprocessing() {
    asm("movq %%gs, %0" : "=r"(kern_proc.gs));
    asm("movq %%rsp, %0" : "=r"(kern_proc.rsp));
    asm("movq %%rbp, %0" : "=r"(kern_proc.rbp));
-   proc_head = NULL;
-   proc_tail = NULL;
+   kern_proc.kb_read = 0;
+   ready_proc.head = NULL;
+   ready_proc.tail = NULL;
+}
+
+// Adds the process to the end.
+static void add_proc(process_queue *queue, process *proc) {
+   if (!queue->head) {
+      queue->head = proc;
+      queue->tail = proc;
+   }
+   else {
+      proc->prev = queue->tail;
+      queue->tail->next = proc;
+      queue->tail = proc;
+   }
+}
+
+static void remove_proc(process_queue *queue, process *proc) {
+   if (proc == queue->head) {
+      queue->head = proc->next;
+   }
+
+   if (proc == queue->tail) {
+      queue->tail = proc->prev;
+   }
+
+   if (proc->prev) {
+      proc->prev->next = proc->next;
+   }
+
+   if (proc->next) {
+      proc->next->prev = proc->prev;
+   }
 }
 
 void PROC_run(void) {
@@ -34,21 +70,21 @@ void PROC_run(void) {
 }
 
 void PROC_reschedule() {
-   if (proc_head == NULL) {
+   if (ready_proc.head == NULL) {
       next_proc = &kern_proc;
       return;
    }
 
-   next_proc = proc_head;
-   if (proc_head == proc_tail) {
+   next_proc = ready_proc.head;
+   if (ready_proc.head == ready_proc.tail) {
       return;
    }
-   proc_head = proc_head->next;
-   proc_head->prev = NULL;
+   ready_proc.head = ready_proc.head->next;
+   ready_proc.head->prev = NULL;
    next_proc->next = NULL;
-   proc_tail->next = next_proc;
-   next_proc->prev = proc_tail;
-   proc_tail = next_proc;
+   ready_proc.tail->next = next_proc;
+   next_proc->prev = ready_proc.tail;
+   ready_proc.tail = next_proc;
 }
 
 process *PROC_create_kthread(kproc_t entry_point, void *arg) {
@@ -81,30 +117,53 @@ process *PROC_create_kthread(kproc_t entry_point, void *arg) {
    new_proc->stack_base = stack_loc;
    new_proc->pid = proc_count++;
 
-   if (!proc_head) {
-      proc_head = new_proc;
-      proc_tail = new_proc;
-   }
-   else {
-      new_proc->prev = proc_tail;
-      proc_tail->next = new_proc;
-      proc_tail = new_proc;
-   }
+   add_proc(&ready_proc, new_proc);
 
    return new_proc;
 }
 
-void yield_internal() {
+void PROC_block_on(process_queue *queue, int enable_ints) {
+   if (!queue) {
+      return;
+   }
+
+   remove_proc(&ready_proc, curr_proc);
+   add_proc(queue, curr_proc);
+
+   if (enable_ints) {
+      enable_interrupts();
+   }
+
+   yield();
+}
+
+void PROC_unblock_all(process_queue *queue) {
+   while (queue->head) {
+      PROC_unblock_head(queue);
+   }
+}
+void PROC_unblock_head(process_queue *queue) {
+   process *head = queue->head;
+
+   remove_proc(queue, queue->head);
+   add_proc(&ready_proc, head);
+}
+void PROC_init_queue(process_queue *queue) {
+   queue->head = NULL;
+   queue->tail = NULL;
+}
+
+void yield_internal(void *arg) {
    PROC_reschedule();
 }
 
-void kexit_internal() {
-   if (proc_head == proc_tail) {
-      proc_head = NULL;
-      proc_tail = NULL;
+void kexit_internal(void *arg) {
+   if (ready_proc.head == ready_proc.tail) {
+      ready_proc.head = NULL;
+      ready_proc.tail = NULL;
    }
    else {
-      proc_head = proc_head->next;
+      remove_proc(&ready_proc, curr_proc);
    }
    PROC_reschedule();
    MMU_free_kern_stack(curr_proc->stack_base);

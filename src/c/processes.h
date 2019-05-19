@@ -2,8 +2,6 @@
 #define PROCESSES_H
 
 #include <stdint.h>
-#include "kmalloc.h"
-#include "system_calls.h"
 
 #define DEFAULT_SS 0
 #define DEFAULT_CS 8
@@ -30,8 +28,8 @@ typedef struct Process{
    void *stack_base;
    struct Process *prev;
    struct Process *next;
+   int kb_read;
    int pid;
-   char blocked;
 } __attribute__ ((packed)) process;
 
 typedef struct {
@@ -53,17 +51,34 @@ typedef struct {
    uint64_t entry_arg;
 } __attribute__ ((packed)) start_stack;
 
+typedef struct {
+   process *head;
+   process *tail;
+} process_queue;
+
 typedef void (*kproc_t)(void*);
 
 process kern_proc;
 process *curr_proc, *next_proc;
-process *proc_head, *proc_tail;
+process_queue ready_proc, kb_blocked;
+// Assumptions: each process is either in the ready queue or a blocked queue
+
+/**
+  * Assumptions: the current process will always be in the ready queue (not
+  * necessarily the tail.
+  **/
 
 void setup_multiprocessing();
 
 void PROC_run(void);
 void PROC_reschedule();
 process *PROC_create_kthread(kproc_t entry_point, void *arg);
+
+void PROC_block_on(process_queue *, int enable_ints);
+void PROC_unblock_all(process_queue *);
+void PROC_unblock_head(process_queue *);
+void PROC_init_queue(process_queue *);
+
 
 void yield_internal();
 void kexit_internal();

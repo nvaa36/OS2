@@ -1,19 +1,28 @@
 #include "kmain.h"
 
-void tester() {
-   printk("I am a tester function!!!!!\n");
+void keyboard_io(void *arg) {
+   while (1)
+      printk("%c\n", getc());
+}
+
+void print_stuff(void *arg) {
+   int i;
+
+   while (1) {
+      for (i = 0; i < 500000; i++);
+      printk("-");
+      yield();
+   }
 }
 
 int kmain(uint32_t *tag_pointer) {
-   int *page;
-   int __loop = 1;
-   while (__loop);
+   /*int __loop = 1;
+   while (__loop);*/
    setup_kernel(tag_pointer);
    printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
-   page = (int *)kmalloc(sizeof(int) * 12);
-   printk("%p\n", page);
-   make_system_call(TEST, NULL);
-   setup_snakes(0);
+   PROC_create_kthread(keyboard_io, NULL);
+   PROC_create_kthread(print_stuff, NULL);
+   //setup_snakes(0);
    while (1) {
       printk("REady to run!\n");
       PROC_run();
@@ -30,6 +39,7 @@ void setup_kernel(uint32_t *tag_pointer) {
    setup_kmalloc();
    SER_init();
    setup_keyboard();
+   setup_kb_state();
    setup_syscalls();
    setup_multiprocessing();
 }

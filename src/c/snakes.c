@@ -33,6 +33,7 @@
 #include "kmalloc.h"
 #include "vga_driver.h"
 #include "processes.h"
+#include "system_calls.h"
 
 #define SN_LENGTH 10
 #define SN_BODY_CHAR '*'
@@ -394,7 +395,7 @@ void kill_snake(){
 }
 
 
-static int snake_delay=10;     /* default 50 msec */
+static int snake_delay=1;     /* default 50 msec */
 extern unsigned int get_snake_delay() {
   /* return whatever the current delay is */
   return snake_delay;
