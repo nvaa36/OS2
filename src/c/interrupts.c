@@ -1,5 +1,9 @@
 #include "interrupts.h"
 
+#include "bitio.h"
+#include "string.h"
+#include "tss.h"
+
 idt_entry idt[NUM_IDT_ENTRIES];
 
 void setup_interrupts() {

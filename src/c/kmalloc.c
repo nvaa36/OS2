@@ -1,5 +1,10 @@
 #include "kmalloc.h"
 
+#include "page_frame_allocator.h"
+#include "printk.h"
+#include "string.h"
+#include "virtual_paging.h"
+
 kmalloc_pool pools[NUM_POOLS];
 
 /* Sets up the initial blocks to allocate. Initally allocates a page for each

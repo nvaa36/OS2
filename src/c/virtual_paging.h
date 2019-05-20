@@ -2,9 +2,7 @@
 #define VIRTUAL_PAGING_H
 
 #include "constants.h"
-
-#include "page_frame_allocator.h"
-#include "string.h"
+#include <stdint.h>
 
 /*
  * Memory layout:

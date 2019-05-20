@@ -1,5 +1,9 @@
 #include "serial.h"
 
+#include "bitio.h"
+#include "interrupts.h"
+#include "string.h"
+
 SERState ser_state;
 
 void SER_init(void) {

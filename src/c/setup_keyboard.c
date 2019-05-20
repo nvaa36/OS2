@@ -1,5 +1,9 @@
 #include "setup_keyboard.h"
 
+#include "bitio.h"
+#include "interrupts.h"
+#include "printk.h"
+
 void setup_keyboard() {
    uint16_t init_enabled = interrupts_enabled();
    disable_interrupts();

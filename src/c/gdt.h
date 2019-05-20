@@ -2,8 +2,6 @@
 #define GDT_H
 
 #include <stdint.h>
-#include "string.h"
-#include "tss.h"
 
 #define NUM_GDT_ENTRIES 4
 #define KERN_IND 1

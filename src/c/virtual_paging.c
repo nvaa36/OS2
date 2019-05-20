@@ -1,5 +1,8 @@
 #include "virtual_paging.h"
 
+#include "page_frame_allocator.h"
+#include "string.h"
+
 PT4_Entry *kern_pt4;
 void *kern_heap_mem_addr;
 void *kern_stack_mem_addr;

@@ -2,9 +2,8 @@
 #define INTERRUPTS_H
 
 #include <stdint.h>
-#include "bitio.h"
+
 #include "gdt.h"
-#include "tss.h"
 
 #define NUM_IDT_ENTRIES 256
 

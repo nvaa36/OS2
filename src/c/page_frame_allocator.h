@@ -1,7 +1,7 @@
 #ifndef PAGE_FRAM_ALL_H
 #define PAGE_FRAM_ALL_H
 
-#include "printk.h"
+#include <stdint.h>
 
 #define END_TYPE 0
 #define MMAP 6

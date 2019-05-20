@@ -1,5 +1,16 @@
 #include "isr.h"
 
+#include "constants.h"
+
+#include "bitio.h"
+#include "interrupts.h"
+#include "printk.h"
+#include "processes.h"
+#include "serial.h"
+#include "stdio.h"
+#include "system_calls.h"
+#include "virtual_paging.h"
+
 void isr_normal(int isr_num, int sys_call_num) {
    if (isr_num > 256) {
       printk("Interrupt #%d out of bounds.\n", isr_num);

@@ -1,8 +1,7 @@
 #ifndef STDIO_H
 #define STDIO_H
 
-#include "bitio.h"
-#include "printk.h"
+#include "serial.h"
 
 #define KBDR 0x60
 #define KBSR 0x64

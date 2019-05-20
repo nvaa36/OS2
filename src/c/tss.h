@@ -2,7 +2,6 @@
 #define TSS_H
 
 #include <stdint.h>
-#include "kmalloc.h"
 
 /* TODO: how big should this be? */
 #define STACK_SIZE 1028

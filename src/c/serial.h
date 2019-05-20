@@ -1,10 +1,6 @@
 #ifndef SERIAL_H
 #define SERIAL_H
 
-#include "bitio.h"
-#include "interrupts.h"
-#include "string.h"
-
 #define COM1_PORT 0x3f8   /* COM1 */
 #define IRR COM1_PORT + 2
 #define LSR COM1_PORT + 5

@@ -1,5 +1,8 @@
 #include "page_frame_allocator.h"
 
+#include "printk.h"
+#include "string.h"
+
 mem_region mem_regions[MMAP_ARR_SIZE];
 int mem_arr_size;
 

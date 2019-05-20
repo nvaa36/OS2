@@ -1,5 +1,7 @@
 #include "vga_driver.h"
 
+#include "string.h"
+
 static unsigned short *vgaBuff = (unsigned short*)VGA_BASE;
 static int width = 80;
 static int height = 20;

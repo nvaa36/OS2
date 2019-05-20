@@ -1,5 +1,10 @@
 #include "system_calls.h"
 
+#include "printk.h"
+#include "processes.h"
+#include "stdio.h"
+#include "tss.h"
+
 void (*(sys_calls[NUM_SYS_CALLS]))();
 
 void setup_syscalls() {

@@ -1,10 +1,6 @@
 #ifndef SETUP_KB_H
 #define SETUP_KB_H
 
-#include "bitio.h"
-#include "interrupts.h"
-#include "printk.h"
-
 #define PS2_DATA 0x60
 #define PS2_CMD 0x64
 #define PS2_STATUS PS2_CMD

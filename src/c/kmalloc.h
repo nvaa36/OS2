@@ -1,8 +1,7 @@
 #ifndef KMALLOC_H
 #define KMALLOC_H
 
-#include "string.h"
-#include "virtual_paging.h"
+#include <stddef.h>
 
 #define NUM_POOLS 6
 #define MAX_POOL 2048

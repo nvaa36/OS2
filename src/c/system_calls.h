@@ -1,10 +1,7 @@
 #ifndef SYSTEM_CALLS_H
 #define SYSTEM_CALLS_H
 
-#include "printk.h"
-#include "processes.h"
-#include "stdio.h"
-#include "tss.h"
+#include <stddef.h>
 
 #define TRAP 0x80
 #define KEXIT_TRAP 0x81

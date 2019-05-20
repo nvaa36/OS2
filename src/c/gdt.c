@@ -1,5 +1,8 @@
 #include "gdt.h"
 
+#include "string.h"
+#include "tss.h"
+
 uint64_t gdt[NUM_GDT_ENTRIES];
 
 void setup_gdt() {

@@ -1,6 +1,11 @@
 #include "stdio.h"
 
+#include "bitio.h"
+#include "interrupts.h"
+#include "printk.h"
 #include "processes.h"
+#include "string.h"
+
 
 static char keycode_translation [] = {'\t', '`', '_', '_', '_', '_', '_', '_',
    'q', '1', '_', '_', '_', 'z', 's', 'a', 'w', '2', '_', '_', 'c', 'x', 'd',

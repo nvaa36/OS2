@@ -1,5 +1,9 @@
 #include "printk.h"
 
+#include "serial.h"
+#include "string.h"
+#include "vga_driver.h"
+
 int printk(const char *fmt, ...) {
    va_list va;
    int i;

@@ -2,7 +2,10 @@
 
 #include "interrupts.h"
 #include "kmalloc.h"
+#include "page_frame_allocator.h"
+#include "string.h"
 #include "system_calls.h"
+#include "virtual_paging.h"
 
 int proc_count;
 

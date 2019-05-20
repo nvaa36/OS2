@@ -2,10 +2,6 @@
 #define PRINTK_H
 
 #include <stdarg.h>
-#include "serial.h"
-#include "string.h"
-#include "vga_driver.h"
-
 #define DECIMAL 10
 #define HEX 16
 #define DEC_ZERO 48
