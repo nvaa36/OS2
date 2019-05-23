@@ -56,11 +56,11 @@
 extern void *isr_locs[];
 
 /* ISR function pointers */
-extern void kb_isr(int, int, void*);
-extern void ser_isr(int, int, void*);
-extern void pf_isr(int, int, void*);
-extern void gp_isr(int, int, void*);
-extern void sc_isr(int, int, void*);
+extern void kb_isr(int, int, void*, void*);
+extern void ser_isr(int, int, void*, void*);
+extern void pf_isr(int, int, void*, void*);
+extern void gp_isr(int, int, void*, void*);
+extern void sc_isr(int, int, void*, void*);
 
 struct idte{
    uint16_t offset1;

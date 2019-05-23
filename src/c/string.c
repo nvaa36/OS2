@@ -1,5 +1,7 @@
 #include "string.h"
 
+#include "kmalloc.h"
+
 void *memset(void *dst, int c, size_t n) {
    int i;
    for (i = 0; i < n; i++) {
@@ -49,5 +51,9 @@ const char *strchr(const char *s, int c) {
    }
    return NULL;
 }
-/*char *strdup(const char *s) {
-}*/
+char *strdup(const char *s) {
+   int size = strlen(s) + 1;
+   char *new = kmalloc(size);
+   memcpy(new, s, size);
+   return new;
+}
