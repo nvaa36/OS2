@@ -50,6 +50,11 @@ static void add_proc(process_queue *queue, process *proc) {
 }
 
 static void remove_proc(process_queue *queue, process *proc) {
+   if (queue->head == queue->tail) {
+      queue->head = NULL;
+      queue->tail = NULL;
+   }
+
    if (proc == queue->head) {
       queue->head = proc->next;
    }
@@ -65,6 +70,9 @@ static void remove_proc(process_queue *queue, process *proc) {
    if (proc->next) {
       proc->next->prev = proc->prev;
    }
+
+   proc->prev = NULL;
+   proc->next = NULL;
 }
 
 void PROC_run(void) {
