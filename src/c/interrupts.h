@@ -86,7 +86,7 @@ struct {
    void* base;
 } __attribute__((packed)) IDTR;
 
-typedef void (*irq_handler_t)(int, int, void*);
+typedef void (*irq_handler_t)(int, int, void*, void*);
 struct {
    void *arg;
    irq_handler_t handler;
@@ -105,7 +105,7 @@ void IRQ_clear_mask(int irq);
 int IRQ_get_mask(int IRQline);
 void IRQ_end_of_interrupt(int irq);
 
-void IRQ_set_handler(int irq, irq_handler_t handler, void *arg);
+//void IRQ_set_handler(int irq, irq_handler_t handler, void *arg);
 
 uint16_t pic_get_irr(void);
 uint16_t pic_get_isr(void);

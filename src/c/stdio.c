@@ -42,12 +42,14 @@ char get_char_head(int *read) {
    return character;
 }
 
-void getc_block(void *arg) {
+void getc_block(char *arg) {
    disable_interrupts();
    while (curr_proc->kb_read == kb_state.tail) {
       PROC_block_on(&kb_blocked, 1);
       disable_interrupts();
    }
+
+   *arg = get_char_head(&curr_proc->kb_read);
 }
 
 // Returns the key if a valid key was pressed, 0 otherwise

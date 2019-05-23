@@ -34,9 +34,10 @@ void kexit() {
 }
 
 char getc() {
-   make_system_call(GETC, NULL);
+   char c = 0;
+   make_system_call(GETC, &c);
 
-   return get_char_head(&curr_proc->kb_read);
+   return c;
 }
 
 void test(void *arg) {

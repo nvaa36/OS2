@@ -35,7 +35,7 @@ typedef struct {
 
 void setup_kb_state();
 char get_char_head(int *read);
-void getc_block(void *arg);
+void getc_block(char *arg);
 char get_kb_c();
 char poll_kb();
 unsigned char handle_key(unsigned char c);

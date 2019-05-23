@@ -11,7 +11,7 @@
 #include "system_calls.h"
 #include "virtual_paging.h"
 
-void isr_normal(int isr_num, int sys_call_num) {
+void isr_normal(int isr_num, int sys_call_num, void *arg) {
    if (isr_num > 256) {
       printk("Interrupt #%d out of bounds.\n", isr_num);
       asm("hlt");
@@ -21,11 +21,11 @@ void isr_normal(int isr_num, int sys_call_num) {
       printk("Interrupt #%d not supported.\n", isr_num);
       asm("hlt");
    }
-   isr(isr_num, sys_call_num, irq_table[isr_num].arg);
+   isr(isr_num, sys_call_num, irq_table[isr_num].arg, arg);
    IRQ_end_of_interrupt(isr_num);
 }
 
-void isr_errcode(int isr_num, int errcode) {
+void isr_errcode(int isr_num, int errcode, void *arg) {
    if (isr_num > 256) {
       printk("Interrupt #%d out of bounds.\n", isr_num);
       asm("hlt");
@@ -35,18 +35,18 @@ void isr_errcode(int isr_num, int errcode) {
       printk("Interrupt #%d not supported.\n", isr_num);
       asm("hlt");
    }
-   isr(isr_num, errcode, NULL);
+   isr(isr_num, errcode, NULL, arg);
    IRQ_end_of_interrupt(isr_num);
 }
 
-void kb_isr(int isr_num, int err_code, void *arg) {
+void kb_isr(int isr_num, int err_code, void *isr_arg, void *arg) {
    char c = get_kb_c();
    if (c) {
       PROC_unblock_all(&kb_blocked);
    }
 }
 
-void ser_isr(int isr_num, int err_code, void *arg) {
+void ser_isr(int isr_num, int err_code, void *isr_arg, void *arg) {
    unsigned char int_type;
    int_type = inb(IRR);
 
@@ -63,12 +63,12 @@ void ser_isr(int isr_num, int err_code, void *arg) {
    printk("Unhandled serial interrupt type: %u\n", int_type);
 }
 
-void gp_isr(int isr_num, int err_code, void *arg) {
+void gp_isr(int isr_num, int err_code, void *isr_arg, void *arg) {
    printk("General Protection Fault. Error code: %x\n", err_code);
    asm("hlt");
 }
 
-void pf_isr(int isr_num, int err_code, void *arg) {
+void pf_isr(int isr_num, int err_code, void *isr_arg, void *arg) {
    void *addr = get_cr2();
    void *pt4 = get_cr3();
    PT1_Entry *pt1e = get_pt1_entry(pt4, addr);
@@ -81,6 +81,6 @@ void pf_isr(int isr_num, int err_code, void *arg) {
    set_page_frame_pt1e(pt4, pt1e);
 }
 
-void sc_isr(int isr_num, int sys_call_num, void *arg) {
+void sc_isr(int isr_num, int sys_call_num, void *isr_arg, void *arg) {
    system_call(sys_call_num, arg);
 }
