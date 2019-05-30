@@ -3,6 +3,7 @@
 #include "constants.h"
 
 #include "bitio.h"
+#include "block_device.h"
 #include "interrupts.h"
 #include "printk.h"
 #include "processes.h"
@@ -22,7 +23,9 @@ void isr_normal(int isr_num, int sys_call_num, void *arg) {
       asm("hlt");
    }
    isr(isr_num, sys_call_num, irq_table[isr_num].arg, arg);
-   IRQ_end_of_interrupt(isr_num);
+   if (isr_num > OFFSET1 && isr_num < OFFSET2 + 0x08) {
+      IRQ_end_of_interrupt(isr_num - OFFSET1);
+   }
 }
 
 void isr_errcode(int isr_num, int errcode, void *arg) {
@@ -36,7 +39,6 @@ void isr_errcode(int isr_num, int errcode, void *arg) {
       asm("hlt");
    }
    isr(isr_num, errcode, NULL, arg);
-   IRQ_end_of_interrupt(isr_num);
 }
 
 void kb_isr(int isr_num, int err_code, void *isr_arg, void *arg) {
@@ -44,6 +46,18 @@ void kb_isr(int isr_num, int err_code, void *isr_arg, void *arg) {
    if (c) {
       PROC_unblock_all(&kb_blocked);
    }
+}
+
+void ata_isr(int isr_num, int err_code, void *isr_arg, void *arg) {
+   ata_request_queue *queue = (ata_request_queue *)isr_arg;
+
+   if (queue->head == NULL) {
+      return;
+   }
+
+   ata_read_handler(queue);
+
+   PROC_unblock_head(&ata_blocked);
 }
 
 void ser_isr(int isr_num, int err_code, void *isr_arg, void *arg) {

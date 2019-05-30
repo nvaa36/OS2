@@ -65,6 +65,7 @@ void setup_isrs() {
    memset((void *)irq_table, 0, sizeof(irq_table));
    irq_table[OFFSET1+KB_IRQ].handler = kb_isr;
    irq_table[OFFSET1+SER_IRQ].handler = ser_isr;
+   irq_table[OFFSET1+ATA_IRQ].handler = ata_isr;
    irq_table[PF].handler = pf_isr;
    irq_table[GP].handler = gp_isr;
    irq_table[SYS_CALL].handler = sc_isr;

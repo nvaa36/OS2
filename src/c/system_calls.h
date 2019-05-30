@@ -9,9 +9,10 @@
 #define YIELD 0x01
 #define KEXIT 0x02
 #define GETC 0x03
+#define READ_BLOCK 0x04
 #define TEST 36
 
-#define NUM_SYS_CALLS 2
+#define NUM_SYS_CALLS 100
 
 void setup_syscalls();
 

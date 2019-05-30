@@ -1,5 +1,6 @@
 #include "system_calls.h"
 
+#include "block_device.h"
 #include "printk.h"
 #include "processes.h"
 #include "stdio.h"
@@ -10,7 +11,8 @@ void (*(sys_calls[NUM_SYS_CALLS]))();
 void setup_syscalls() {
    sys_calls[YIELD] = yield_internal;
    sys_calls[KEXIT] = kexit_internal;
-   sys_calls[GETC] = getc_block;
+   sys_calls[GETC] = getc_syscall;
+   sys_calls[READ_BLOCK] = read_block_syscall;
    sys_calls[TEST] = test;
 }
 

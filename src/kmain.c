@@ -16,7 +16,8 @@ void print_stuff(void *arg) {
 }
 
 void setup_thread(void *arg) {
-   setup_block_devices();
+   block_dev *dev = setup_block_devices();
+   setup_filesystem(dev);
 }
 
 int kmain(uint32_t *tag_pointer) {
@@ -24,10 +25,10 @@ int kmain(uint32_t *tag_pointer) {
    while (__loop);
    setup_kernel(tag_pointer);
    printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
-   //PROC_create_kthread(setup_thread, NULL);
-   PROC_create_kthread(print_stuff, NULL);
+   PROC_create_kthread(setup_thread, NULL);
+   /*PROC_create_kthread(print_stuff, NULL);
    PROC_create_kthread(keyboard_io, NULL);
-   PROC_create_kthread(keyboard_io, NULL);
+   PROC_create_kthread(keyboard_io, NULL);*/
    //setup_snakes(0);
    while (1) {
       printk("REady to run!\n");

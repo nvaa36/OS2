@@ -42,7 +42,7 @@ char get_char_head(int *read) {
    return character;
 }
 
-void getc_block(char *arg) {
+void getc_syscall(char *arg) {
    disable_interrupts();
    while (curr_proc->kb_read == kb_state.tail) {
       PROC_block_on(&kb_blocked, 1);

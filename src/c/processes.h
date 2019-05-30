@@ -60,7 +60,7 @@ typedef void (*kproc_t)(void*);
 
 process kern_proc;
 process *curr_proc, *next_proc;
-process_queue ready_proc, kb_blocked;
+process_queue ready_proc, kb_blocked, ata_blocked;
 // Assumptions: each process is either in the ready queue or a blocked queue
 
 /**

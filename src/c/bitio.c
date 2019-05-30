@@ -10,10 +10,10 @@ char inb(unsigned short int port) {
    return value;
 }
 
-uint32_t inl(unsigned short int port) {
-   uint32_t value;
+uint16_t inw(unsigned short int port) {
+   uint16_t value;
 
-   asm("inl %1, %0"
+   asm("inw %1, %0"
        : "=a" (value)
        : "Nd" (port));
 

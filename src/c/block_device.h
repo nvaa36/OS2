@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#include "processes.h"
+
 /* From OSDevWiki */
 #define ATA_SR_BSY     0x80    // Busy
 #define ATA_SR_DRDY    0x40    // Drive ready
@@ -109,6 +111,17 @@
 #define LBA 0x40
 
 #define BLOCK_SIZE 512
+#define NUM_PARTITIONS 4
+
+#define MBR1 0x55
+#define MBR2 0xAA
+
+#define STAT_DRQ 3
+
+#define PART_OFF1 446
+#define PART_OFF2 462
+#define PART_OFF3 478
+#define PART_OFF4 494
 
 enum BlockDevType { MASS_STORAGE, PARTITION };
 
@@ -124,14 +137,44 @@ typedef struct BlockDev {
 
 // TODO: actually put fields in this
 typedef struct ATARequest {
+   block_dev *dev;
+   uint64_t blk_num;
+   void *dst;
+   int bytes_read;
+   process *proc;
+   char resolved;
+   struct ATARequest *prev, *next;
 } ata_request;
+
+typedef struct {
+   ata_request *head, *tail;
+} ata_request_queue;
+
+struct partition {
+   uint32_t lba;
+   uint32_t num_sectors;
+};
 
 typedef struct ATABlockDev {
    block_dev dev;
    uint16_t ata_base, ata_ctl;
    uint8_t slave, irq;
-   struct ata_request *req_head, *req_tail;
+   ata_request_queue queue;
+   struct partition part_info;
 } ata_block_dev;
+
+struct part_entry {
+   uint8_t stat;
+   uint8_t h1;
+   uint8_t hc1;
+   uint8_t lc1;
+   uint8_t type;
+   uint8_t h_last;
+   uint8_t hc_last;
+   uint8_t lc_last;
+   uint32_t lba;
+   uint32_t num_sectors;
+} __attribute__ ((packed));
 
 typedef struct {
    char b1;
@@ -144,10 +187,10 @@ typedef struct {
    char unused1;
 } __attribute__ ((packed)) lba_address;
 
-void setup_block_devices();
-int BLK_register(struct BlockDev *dev);
-ata_block_dev *ata_probe(uint16_t base, uint16_t ctrl, uint8_t slave,
-                     uint8_t irq);
-void read(void);
+block_dev *block_dev_head, *block_dev_tail;
+
+block_dev *setup_block_devices();
+void read_block_syscall(ata_request *request);
+void ata_read_handler(ata_request_queue *queue);
 
 #endif

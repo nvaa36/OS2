@@ -41,6 +41,8 @@
 
 #define KB_IRQ 1
 #define SER_IRQ 4
+#define CASC_IRQ 2
+#define ATA_IRQ 14
 
 #define DF 0x8
 #define GP 0xD
@@ -58,6 +60,7 @@ extern void *isr_locs[];
 /* ISR function pointers */
 extern void kb_isr(int, int, void*, void*);
 extern void ser_isr(int, int, void*, void*);
+extern void ata_isr(int, int, void*, void*);
 extern void pf_isr(int, int, void*, void*);
 extern void gp_isr(int, int, void*, void*);
 extern void sc_isr(int, int, void*, void*);
