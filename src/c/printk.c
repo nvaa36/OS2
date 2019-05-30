@@ -68,6 +68,8 @@ void handle_flag(const char *fmt, int *ind, char c, va_list va, int *num_chars) 
       case 'q':
          print_dux(fmt, ind, (long long)va_arg(va, long long), num_chars);
          return;
+      case 's':
+         printk(va_arg(va, char *));
    }
 }
 

@@ -5,6 +5,7 @@
 #include "c/block_device.h"
 #include "c/filesystems.h"
 #include "c/gdt.h"
+#include "c/inode.h"
 #include "c/interrupts.h"
 #include "c/kmalloc.h"
 #include "c/page_frame_allocator.h"

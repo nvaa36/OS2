@@ -17,7 +17,8 @@ void print_stuff(void *arg) {
 
 void setup_thread(void *arg) {
    block_dev *dev = setup_block_devices();
-   setup_filesystem(dev);
+   struct super_block *sb = setup_filesystem(dev);
+   sb->root_inode->readdir(sb->root_inode, readdir_cb_print, NULL);
 }
 
 int kmain(uint32_t *tag_pointer) {

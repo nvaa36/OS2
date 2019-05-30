@@ -190,6 +190,8 @@ void ata_read_handler(ata_request_queue *queue) {
       ((uint16_t *)request->dst)[bl_num] = inw(device->ata_base + ATA_REG_DATA);
    }
 
+   request->bytes_read = BLOCK_SIZE;
+
    remove_request(queue, queue->head);
 }
 
