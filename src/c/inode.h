@@ -1,7 +1,8 @@
 #ifndef INODE_H
 #define INODE_H
 
-#include "filesystems.h"
+#include <stdint.h>
+#include "file.h"
 
 #define FAT_ATTR_READ_ONLY 0x01
 #define FAT_ATTR_HIDDEN 0x02
@@ -19,6 +20,46 @@
 #define END_EXT_MASK 0x40
 #define EXT_NAME_BYTES 13
 #define MAX_NAME_SIZE END_EXT_MASK * EXT_NAME_BYTES
+
+typedef unsigned long ino_t;
+typedef unsigned int mode_t;
+typedef unsigned int uid_t;
+typedef unsigned int gid_t;
+typedef long off_t;
+
+typedef struct super_block super_block;
+typedef struct inode inode;
+
+typedef int (*readdir_cb)(const char *, inode *, void *);
+
+struct ino_metadata {
+   ino_t st_ino;
+   mode_t st_mode;
+   uid_t st_uid;
+   gid_t st_gid;
+   off_t st_size;
+};
+
+struct inode {
+   ino_t st_ino;
+   mode_t st_mode;
+   uid_t st_uid;
+   gid_t st_gid;
+   off_t st_size;
+   super_block *super_parent;
+   struct inode *inode_parent, *next;
+   char *name;
+   struct file *(*open)(struct inode *inode, enum Mode mode);
+   int (*readdir)(struct inode *inode, readdir_cb cb, void *p);
+   int (*read)(struct inode *inode, int offset, int len, char *dst);
+   int (*unlink)(struct inode *inode, const char *name);
+   void (*free)(struct inode **inode);
+};
+
+struct dir_inode {
+   struct inode inode;
+   struct inode *child;
+};
 
 struct FAT_dir_ent {
    char name[11];
@@ -47,12 +88,12 @@ struct FAT_long_dir_ent {
 } __attribute__((packed));
 
 struct inode *init_dir_inode(struct ino_metadata metadata,
-                             struct super_block *sb, struct inode *parent,
+                             super_block *sb, struct inode *parent,
                              struct inode *next, const char *name);
 struct inode *init_file_inode(struct ino_metadata metadata,
-                             struct super_block *sb, struct inode *parent,
+                             super_block *sb, struct inode *parent,
                              struct inode *next, const char *name);
 
-int readdir_cb_print(const char *name, struct inode *inode, void *p);
+int readdir_cb_test(const char *name, struct inode *inode, void *p);
 
 #endif

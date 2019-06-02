@@ -18,12 +18,12 @@ void print_stuff(void *arg) {
 void setup_thread(void *arg) {
    block_dev *dev = setup_block_devices();
    struct super_block *sb = setup_filesystem(dev);
-   sb->root_inode->readdir(sb->root_inode, readdir_cb_print, NULL);
+   sb->root_inode->readdir(sb->root_inode, readdir_cb_test, NULL);
 }
 
 int kmain(uint32_t *tag_pointer) {
-   int __loop = 1;
-   while (__loop);
+   /*int __loop = 1;
+   while (__loop);*/
    setup_kernel(tag_pointer);
    printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
    PROC_create_kthread(setup_thread, NULL);

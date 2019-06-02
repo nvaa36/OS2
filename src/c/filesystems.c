@@ -48,6 +48,26 @@ int read_cluster(struct fat32_super_block *sb, unsigned long inode_num,
    return bytes_read;
 }
 
+uint32_t get_next_cluster(struct fat32_super_block *sb, uint64_t inode_num) {
+   uint32_t next_inode_num = sb->FAT[inode_num];
+   if (next_inode_num > MAX_FAT_NUM || next_inode_num == 0) {
+      return 0;
+   }
+   return next_inode_num;
+}
+
+ino_t get_ino_of_offset(struct fat32_super_block *sb, ino_t start_cluster,
+                        off_t offset) {
+   int i;
+   ino_t cur_cluster = start_cluster;
+
+   for (i = 0; i < offset / (sb->sectors_per_cluster * BLOCK_SIZE); i++) {
+      cur_cluster = get_next_cluster(sb, cur_cluster);
+   }
+
+   return cur_cluster;
+}
+
 // Returns NULL if not able to parse FAT32 (e.g. if it is not FAT32)
 struct super_block *fat32_probe(block_dev *dev) {
    struct fat32 fat32;

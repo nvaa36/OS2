@@ -28,6 +28,7 @@ char *strncpy(char *dest, const char *src, size_t n) {
    memcpy(dest, src, n);
    return dest;
 }
+
 int strncmp(const char *s1, const char *s2, size_t n) {
    int i;
    int val = 0;

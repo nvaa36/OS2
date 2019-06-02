@@ -3,6 +3,7 @@
 
 #include "block_device.h"
 #include "file.h"
+#include "inode.h"
 
 #define BPB_OFF 0
 
@@ -12,11 +13,7 @@
 #define MODE_FILE 0x1
 #define MODE_DIR 0x2
 
-typedef unsigned long ino_t;
-typedef unsigned int mode_t;
-typedef unsigned int uid_t;
-typedef unsigned int gid_t;
-typedef long off_t;
+#define MAX_FAT_NUM 0x0FFFFFF8
 
 struct super_block {
    struct inode *root_inode;
@@ -36,36 +33,6 @@ struct fat32_super_block {
    uint32_t sectors_per_fat;
    uint64_t cluster_start_offset;
    char label[11];
-};
-
-typedef int (*readdir_cb)(const char *, struct inode *, void *);
-
-struct ino_metadata {
-   ino_t st_ino;
-   mode_t st_mode;
-   uid_t st_uid;
-   gid_t st_gid;
-   off_t st_size;
-};
-
-struct inode {
-   ino_t st_ino;
-   mode_t st_mode;
-   uid_t st_uid;
-   gid_t st_gid;
-   off_t st_size;
-   struct super_block *super_parent;
-   struct inode *inode_parent, *next;
-   char *name;
-   struct file *(*open)(unsigned long inode);
-   int (*readdir)(struct inode *inode, readdir_cb cb, void *p);
-   int (*unlink)(struct inode *inode, const char *name);
-   void (*free)(struct inode **inode);
-};
-
-struct dir_inode {
-   struct inode inode;
-   struct inode *child;
 };
 
 struct fat_bpb {
@@ -133,5 +100,8 @@ uint64_t clusternum_to_lba(struct fat32_super_block *this,
                            uint32_t cluster_num);
 int read_cluster(struct fat32_super_block *sb, unsigned long inode_num,
                    void **buffer);
+uint32_t get_next_cluster(struct fat32_super_block *sb, uint64_t inode_num);
+ino_t get_ino_of_offset(struct fat32_super_block *sb, ino_t start_cluster,
+                        off_t offset);
 
 #endif
