@@ -103,5 +103,6 @@ int read_cluster(struct fat32_super_block *sb, unsigned long inode_num,
 uint32_t get_next_cluster(struct fat32_super_block *sb, uint64_t inode_num);
 ino_t get_ino_of_offset(struct fat32_super_block *sb, ino_t start_cluster,
                         off_t offset);
+struct inode *inode_for_path(const char *path, struct inode *cwd);
 
 #endif

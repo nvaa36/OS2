@@ -58,3 +58,18 @@ char *strdup(const char *s) {
    memcpy(new, s, size);
    return new;
 }
+
+// My version of strtok returns to the user the index of the rest of the
+// string after the token. Returns NULL if it does not find the token or if
+// there is nothing left.
+char *strtok(char *string, char token) {
+   int i;
+
+   for (i = 0; i < strlen(string); i++) {
+      if (string[i] == token) {
+         string[i] = '\0';
+         return &(string[i + 1]);
+      }
+   }
+   return NULL;
+}

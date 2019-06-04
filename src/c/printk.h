@@ -10,6 +10,7 @@ int printk(const char *fmt, ...) __attribute__ ((format (printf, 1, 2)));
 
 void handle_flag(const char *, int *, char, va_list, int *);
 
+void putc_syscall(char *c);
 void print_dux(const char *, int *, long long, int *);
 void print_neg(long long i, int *num_chars);
 void print_char(char);

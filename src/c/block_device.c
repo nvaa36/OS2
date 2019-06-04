@@ -291,13 +291,10 @@ block_dev *setup_block_devices() {
    irq_table[OFFSET1+ATA_IRQ].arg = &device->queue;
    IRQ_clear_mask(CASC_IRQ);
    IRQ_clear_mask(ATA_IRQ);
-   printk("setup\n");
 
    read_mbr(device);
-   printk("mbr read\n");
 
    device->dev.read_block((block_dev *)device, 10, block);
-   printk("block read\n");
 
    return (block_dev *)device;
 }

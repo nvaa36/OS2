@@ -10,6 +10,7 @@
 #define KEXIT 0x02
 #define GETC 0x03
 #define READ_BLOCK 0x04
+#define PUTC 0x05
 #define TEST 36
 
 #define NUM_SYS_CALLS 100
@@ -24,6 +25,7 @@ void system_call(int sys_call_num, void *arg);
 void yield();
 void kexit();
 char getc();
+void putc(char c);
 void test(void *arg);
 
 #endif

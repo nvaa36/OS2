@@ -10,5 +10,6 @@ char *strncpy(char *dest, const char *src, size_t n);
 int strncmp(const char *s1, const char *s2, size_t n);
 const char *strchr(const char *s, int c);
 char *strdup(const char *s);
+char *strtok(char *s, char c);
 
 #endif

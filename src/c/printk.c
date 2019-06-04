@@ -90,6 +90,10 @@ void print_dux(const char *fmt, int *i, long long num, int *num_chars) {
    }
 }
 
+void putc_syscall(char *c) {
+   print_char(*c);
+}
+
 void print_char(char c) {
    if (c == '\b') {
       backspace();

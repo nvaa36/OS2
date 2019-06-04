@@ -87,6 +87,11 @@ struct FAT_long_dir_ent {
    uint16_t last[2];
 } __attribute__((packed));
 
+struct find_inode_info {
+   const char *name;
+   struct inode *inode;
+};
+
 struct inode *init_dir_inode(struct ino_metadata metadata,
                              super_block *sb, struct inode *parent,
                              struct inode *next, const char *name);
@@ -95,5 +100,6 @@ struct inode *init_file_inode(struct ino_metadata metadata,
                              struct inode *next, const char *name);
 
 int readdir_cb_test(const char *name, struct inode *inode, void *p);
+int readdir_cb_find_inode(const char *name, struct inode *inode, void *p);
 
 #endif

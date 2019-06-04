@@ -2,7 +2,7 @@
 
 void keyboard_io(void *arg) {
    while (1)
-      printk("%c\n", getc());
+      putc(getc());
 }
 
 void print_stuff(void *arg) {
@@ -19,20 +19,21 @@ void setup_thread(void *arg) {
    block_dev *dev = setup_block_devices();
    struct super_block *sb = setup_filesystem(dev);
    sb->root_inode->readdir(sb->root_inode, readdir_cb_test, NULL);
+   load_test_func(sb);
 }
 
 int kmain(uint32_t *tag_pointer) {
-   /*int __loop = 1;
-   while (__loop);*/
+   int __loop = 1;
+   while (__loop);
    setup_kernel(tag_pointer);
-   printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
+   //printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
    PROC_create_kthread(setup_thread, NULL);
-   /*PROC_create_kthread(print_stuff, NULL);
-   PROC_create_kthread(keyboard_io, NULL);
-   PROC_create_kthread(keyboard_io, NULL);*/
+   //PROC_create_kthread(print_stuff, NULL);
+   //PROC_create_kthread(keyboard_io, NULL);
+   //PROC_create_kthread(keyboard_io, NULL);
    //setup_snakes(0);
    while (1) {
-      printk("REady to run!\n");
+      //printk("REady to run!\n");
       PROC_run();
       wait_for_interrupt();
    }

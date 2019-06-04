@@ -6,6 +6,8 @@
 #include "printk.h"
 #include "string.h"
 
+#include "md5.h"
+
 struct file *inode_dir_open(struct inode *inode, enum Mode mode) {
    printk("Cannot open directory.\n");
    return NULL;
@@ -15,12 +17,27 @@ struct file *inode_file_open(struct inode *inode, enum Mode mode) {
    return init_file(inode, mode, inode->st_size);
 }
 
+// This callback will look for the file with the name in the inode_find struct
+// and populate the inode field accordingly.
+int readdir_cb_find_inode(const char *name, struct inode *inode, void *p) {
+   struct find_inode_info *info = (struct find_inode_info *)p;
+
+   //printk("Processing: %s\n", name);
+   if (strlen(name) == strlen(info->name) && 
+       !strncmp(name, info->name, strlen(name))) {
+      //printk("Found node %s\n", name);
+      info->inode = inode;
+   }
+
+   return 0;
+}
+
 int readdir_cb_test(const char *name, struct inode *inode, void *p) {
-   char buffer[BLOCK_SIZE];
+   char buffer[BLOCK_SIZE * 40 + 1];
    struct file *file;
    int bytes_read;
 
-   printk("Found Inode: %s\n", name);
+   //printk("Found Inode: %s\n", name);
    if (inode->st_mode == MODE_DIR &&
        inode->st_ino != inode->inode_parent->st_ino &&
        inode->st_ino != inode->inode_parent->inode_parent->st_ino) {
@@ -29,8 +46,10 @@ int readdir_cb_test(const char *name, struct inode *inode, void *p) {
 
    if (!strncmp(name, "tester.txt", strlen("tester.txt"))) {
       file = inode->open(inode, READ);
-      while ((bytes_read = file->read(file, buffer, BLOCK_SIZE))) {
+      //file->lseek(file, 39);
+      while ((bytes_read = file->read(file, buffer, BLOCK_SIZE * 40))) {
          buffer[bytes_read] = '\0';
+         run_md5(buffer);
          printk((char *)buffer);
       }
       file->close(&file);
@@ -80,6 +99,7 @@ int inode_dir_readdir(struct inode *inode, readdir_cb cb, void *p) {
             }
             memset(&metadata, 0, sizeof(metadata));
             metadata.st_ino = dir_ent->cluster_hi << 16 | dir_ent->cluster_lo;
+            metadata.st_size = dir_ent->size;
             if (dir_ent->name[0] != SKIP_NAME && metadata.st_ino != 0) {
                if (dir_ent->attr == FAT_ATTR_DIRECTORY) {
                   metadata.st_mode = MODE_DIR;
@@ -93,7 +113,7 @@ int inode_dir_readdir(struct inode *inode, readdir_cb cb, void *p) {
                                                inode, child_inode,
                                                name ?: dir_ent->name);
                }
-               cb(name ?: dir_ent->name, child_inode, NULL);
+               cb(name ?: dir_ent->name, child_inode, p);
                num_inodes++;
             }
             if (name) {
@@ -123,18 +143,33 @@ int inode_file_read(struct inode *inode, int offset, int len, char *dst) {
    struct fat32_super_block *sb = (struct fat32_super_block *)
                                   inode->super_parent;
 
+   if (offset > inode->st_size) {
+      printk("Offset past end of file.\n");
+      return 0;
+   }
+
+   if (len > inode->st_size - offset) {
+      // If there are not len more bytes in the file, simply read the rest.
+      len = inode->st_size - offset;
+   }
+
    cur_cluster = get_ino_of_offset(sb, inode->st_ino, offset);
    bytes_in_buffer = read_cluster(sb, cur_cluster, (void **)&buffer);
 
-   for (i = 0, buffer_off = 0; i < len; i++, buffer_off++) {
+   for (i = 0, buffer_off = offset % (sb->sectors_per_cluster * BLOCK_SIZE);
+        i < len; i++, buffer_off++) {
       if (buffer_off == bytes_in_buffer) {
          kfree(buffer);
-         bytes_in_buffer = read_cluster(sb,
-                           get_next_cluster(sb, cur_cluster),
-                           (void **)&buffer);
+         cur_cluster = get_next_cluster(sb, cur_cluster);
+         if (!cur_cluster) {
+            // There is no next cluster, we have reached the end.
+            printk("End of file.\n");
+            return i;
+         }
+         bytes_in_buffer = read_cluster(sb, cur_cluster, (void **)&buffer);
          if (!bytes_in_buffer) {
-            printk("Problem reading file.\n");
-            return -1;
+            printk("End of file.\n");
+            return i;
          }
          buffer_off = 0;
       }

@@ -68,6 +68,38 @@ ino_t get_ino_of_offset(struct fat32_super_block *sb, ino_t start_cluster,
    return cur_cluster;
 }
 
+struct inode *inode_for_path(const char *p, struct inode *cwd) {
+   char *tmp, *orig_path;
+   struct find_inode_info *tofind;
+
+   struct inode *cur_inode = cwd;
+   char *path = strdup(p);
+
+   orig_path = path;
+   tofind = (struct find_inode_info *)kmalloc(sizeof(*tofind));
+   memset(tofind, 0, sizeof(*tofind));
+
+   do {
+      tmp = strtok(path, '/');
+      tofind->name = path;
+      tofind->inode = NULL;
+      //printk("Looking for: %s in dir: %s\n", path, cur_inode->name);
+      cur_inode->readdir(cur_inode, readdir_cb_find_inode, tofind);
+
+      if (tofind->inode == NULL) {
+         printk("Could not find file: %s in dir: %s\n", path, cur_inode->name);
+         kfree(orig_path);
+         return NULL;
+      }
+
+      cur_inode = tofind->inode;
+      path = tmp;
+   } while (tmp);
+
+   kfree(orig_path);
+   return cur_inode;
+}
+
 // Returns NULL if not able to parse FAT32 (e.g. if it is not FAT32)
 struct super_block *fat32_probe(block_dev *dev) {
    struct fat32 fat32;

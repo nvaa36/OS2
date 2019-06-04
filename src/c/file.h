@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 
+#define SEEK_SET 1
+#define SEEK_CUR 2
+
 typedef struct inode inode;
 
 typedef long off_t;
@@ -17,7 +20,7 @@ struct file {
    int (*close)(struct file **file);
    int (*read)(struct file *file, char *dst, int len);
    int (*write)(struct file *file, char *dst, int len); // Unimplemented
-   int (*lseek)(struct file *file, off_t offset);
+   int (*lseek)(struct file *file, off_t offset, int whence);
    int (*mmap)(struct file *file, void *addr);
 };
 

@@ -27,6 +27,7 @@
 
 #define KERN_HEAP_START 0xF0000000000
 #define KERN_STACK_START 0x20000000000
+#define USER_SPACE_START 0x100000000000
 
 typedef struct {
    uint64_t reserved:3;

@@ -12,6 +12,7 @@ void setup_syscalls() {
    sys_calls[YIELD] = yield_internal;
    sys_calls[KEXIT] = kexit_internal;
    sys_calls[GETC] = getc_syscall;
+   sys_calls[PUTC] = putc_syscall;
    sys_calls[READ_BLOCK] = read_block_syscall;
    sys_calls[TEST] = test;
 }
@@ -40,6 +41,10 @@ char getc() {
    make_system_call(GETC, &c);
 
    return c;
+}
+
+void putc(char c) {
+   make_system_call(PUTC, &c);
 }
 
 void test(void *arg) {

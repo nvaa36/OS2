@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include "c/block_device.h"
+#include "c/elf_loader.h"
 #include "c/filesystems.h"
 #include "c/gdt.h"
 #include "c/inode.h"
