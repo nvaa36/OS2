@@ -26,12 +26,8 @@ int kmain(uint32_t *tag_pointer) {
    int __loop = 1;
    while (__loop);
    setup_kernel(tag_pointer);
-   //printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
+   printk("djs\nkhfaksdjhfkjhfoweihafoiehfioehfoiwehoifhweoifhweoifhweoifhoiwehfoiwehfiwehfoiehfoiehwfoiheofihweoifhweoifhaoeiwhfoiewhfoiewhfoiewhfoiewhfoiaewhfoiwehafioewh\n");
    PROC_create_kthread(setup_thread, NULL);
-   //PROC_create_kthread(print_stuff, NULL);
-   //PROC_create_kthread(keyboard_io, NULL);
-   //PROC_create_kthread(keyboard_io, NULL);
-   //setup_snakes(0);
    while (1) {
       //printk("REady to run!\n");
       PROC_run();

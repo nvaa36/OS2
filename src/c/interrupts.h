@@ -54,6 +54,9 @@
 
 #define IF_MASK 1 << 9
 
+#define USER_PERM 3
+#define KERN_PERM 0
+
 /* Labels for the 0th and 1st isrs */
 extern void *isr_locs[];
 

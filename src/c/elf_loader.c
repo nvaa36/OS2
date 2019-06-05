@@ -82,6 +82,6 @@ void load_test_func(struct super_block *sb) {
 
    entry_point = parse_elf(binary);
 
-   PROC_create_kthread((kproc_t)entry_point, NULL);
+   PROC_create_user_thread((kproc_t)entry_point, NULL);
    printk("%p\n", entry_point);
 }

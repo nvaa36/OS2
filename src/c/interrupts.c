@@ -70,8 +70,10 @@ void setup_isrs() {
    irq_table[GP].handler = gp_isr;
    irq_table[SYS_CALL].handler = sc_isr;
    idt[SYS_CALL].type = TRAP_TYPE;
+   idt[SYS_CALL].dpl = USER_PERM;
    irq_table[KEXIT_ISR_NUM].handler = sc_isr;
    idt[KEXIT_ISR_NUM].type = TRAP_TYPE;
+   idt[KEXIT_ISR_NUM].dpl = USER_PERM;
 }
 
 /* Code from OSDevWiki */

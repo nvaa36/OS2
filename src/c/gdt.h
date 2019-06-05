@@ -3,10 +3,11 @@
 
 #include <stdint.h>
 
-#define NUM_GDT_ENTRIES 4
+#define NUM_GDT_ENTRIES 5
 #define KERN_IND 1
 #define TSS_IND1 2
 #define TSS_IND2 3
+#define USER_IND 4
 
 #define AVAIL_TSS_TYPE 9
 

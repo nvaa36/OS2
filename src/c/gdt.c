@@ -5,17 +5,6 @@
 
 uint64_t gdt[NUM_GDT_ENTRIES];
 
-void setup_gdt() {
-   /* Zero first entry. */
-   memset(gdt, 0, sizeof(uint64_t));
-   setup_kernel_segment();
-   setup_tss_desc();
-
-   /* Make the table descriptor */
-   lgdt((void *)gdt, sizeof(gdt));
-   ltr();
-}
-
 void setup_kernel_segment() {
    ((cs_desc*)&gdt[KERN_IND])->limit1 = 0;
    ((cs_desc*)&gdt[KERN_IND])->base_addr1 = 0;
@@ -35,6 +24,27 @@ void setup_kernel_segment() {
    ((cs_desc*)&gdt[KERN_IND])->g = 0;
 
    ((cs_desc*)&gdt[KERN_IND])->base_addr3 = 0;
+}
+
+void setup_user_segment() {
+   ((cs_desc*)&gdt[USER_IND])->limit1 = 0;
+   ((cs_desc*)&gdt[USER_IND])->base_addr1 = 0;
+   ((cs_desc*)&gdt[USER_IND])->base_addr2 = 0;
+   ((cs_desc*)&gdt[USER_IND])->a = 0;
+   ((cs_desc*)&gdt[USER_IND])->r = 0;
+   ((cs_desc*)&gdt[USER_IND])->c = 0;
+   ((cs_desc*)&gdt[USER_IND])->exec = 1;
+   ((cs_desc*)&gdt[USER_IND])->one = 1;
+   ((cs_desc*)&gdt[USER_IND])->dpl = 3;
+   ((cs_desc*)&gdt[USER_IND])->present = 1;
+
+   ((cs_desc*)&gdt[USER_IND])->limit2 = 0;
+   ((cs_desc*)&gdt[USER_IND])->avail = 0;
+   ((cs_desc*)&gdt[USER_IND])->long_mode = 1;
+   ((cs_desc*)&gdt[USER_IND])->d = 0;
+   ((cs_desc*)&gdt[USER_IND])->g = 0;
+
+   ((cs_desc*)&gdt[USER_IND])->base_addr3 = 0;
 }
 
 void setup_tss_desc() {
@@ -70,4 +80,16 @@ void lgdt(void* base, uint16_t size) {
 
 void ltr() {
    asm("ltr %0" : : "a"((uint16_t)(TSS_IND1 * sizeof(uint64_t))));
+}
+
+void setup_gdt() {
+   /* Zero first entry. */
+   memset(gdt, 0, sizeof(uint64_t));
+   setup_kernel_segment();
+   setup_user_segment();
+   setup_tss_desc();
+
+   /* Make the table descriptor */
+   lgdt((void *)gdt, sizeof(gdt));
+   ltr();
 }

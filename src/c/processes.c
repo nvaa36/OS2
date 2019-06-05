@@ -133,6 +133,41 @@ process *PROC_create_kthread(kproc_t entry_point, void *arg) {
    return new_proc;
 }
 
+process *PROC_create_user_thread(kproc_t entry_point, void *arg) {
+   start_stack *stack;
+   process *new_proc;
+   uint16_t rflags;
+
+   void *stack_loc = MMU_alloc_kern_stack();
+   stack = (start_stack *)(stack_loc + STACK_NUM_PAGES * PAGE_FRAME_SIZE -
+                 sizeof(start_stack));
+   memset(stack, 0, sizeof(start_stack));
+
+   stack->ret_rip = (uint64_t)entry_point;
+   stack->ret_cs = USER_CS;
+   asm("pushf"); // Push the flags register
+   asm("pop %0" : "=r"(rflags));
+   stack->ret_rflags = (uint64_t)rflags;
+   stack->ret_rsp = (uint64_t)&stack->entry_ret_addr;
+   stack->ret_ss = USER_SS;
+   // Make the first argument when you start the function be the argument
+   // passed in.
+   stack->rdi = (uint64_t)arg;
+
+   stack->entry_ret_addr = (uint64_t)kexit;
+   stack->entry_arg = (uint64_t)arg;
+
+   new_proc = kmalloc(sizeof(process));
+   memset(new_proc, 0, sizeof(process));
+   new_proc->rsp = (uint64_t)stack;
+   new_proc->stack_base = stack_loc;
+   new_proc->pid = proc_count++;
+
+   add_proc(&ready_proc, new_proc);
+
+   return new_proc;
+}
+
 void PROC_block_on(process_queue *queue, int enable_ints) {
    if (!queue) {
       return;

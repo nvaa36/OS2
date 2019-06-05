@@ -5,6 +5,8 @@
 
 #define DEFAULT_SS 0
 #define DEFAULT_CS 8
+#define USER_SS 0
+#define USER_CS 32
 
 typedef struct Process{
    uint64_t rax;
@@ -73,6 +75,7 @@ void setup_multiprocessing();
 void PROC_run(void);
 void PROC_reschedule();
 process *PROC_create_kthread(kproc_t entry_point, void *arg);
+process *PROC_create_user_thread(kproc_t entry_point, void *arg);
 
 void PROC_block_on(process_queue *, int enable_ints);
 void PROC_unblock_all(process_queue *);
