@@ -5,6 +5,8 @@
 #include "string.h"
 #include "virtual_paging.h"
 
+extern PT4_Entry *kern_pt4;
+
 // TODO: Is there a safer way to do this?
 void load_segments(struct file *binary, uint64_t prog_num_entries,
                    struct ELF64ProgHeader *prog_table) {
@@ -23,6 +25,8 @@ void load_segments(struct file *binary, uint64_t prog_num_entries,
          continue;
       }
 
+      // TODO: change when you have another page table for user.
+      MMU_alloc_user_prog(kern_pt4, (void *)entry.load_addr, entry.file_size);
       binary->read(binary, (char *)entry.load_addr, entry.file_size);
    }
 }

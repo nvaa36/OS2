@@ -87,8 +87,7 @@ void pf_isr(int isr_num, int err_code, void *isr_arg, void *arg) {
    void *pt4 = get_cr3();
    PT1_Entry *pt1e = get_pt1_entry(pt4, addr);
 
-   // TODO: Is this hacky? Is there a better way to do this?
-   if ((uint64_t)addr < USER_SPACE_START && pt1e->avl != ALLOC_ON_DEMAND) {
+   if (pt1e->avl != ALLOC_ON_DEMAND) {
       printk("Unhandled Page Fault. Addr: %p, table: %p, error code: %d\n",
              addr, pt4, err_code);
    }

@@ -5,7 +5,8 @@
 #include "page_frame_allocator.h"
 #include "string.h"
 #include "system_calls.h"
-#include "virtual_paging.h"
+
+extern PT4_Entry *kern_pt4;
 
 int proc_count;
 
@@ -138,7 +139,8 @@ process *PROC_create_user_thread(kproc_t entry_point, void *arg) {
    process *new_proc;
    uint16_t rflags;
 
-   void *stack_loc = MMU_alloc_kern_stack();
+   // TODO: change when you have another page table
+   void *stack_loc = MMU_alloc_user_stack(kern_pt4);
    stack = (start_stack *)(stack_loc + STACK_NUM_PAGES * PAGE_FRAME_SIZE -
                  sizeof(start_stack));
    memset(stack, 0, sizeof(start_stack));
@@ -162,6 +164,9 @@ process *PROC_create_user_thread(kproc_t entry_point, void *arg) {
    new_proc->rsp = (uint64_t)stack;
    new_proc->stack_base = stack_loc;
    new_proc->pid = proc_count++;
+   new_proc->stack_ptr = (void *)USER_SPACE_STACK_START;
+   new_proc->heap_ptr = (void *)USER_SPACE_HEAP;
+   new_proc->pt4 = kern_pt4;
 
    add_proc(&ready_proc, new_proc);
 

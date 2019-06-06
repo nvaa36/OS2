@@ -2,11 +2,12 @@
 #define PROCESSES_H
 
 #include <stdint.h>
+#include "virtual_paging.h"
 
 #define DEFAULT_SS 0
 #define DEFAULT_CS 8
-#define USER_SS 0
-#define USER_CS 32
+#define USER_CS USER_CS_IND << 3 | 3
+#define USER_SS USER_SS_IND << 3 | 3
 
 typedef struct Process{
    uint64_t rax;
@@ -31,6 +32,9 @@ typedef struct Process{
    struct Process *prev;
    struct Process *next;
    int kb_read;
+   void *stack_ptr;
+   void *heap_ptr;
+   PT4_Entry *pt4;
    int pid;
 } __attribute__ ((packed)) process;
 

@@ -11,16 +11,42 @@ void setup_kernel_page_tables() {
    kern_pt4 = setup_page_tables();
 }
 
-void set_page_kern_frame(void *address) {
-   set_page_frame(kern_pt4, address);
-}
-
 void *MMU_alloc_kern_stack() {
    return MMU_alloc_kern_pages(STACK_NUM_PAGES);
 }
 
 void MMU_free_kern_stack(void *address) {
    return MMU_free_kern_pages(address, STACK_NUM_PAGES);
+}
+
+// Makes space for a user program on the stack and sets it to usable by the
+// user.
+void MMU_alloc_user_prog(PT4_Entry *pt4, void *address, uint64_t lgth) {
+   PT1_Entry *pt1e;
+   uint64_t i;
+   uint64_t start = (uint64_t)address - ((uint64_t)address % PAGE_FRAME_SIZE);
+   uint64_t end = start + PAGE_FRAME_SIZE * (lgth /PAGE_FRAME_SIZE + 1);
+
+   for (i = start; i <= end; i += PAGE_FRAME_SIZE) {
+      pt1e = get_pt1_entry(pt4, (void *)i);
+      pt1e->avl = ALLOC_ON_DEMAND;
+      pt1e->su = USER_BIT;
+   }
+}
+
+void *MMU_alloc_user_stack(PT4_Entry *pt4) {
+   void *virt_addr = (void *)USER_SPACE_STACK_START;
+   PT1_Entry *pt1e;
+   int i;
+
+   for (i = 0; i < num; i++) {
+      pt1e = get_pt1_entry(pt4, virt_addr + i * PAGE_FRAME_SIZE);
+      pt1e->avl = ALLOC_ON_DEMAND;
+   }
+
+   kern_heap_mem_addr += PAGE_FRAME_SIZE * num;
+
+   return virt_addr;
 }
 
 // Allocates the virtual space and creates page table entries, but doesn't
@@ -111,6 +137,9 @@ PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address) {
       pt4e->pt3_ba = (uint64_t)pt3e >> ADDR_SHIFT;
       pt4e->present = 1;
       pt4e->rw = 1;
+      if ((uint64_t)address >= USER_SPACE_START) {
+         pt4e->su = 1;
+      }
    }
 
    pt3e = &((PT3_Entry *)((uint64_t)pt4e->pt3_ba << ADDR_SHIFT))
@@ -122,6 +151,9 @@ PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address) {
       pt3e->present = 1;
       pt3e->pt2_ba = (uint64_t)pt2e >> ADDR_SHIFT;
       pt3e->rw = 1;
+      if ((uint64_t)address >= USER_SPACE_START) {
+         pt3e->su = 1;
+      }
    }
 
    pt2e = &((PT2_Entry *)((uint64_t)pt3e->pt2_ba << ADDR_SHIFT))
@@ -133,6 +165,9 @@ PT1_Entry *get_pt1_entry(PT4_Entry *pt4, void *address) {
       pt2e->present = 1;
       pt2e->pt1_ba = (uint64_t)pt1e >> ADDR_SHIFT;
       pt2e->rw = 1;
+      if ((uint64_t)address >= USER_SPACE_START) {
+         pt2e->su = 1;
+      }
    }
 
    return &((PT1_Entry *)((uint64_t)pt2e->pt1_ba << ADDR_SHIFT))

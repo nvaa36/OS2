@@ -3,11 +3,12 @@
 
 #include <stdint.h>
 
-#define NUM_GDT_ENTRIES 5
+#define NUM_GDT_ENTRIES 6
 #define KERN_IND 1
-#define TSS_IND1 2
-#define TSS_IND2 3
-#define USER_IND 4
+#define TSS_IND1 4
+#define TSS_IND2 5
+#define USER_CS_IND 2
+#define USER_SS_IND 3
 
 #define AVAIL_TSS_TYPE 9
 
@@ -20,6 +21,28 @@ struct csdesc {
    uint8_t r:1;
    uint8_t c:1;
    uint8_t exec:1;
+   uint8_t one:1;
+   uint8_t dpl:2;
+   uint8_t present:1;
+
+   uint8_t limit2:4;
+   uint8_t avail:1;
+   uint8_t long_mode:1;
+   uint8_t d:1;
+   uint8_t g:1;
+
+   uint8_t base_addr3;
+} __attribute__ ((packed));
+
+struct ssdesc {
+   uint16_t limit1;
+   uint16_t base_addr1;
+   uint8_t base_addr2;
+
+   uint8_t a:1;
+   uint8_t w:1;
+   uint8_t e:1;
+   uint8_t zero:1;
    uint8_t one:1;
    uint8_t dpl:2;
    uint8_t present:1;
@@ -61,6 +84,7 @@ struct tssdesc_pt2 {
 } __attribute__ ((packed));
 
 typedef struct csdesc cs_desc;
+typedef struct ssdesc ss_desc;
 typedef struct tssdesc_pt1 tss_desc1;
 typedef struct tssdesc_pt2 tss_desc2;
 

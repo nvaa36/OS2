@@ -20,6 +20,7 @@
 #define ADDR_SHIFT 12
 
 #define ALLOC_ON_DEMAND 1
+#define USER_BIT 1
 
 #define IDENT_IND 0
 #define KERN_STACK_IND 1
@@ -28,6 +29,8 @@
 #define KERN_HEAP_START 0xF0000000000
 #define KERN_STACK_START 0x20000000000
 #define USER_SPACE_START 0x100000000000
+#define USER_SPACE_HEAP 0x130000000000
+#define USER_SPACE_STACK_START 0x190000000000
 
 typedef struct {
    uint64_t reserved:3;
@@ -115,11 +118,14 @@ typedef struct {
 // Kernel page table functions. Most are wrappers for the normal page table
 // functions that pass in the kernel pt4.
 void setup_kernel_page_tables();
-void set_page_kern_frame(void *address);
 
 // Allocates a kernel stack of the default size of 512 pages or 2 MB
 void *MMU_alloc_kern_stack();
 void MMU_free_kern_stack(void *);
+
+// Allocate a user stack of the default size of 512 pages.
+void MMU_alloc_user_prog(PT4_Entry *pt4, void *address, uint64_t lgth);
+void *MMU_alloc_user_stack();
 
 // Functions to allocate pages from the kernel heap.
 void *MMU_alloc_kern_page();

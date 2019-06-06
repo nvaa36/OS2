@@ -27,24 +27,43 @@ void setup_kernel_segment() {
 }
 
 void setup_user_segment() {
-   ((cs_desc*)&gdt[USER_IND])->limit1 = 0;
-   ((cs_desc*)&gdt[USER_IND])->base_addr1 = 0;
-   ((cs_desc*)&gdt[USER_IND])->base_addr2 = 0;
-   ((cs_desc*)&gdt[USER_IND])->a = 0;
-   ((cs_desc*)&gdt[USER_IND])->r = 0;
-   ((cs_desc*)&gdt[USER_IND])->c = 0;
-   ((cs_desc*)&gdt[USER_IND])->exec = 1;
-   ((cs_desc*)&gdt[USER_IND])->one = 1;
-   ((cs_desc*)&gdt[USER_IND])->dpl = 3;
-   ((cs_desc*)&gdt[USER_IND])->present = 1;
+   ((cs_desc*)&gdt[USER_CS_IND])->limit1 = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->base_addr1 = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->base_addr2 = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->a = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->r = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->c = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->exec = 1;
+   ((cs_desc*)&gdt[USER_CS_IND])->one = 1;
+   ((cs_desc*)&gdt[USER_CS_IND])->dpl = 3;
+   ((cs_desc*)&gdt[USER_CS_IND])->present = 1;
 
-   ((cs_desc*)&gdt[USER_IND])->limit2 = 0;
-   ((cs_desc*)&gdt[USER_IND])->avail = 0;
-   ((cs_desc*)&gdt[USER_IND])->long_mode = 1;
-   ((cs_desc*)&gdt[USER_IND])->d = 0;
-   ((cs_desc*)&gdt[USER_IND])->g = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->limit2 = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->avail = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->long_mode = 1;
+   ((cs_desc*)&gdt[USER_CS_IND])->d = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->g = 0;
 
-   ((cs_desc*)&gdt[USER_IND])->base_addr3 = 0;
+   ((cs_desc*)&gdt[USER_CS_IND])->base_addr3 = 0;
+
+   ((ss_desc*)&gdt[USER_SS_IND])->limit1 = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->base_addr1 = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->base_addr2 = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->a = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->w = 1;
+   ((ss_desc*)&gdt[USER_SS_IND])->e = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->zero = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->one = 1;
+   ((ss_desc*)&gdt[USER_SS_IND])->dpl = 3;
+   ((ss_desc*)&gdt[USER_SS_IND])->present = 1;
+
+   ((ss_desc*)&gdt[USER_SS_IND])->limit2 = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->avail = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->long_mode = 1;
+   ((ss_desc*)&gdt[USER_SS_IND])->d = 0;
+   ((ss_desc*)&gdt[USER_SS_IND])->g = 0;
+
+   ((ss_desc*)&gdt[USER_SS_IND])->base_addr3 = 0;
 }
 
 void setup_tss_desc() {
