@@ -28,6 +28,7 @@ void putc(char c) {
 
 void test_func(void *arg) {
    while(1) {
-      putc(getc() + 2);
+      putc(getc() + 5);
    }
+   //putc('+');
 }

@@ -5,6 +5,7 @@
 #include "page_frame_allocator.h"
 #include "string.h"
 #include "system_calls.h"
+#include "tss.h"
 
 extern PT4_Entry *kern_pt4;
 
@@ -135,15 +136,21 @@ process *PROC_create_kthread(kproc_t entry_point, void *arg) {
 }
 
 process *PROC_create_user_thread(kproc_t entry_point, void *arg) {
-   start_stack *stack;
+   start_stack *stack, *kern_stack;
    process *new_proc;
    uint16_t rflags;
 
    // TODO: change when you have another page table
    void *stack_loc = MMU_alloc_user_stack(kern_pt4);
-   stack = (start_stack *)(stack_loc + STACK_NUM_PAGES * PAGE_FRAME_SIZE -
+   void *kern_stack_loc = MMU_alloc_kern_stack();
+   stack = (start_stack *)(stack_loc + USER_STACK_NUM_PAGES * PAGE_FRAME_SIZE -
                  sizeof(start_stack));
    memset(stack, 0, sizeof(start_stack));
+
+   kern_stack = (start_stack *)(kern_stack_loc + STACK_NUM_PAGES *
+                 PAGE_FRAME_SIZE - sizeof(start_stack));
+   memset(kern_stack, 0, sizeof(start_stack));
+   set_rsp0(kern_stack_loc + STACK_NUM_PAGES * PAGE_FRAME_SIZE);
 
    stack->ret_rip = (uint64_t)entry_point;
    stack->ret_cs = USER_CS;
@@ -156,7 +163,7 @@ process *PROC_create_user_thread(kproc_t entry_point, void *arg) {
    // passed in.
    stack->rdi = (uint64_t)arg;
 
-   stack->entry_ret_addr = (uint64_t)kexit;
+   stack->entry_ret_addr = (uint64_t)exit;
    stack->entry_arg = (uint64_t)arg;
 
    new_proc = kmalloc(sizeof(process));
@@ -164,7 +171,7 @@ process *PROC_create_user_thread(kproc_t entry_point, void *arg) {
    new_proc->rsp = (uint64_t)stack;
    new_proc->stack_base = stack_loc;
    new_proc->pid = proc_count++;
-   new_proc->stack_ptr = (void *)USER_SPACE_STACK_START;
+   new_proc->stack_ptr = (void *)USER_SPACE_STACK_END;
    new_proc->heap_ptr = (void *)USER_SPACE_HEAP;
    new_proc->pt4 = kern_pt4;
 
@@ -218,5 +225,19 @@ void kexit_internal(void *arg) {
    }
    PROC_reschedule();
    MMU_free_kern_stack(curr_proc->stack_base);
+   kfree(curr_proc);
+}
+
+void exit_internal(void *arg) {
+   if (ready_proc.head == ready_proc.tail) {
+      ready_proc.head = NULL;
+      ready_proc.tail = NULL;
+   }
+   else {
+      remove_proc(&ready_proc, curr_proc);
+   }
+   PROC_reschedule();
+   MMU_free_user_stack(curr_proc->stack_base);
+   // TODO: free the page table
    kfree(curr_proc);
 }

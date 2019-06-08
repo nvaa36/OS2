@@ -30,7 +30,10 @@
 #define KERN_STACK_START 0x20000000000
 #define USER_SPACE_START 0x100000000000
 #define USER_SPACE_HEAP 0x130000000000
-#define USER_SPACE_STACK_START 0x190000000000
+#define USER_STACK_NUM_PAGES 4096
+#define USER_SPACE_STACK_END 0x190000000000
+#define USER_SPACE_STACK_START USER_SPACE_STACK_END - \
+            USER_STACK_NUM_PAGES * PAGE_FRAME_SIZE
 
 typedef struct {
    uint64_t reserved:3;
@@ -125,6 +128,7 @@ void MMU_free_kern_stack(void *);
 
 // Allocate a user stack of the default size of 512 pages.
 void MMU_alloc_user_prog(PT4_Entry *pt4, void *address, uint64_t lgth);
+void MMU_free_user_stack(void *address);
 void *MMU_alloc_user_stack();
 
 // Functions to allocate pages from the kernel heap.

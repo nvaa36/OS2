@@ -19,6 +19,10 @@ void MMU_free_kern_stack(void *address) {
    return MMU_free_kern_pages(address, STACK_NUM_PAGES);
 }
 
+void MMU_free_user_stack(void *address) {
+   return MMU_free_kern_pages(address, USER_STACK_NUM_PAGES);
+}
+
 // Makes space for a user program on the stack and sets it to usable by the
 // user.
 void MMU_alloc_user_prog(PT4_Entry *pt4, void *address, uint64_t lgth) {
@@ -39,12 +43,11 @@ void *MMU_alloc_user_stack(PT4_Entry *pt4) {
    PT1_Entry *pt1e;
    int i;
 
-   for (i = 0; i < num; i++) {
+   for (i = 0; i < USER_STACK_NUM_PAGES; i++) {
       pt1e = get_pt1_entry(pt4, virt_addr + i * PAGE_FRAME_SIZE);
       pt1e->avl = ALLOC_ON_DEMAND;
+      pt1e->su = USER_BIT;
    }
-
-   kern_heap_mem_addr += PAGE_FRAME_SIZE * num;
 
    return virt_addr;
 }

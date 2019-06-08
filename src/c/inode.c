@@ -22,10 +22,8 @@ struct file *inode_file_open(struct inode *inode, enum Mode mode) {
 int readdir_cb_find_inode(const char *name, struct inode *inode, void *p) {
    struct find_inode_info *info = (struct find_inode_info *)p;
 
-   //printk("Processing: %s\n", name);
    if (strlen(name) == strlen(info->name) && 
        !strncmp(name, info->name, strlen(name))) {
-      //printk("Found node %s\n", name);
       info->inode = inode;
    }
 
@@ -33,24 +31,20 @@ int readdir_cb_find_inode(const char *name, struct inode *inode, void *p) {
 }
 
 int readdir_cb_test(const char *name, struct inode *inode, void *p) {
-   char buffer[BLOCK_SIZE * 40 + 1];
+   char buffer[BLOCK_SIZE * 50];
    struct file *file;
    int bytes_read;
 
-   //printk("Found Inode: %s\n", name);
    if (inode->st_mode == MODE_DIR &&
        inode->st_ino != inode->inode_parent->st_ino &&
        inode->st_ino != inode->inode_parent->inode_parent->st_ino) {
       inode->readdir(inode, readdir_cb_test, p);
    }
 
-   if (!strncmp(name, "tester.txt", strlen("tester.txt"))) {
+   if (!strncmp(name, "test_files.bin", strlen("test_files.bin"))) {
       file = inode->open(inode, READ);
-      //file->lseek(file, 39);
-      while ((bytes_read = file->read(file, buffer, BLOCK_SIZE * 40))) {
-         buffer[bytes_read] = '\0';
-         run_md5(buffer);
-         printk((char *)buffer);
+      while ((bytes_read = file->read(file, buffer, BLOCK_SIZE * 50))) {
+         run_md5(buffer, bytes_read);
       }
       file->close(&file);
    }

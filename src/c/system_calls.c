@@ -11,6 +11,7 @@ void (*(sys_calls[NUM_SYS_CALLS]))();
 void setup_syscalls() {
    sys_calls[YIELD] = yield_internal;
    sys_calls[KEXIT] = kexit_internal;
+   sys_calls[EXIT] = exit_internal;
    sys_calls[GETC] = getc_syscall;
    sys_calls[PUTC] = putc_syscall;
    sys_calls[READ_BLOCK] = read_block_syscall;
@@ -29,6 +30,11 @@ void system_call(int sys_call_num, void *arg) {
 
 void yield() {
    make_system_call(YIELD, NULL);
+}
+
+void exit() {
+   asm("movq %0, %%rsi" : : "i"(EXIT) : "rsi");
+   asm("int %0" : : "i"(KEXIT_TRAP));
 }
 
 void kexit() {

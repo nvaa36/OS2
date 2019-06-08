@@ -83,7 +83,6 @@ void load_test_func(struct super_block *sb) {
 
    file_inode = inode_for_path("boot/test_files.bin", sb->root_inode);
    binary = file_inode->open(file_inode, READ);
-
    entry_point = parse_elf(binary);
 
    PROC_create_user_thread((kproc_t)entry_point, NULL);

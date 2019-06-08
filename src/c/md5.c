@@ -161,10 +161,9 @@ void md5(uint8_t *initial_msg, size_t initial_len) {
 
 }
 
-int run_md5(char *str) {
+int run_md5(char *str, int len) {
 
    char *msg = str;
-   size_t len = strlen(msg);
 
    // benchmark
    // int i;

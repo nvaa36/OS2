@@ -45,5 +45,6 @@ char kexit_stack[STACK_SIZE];
 struct TSS tss;
 
 void setup_tss();
+void set_rsp0(void *stack_loc);
 
 #endif

@@ -32,6 +32,7 @@ typedef struct Process{
    struct Process *prev;
    struct Process *next;
    int kb_read;
+   int size;
    void *stack_ptr;
    void *heap_ptr;
    PT4_Entry *pt4;
@@ -89,5 +90,6 @@ void PROC_init_queue(process_queue *);
 
 void yield_internal();
 void kexit_internal();
+void exit_internal();
 
 #endif
